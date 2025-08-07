@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ExternalLink, TrendingUp, Shield, DollarSign, Globe } from 'lucide-react'
+import { useLanguage } from './contexts/LanguageContext'
 
 interface ForexBroker {
     id: number
@@ -202,6 +203,7 @@ const forexBrokers: ForexBroker[] = [
 ]
 
 export default function Home() {
+    const { t } = useLanguage()
     const [searchTerm, setSearchTerm] = useState('')
     const [sortBy, setSortBy] = useState<'rating' | 'name'>('rating')
 
@@ -218,24 +220,24 @@ export default function Home() {
         })
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
             {/* Header */}
-            <header className="bg-white shadow-sm border-b">
+            <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center py-6">
                         <div className="flex items-center">
                             <TrendingUp className="h-8 w-8 text-blue-600 mr-3" />
-                            <h1 className="text-2xl font-bold text-gray-900">Action Now</h1>
+                            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Action Now</h1>
                         </div>
                         <nav className="flex space-x-8">
                             <Link href="/" className="text-blue-600 font-medium">
-                                Sàn Forex
+                                {t('nav.forex')}
                             </Link>
-                            <Link href="/news" className="text-gray-500 hover:text-blue-600 font-medium">
-                                Tin Tức
+                            <Link href="/news" className="text-gray-500 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-blue-400">
+                                {t('nav.news')}
                             </Link>
-                            <Link href="/knowledge" className="text-gray-500 hover:text-blue-600 font-medium">
-                                Kiến Thức
+                            <Link href="/knowledge" className="text-gray-500 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-blue-400">
+                                {t('nav.knowledge')}
                             </Link>
                         </nav>
                     </div>
@@ -246,35 +248,35 @@ export default function Home() {
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 {/* Hero Section */}
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                        Danh Sách Sàn Forex Uy Tín
+                    <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        {t('home.title')}
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Khám phá các sàn forex hàng đầu với đánh giá chi tiết, so sánh tính năng và link đăng ký trực tiếp
+                    <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                        {t('home.subtitle')}
                     </p>
                 </div>
 
                 {/* Search and Filter */}
-                <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-8 border border-gray-200 dark:border-gray-700">
                     <div className="flex flex-col sm:flex-row gap-4">
                         <div className="flex-1">
                             <input
                                 type="text"
-                                placeholder="Tìm kiếm sàn forex..."
+                                placeholder={t('home.searchPlaceholder')}
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900 placeholder-gray-500"
+                                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                             />
                         </div>
                         <div className="flex items-center space-x-4">
-                            <label className="text-sm font-medium text-gray-700">Sắp xếp theo:</label>
+                            <label className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('common.sort')}:</label>
                             <select
                                 value={sortBy}
                                 onChange={(e) => setSortBy(e.target.value as 'rating' | 'name')}
-                                className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
+                                className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                             >
-                                <option value="rating">Đánh giá cao nhất</option>
-                                <option value="name">Tên A-Z</option>
+                                <option value="rating">{t('home.sortByRating')}</option>
+                                <option value="name">{t('home.sortByName')}</option>
                             </select>
                         </div>
                     </div>
@@ -283,9 +285,9 @@ export default function Home() {
                 {/* Brokers Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
                     {filteredBrokers.map((broker) => (
-                        <div key={broker.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100 flex flex-col h-full">
+                        <div key={broker.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col h-full">
                             {/* Broker Header */}
-                            <div className="p-6 border-b border-gray-100 flex-shrink-0">
+                            <div className="p-6 border-b border-gray-100 dark:border-gray-700 flex-shrink-0">
                                 <div className="flex items-center justify-between mb-4">
                                     <img
                                         src={broker.logo}
@@ -294,18 +296,18 @@ export default function Home() {
                                     />
                                     <div className="flex items-center">
                                         <span className="text-yellow-500 mr-1">★</span>
-                                        <span className="font-semibold text-gray-800">{broker.rating}</span>
+                                        <span className="font-semibold text-gray-800 dark:text-white">{broker.rating}</span>
                                     </div>
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-800 mb-2">{broker.name}</h3>
-                                <p className="text-gray-700 text-sm mb-4 leading-relaxed">{broker.description}</p>
+                                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">{broker.name}</h3>
+                                <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 leading-relaxed">{broker.description}</p>
 
                                 {/* Features */}
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {broker.features.map((feature, index) => (
                                         <span
                                             key={index}
-                                            className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+                                            className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full"
                                         >
                                             {feature}
                                         </span>
@@ -318,18 +320,18 @@ export default function Home() {
                                 <div className="space-y-3 mb-6 flex-grow">
                                     <div className="flex items-center text-sm min-w-0">
                                         <Shield className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
-                                        <span className="text-gray-600 flex-shrink-0">Quy định: </span>
-                                        <span className="font-medium ml-1 text-gray-800 truncate">{broker.regulation}</span>
+                                        <span className="text-gray-600 dark:text-gray-400 flex-shrink-0">Quy định: </span>
+                                        <span className="font-medium ml-1 text-gray-800 dark:text-white truncate">{broker.regulation}</span>
                                     </div>
                                     <div className="flex items-center text-sm min-w-0">
                                         <DollarSign className="h-4 w-4 text-blue-600 mr-2 flex-shrink-0" />
-                                        <span className="text-gray-600 flex-shrink-0">Nạp tối thiểu: </span>
-                                        <span className="font-medium ml-1 text-gray-800 truncate">{broker.minDeposit}</span>
+                                        <span className="text-gray-600 dark:text-gray-400 flex-shrink-0">Nạp tối thiểu: </span>
+                                        <span className="font-medium ml-1 text-gray-800 dark:text-white truncate">{broker.minDeposit}</span>
                                     </div>
                                     <div className="flex items-center text-sm min-w-0">
                                         <TrendingUp className="h-4 w-4 text-purple-600 mr-2 flex-shrink-0" />
-                                        <span className="text-gray-600 flex-shrink-0">Spread: </span>
-                                        <span className="font-medium ml-1 text-gray-800 truncate">{broker.spreads}</span>
+                                        <span className="text-gray-600 dark:text-gray-400 flex-shrink-0">Spread: </span>
+                                        <span className="font-medium ml-1 text-gray-800 dark:text-white truncate">{broker.spreads}</span>
                                     </div>
                                 </div>
 
@@ -339,7 +341,7 @@ export default function Home() {
                                         href={`/broker/${broker.id}`}
                                         className="flex-1 bg-gray-600 hover:bg-gray-700 text-white font-medium py-3 px-4 rounded-lg flex items-center justify-center transition-colors duration-200"
                                     >
-                                        Xem chi tiết
+                                        {t('home.viewDetails')}
                                     </Link>
                                     <a
                                         href={broker.url}
@@ -348,7 +350,7 @@ export default function Home() {
                                         className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg flex items-center justify-center transition-colors duration-200"
                                     >
                                         <Globe className="h-4 w-4 mr-2" />
-                                        Truy cập
+                                        {t('home.visit')}
                                         <ExternalLink className="h-4 w-4 ml-2" />
                                     </a>
                                 </div>
@@ -361,8 +363,8 @@ export default function Home() {
                 {filteredBrokers.length === 0 && (
                     <div className="text-center py-12">
                         <TrendingUp className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                        <h3 className="text-lg font-medium text-gray-900 mb-2">Không tìm thấy sàn forex</h3>
-                        <p className="text-gray-600">Thử tìm kiếm với từ khóa khác</p>
+                        <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">Không tìm thấy sàn forex</h3>
+                        <p className="text-gray-600 dark:text-gray-400">Thử tìm kiếm với từ khóa khác</p>
                     </div>
                 )}
             </main>
@@ -373,14 +375,14 @@ export default function Home() {
                     <div className="text-center">
                         <h3 className="text-xl font-bold mb-4">Action Now</h3>
                         <p className="text-gray-400 mb-6">
-                            Cung cấp thông tin chính xác và cập nhật về thị trường forex
+                            {t('footer.description')}
                         </p>
                         <div className="flex justify-center space-x-6">
                             <Link href="/" className="text-gray-400 hover:text-white">
-                                Sàn Forex
+                                {t('nav.forex')}
                             </Link>
                             <Link href="/news" className="text-gray-400 hover:text-white">
-                                Tin Tức
+                                {t('nav.news')}
                             </Link>
                         </div>
                     </div>

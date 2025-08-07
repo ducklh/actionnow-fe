@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Clock, Tag, Share2, Bookmark, TrendingUp, DollarSign, Shield, BarChart3, Users, AlertTriangle, CheckCircle, Info, Zap, Settings, Brain, Target } from 'lucide-react'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 interface KnowledgeItem {
     id: number
@@ -617,17 +618,18 @@ const knowledgeItems: KnowledgeItem[] = [
 ]
 
 export default function KnowledgeDetailPage({ params }: { params: { id: string } }) {
+    const { t } = useLanguage()
     const article = knowledgeItems.find(item => item.id === parseInt(params.id))
 
     if (!article) {
         return (
-            <div className="min-h-screen bg-gray-50">
+            <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                     <div className="text-center">
-                        <h1 className="text-2xl font-bold text-gray-900 mb-4">Không tìm thấy bài viết</h1>
-                        <p className="text-gray-600 mb-8">Bài viết bạn đang tìm kiếm không tồn tại.</p>
+                        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Không tìm thấy bài viết</h1>
+                        <p className="text-gray-600 dark:text-gray-400 mb-8">Bài viết bạn đang tìm kiếm không tồn tại.</p>
                         <Link href="/knowledge" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-                            Quay lại trang kiến thức
+                            {t('common.back')}
                         </Link>
                     </div>
                 </div>
@@ -638,36 +640,36 @@ export default function KnowledgeDetailPage({ params }: { params: { id: string }
     const IconComponent = article.icon
     const getLevelColor = (level: string) => {
         switch (level) {
-            case 'Cơ bản': return 'bg-green-100 text-green-800'
-            case 'Trung cấp': return 'bg-yellow-100 text-yellow-800'
-            case 'Nâng cao': return 'bg-red-100 text-red-800'
-            default: return 'bg-gray-100 text-gray-800'
+            case 'Cơ bản': return 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
+            case 'Trung cấp': return 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200'
+            case 'Nâng cao': return 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200'
+            default: return 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300'
         }
     }
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
             {/* Header */}
-            <header className="bg-white shadow-sm border-b border-gray-200">
+            <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center py-6">
                         <div className="flex items-center">
-                            <Link href="/knowledge" className="flex items-center text-gray-600 hover:text-blue-600 mr-6">
+                            <Link href="/knowledge" className="flex items-center text-gray-600 hover:text-blue-600 mr-6 dark:text-gray-400 dark:hover:text-blue-400">
                                 <ArrowLeft className="h-5 w-5 mr-2" />
-                                Quay lại
+                                {t('common.back')}
                             </Link>
                             <BookOpen className="h-8 w-8 text-blue-600 mr-3" />
-                            <h1 className="text-2xl font-bold text-gray-900">Action Now</h1>
+                            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Action Now</h1>
                         </div>
                         <nav className="flex space-x-8">
-                            <Link href="/" className="text-gray-500 hover:text-gray-900 transition-colors">
-                                Sàn Forex
+                            <Link href="/" className="text-gray-500 hover:text-gray-900 transition-colors dark:text-gray-400 dark:hover:text-white">
+                                {t('nav.forex')}
                             </Link>
-                            <Link href="/news" className="text-gray-500 hover:text-gray-900 transition-colors">
-                                Tin Tức
+                            <Link href="/news" className="text-gray-500 hover:text-gray-900 transition-colors dark:text-gray-400 dark:hover:text-white">
+                                {t('nav.news')}
                             </Link>
                             <Link href="/knowledge" className="text-blue-600 font-medium">
-                                Kiến Thức
+                                {t('nav.knowledge')}
                             </Link>
                         </nav>
                     </div>
@@ -677,10 +679,10 @@ export default function KnowledgeDetailPage({ params }: { params: { id: string }
             {/* Main Content */}
             <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 {/* Article Header */}
-                <div className="bg-white rounded-lg shadow-md p-6 mb-8 border border-gray-100">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8 border border-gray-100 dark:border-gray-700">
                     <div className="mb-6">
                         <div className="flex items-center mb-4">
-                            <div className="p-2 bg-blue-100 rounded-lg mr-3">
+                            <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg mr-3">
                                 <IconComponent className="h-6 w-6 text-blue-600" />
                             </div>
                             <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getLevelColor(article.level)}`}>
@@ -688,11 +690,11 @@ export default function KnowledgeDetailPage({ params }: { params: { id: string }
                             </span>
                         </div>
 
-                        <h1 className="text-3xl font-bold text-gray-900 mb-4">{article.title}</h1>
-                        <p className="text-xl text-gray-600 mb-6">{article.description}</p>
+                        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{article.title}</h1>
+                        <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">{article.description}</p>
 
                         {/* Article Meta */}
-                        <div className="flex items-center justify-between text-sm text-gray-500 mb-6">
+                        <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-6">
                             <div className="flex items-center space-x-6">
                                 <div className="flex items-center">
                                     <Clock className="h-4 w-4 mr-2" />

@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { ThemeProvider } from './contexts/ThemeContext'
+import { LanguageProvider } from './contexts/LanguageContext'
+import Settings from './components/Settings'
+import ThemeWrapper from './components/ThemeWrapper'
 // import './output.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -21,11 +25,34 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="vi">
+        <html lang="vi" suppressHydrationWarning>
+            <head>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function() {
+                                try {
+                                    var theme = localStorage.getItem('theme');
+                                    var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                                    var initialTheme = theme || systemTheme;
+                                    document.documentElement.classList.add(initialTheme);
+                                } catch (e) {}
+                            })();
+                        `,
+                    }}
+                />
+            </head>
             <body className={inter.className}>
-                <div className="min-h-screen bg-gray-50">
-                    {children}
-                </div>
+                <ThemeProvider>
+                    <LanguageProvider>
+                        <ThemeWrapper>
+                            <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+                                {children}
+                                <Settings />
+                            </div>
+                        </ThemeWrapper>
+                    </LanguageProvider>
+                </ThemeProvider>
             </body>
         </html>
     )

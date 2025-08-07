@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark, TrendingUp, Tag } from 'lucide-react'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 interface NewsArticle {
   id: number
@@ -400,15 +401,16 @@ const newsArticles: NewsArticle[] = [
 ]
 
 export default function NewsDetailPage({ params }: { params: { id: string } }) {
+  const { t } = useLanguage()
   const article = newsArticles.find(a => a.id === parseInt(params.id))
 
   if (!article) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Không tìm thấy bài viết</h1>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Không tìm thấy bài viết</h1>
           <Link href="/news" className="text-blue-600 hover:text-blue-700">
-            Quay lại trang tin tức
+            {t('common.back')}
           </Link>
         </div>
       </div>
@@ -418,18 +420,18 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
   const relatedArticles = newsArticles.filter(a => article.relatedArticles.includes(a.id))
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
-              <Link href="/news" className="flex items-center text-gray-600 hover:text-blue-600 mr-6">
+              <Link href="/news" className="flex items-center text-gray-600 hover:text-blue-600 mr-6 dark:text-gray-400 dark:hover:text-blue-400">
                 <ArrowLeft className="h-5 w-5 mr-2" />
-                Quay lại
+                {t('common.back')}
               </Link>
               <TrendingUp className="h-8 w-8 text-blue-600 mr-3" />
-              <h1 className="text-2xl font-bold text-gray-900">Action Now</h1>
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Action Now</h1>
             </div>
             <div className="flex items-center space-x-4">
               <button className="text-gray-500 hover:text-blue-600">
@@ -446,16 +448,16 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Article Header */}
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-8 border border-gray-200 dark:border-gray-700">
           <div className="mb-6">
-            <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+            <span className="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm font-medium mb-4">
               {article.category}
             </span>
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">{article.title}</h1>
-            <p className="text-xl text-gray-600 mb-6">{article.excerpt}</p>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{article.title}</h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">{article.excerpt}</p>
 
             {/* Article Meta */}
-            <div className="flex items-center justify-between text-sm text-gray-500 mb-6">
+            <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-6">
               <div className="flex items-center space-x-6">
                 <div className="flex items-center">
                   <User className="h-4 w-4 mr-2" />
@@ -477,7 +479,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
               {article.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full flex items-center"
+                  className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full flex items-center"
                 >
                   <Tag className="h-3 w-3 mr-1" />
                   {tag}
