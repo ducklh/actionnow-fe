@@ -17,6 +17,13 @@ Website hiện đại cung cấp thông tin về các sàn forex uy tín và tin
 - Tìm kiếm và lọc tin tức theo danh mục
 - Giao diện đẹp mắt và dễ đọc
 
+### 📚 Trang Kiến Thức
+- Tài liệu học tập từ cơ bản đến nâng cao
+- 8 chuyên mục kiến thức chuyên sâu
+- 12 bài viết chi tiết về forex
+- Phân loại theo cấp độ: Cơ bản, Trung cấp, Nâng cao
+- Tìm kiếm và lọc theo chuyên mục
+
 ## Công nghệ sử dụng
 
 - **Next.js 14** - Framework React hiện đại
@@ -57,12 +64,14 @@ npm start
 
 ```
 forex-news/
-├── app/
-│   ├── globals.css          # CSS toàn cục
-│   ├── layout.tsx           # Layout chính
-│   ├── page.tsx             # Trang chủ (Sàn Forex)
-│   └── news/
-│       └── page.tsx         # Trang tin tức
+       ├── app/
+       │   ├── globals.css          # CSS toàn cục
+       │   ├── layout.tsx           # Layout chính
+       │   ├── page.tsx             # Trang chủ (Sàn Forex)
+       │   ├── news/
+       │   │   └── page.tsx         # Trang tin tức
+       │   └── knowledge/
+       │       └── page.tsx         # Trang kiến thức
 ├── package.json
 ├── tailwind.config.js       # Cấu hình Tailwind
 ├── next.config.js           # Cấu hình Next.js
@@ -106,6 +115,11 @@ Website hiện tại sử dụng dữ liệu mẫu cho:
 - 6 bài viết mẫu về thị trường forex
 - Phân tích EUR/USD, USD/JPY, GBP/USD, AUD/USD, USD/CAD, NZD/USD
 - Các danh mục: Phân tích kỹ thuật, Phân tích cơ bản, Tin tức thị trường
+
+### Kiến Thức
+- 12 bài viết kiến thức chuyên sâu
+- 8 chuyên mục: Kiến thức cơ bản, Phân tích kỹ thuật, Phân tích cơ bản, Quản lý rủi ro, Tâm lý giao dịch, Chiến lược giao dịch, Công cụ giao dịch
+- Phân loại theo cấp độ: Cơ bản, Trung cấp, Nâng cao
 
 ## Tùy chỉnh
 

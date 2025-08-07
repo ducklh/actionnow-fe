@@ -130,6 +130,9 @@ export default function NewsPage() {
                             <Link href="/news" className="text-blue-600 font-medium">
                                 Tin Tức
                             </Link>
+                            <Link href="/knowledge" className="text-gray-500 hover:text-blue-600 font-medium">
+                                Kiến Thức
+                            </Link>
                         </nav>
                     </div>
                 </div>
