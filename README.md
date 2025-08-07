@@ -23,6 +23,8 @@ Website hiện đại cung cấp thông tin về các sàn forex uy tín và tin
 - 12 bài viết chi tiết về forex
 - Phân loại theo cấp độ: Cơ bản, Trung cấp, Nâng cao
 - Tìm kiếm và lọc theo chuyên mục
+- Trang chi tiết cho từng bài viết với nội dung đầy đủ
+- Bài viết liên quan và navigation thông minh
 
 ## Công nghệ sử dụng
 
@@ -71,7 +73,9 @@ forex-news/
        │   ├── news/
        │   │   └── page.tsx         # Trang tin tức
        │   └── knowledge/
-       │       └── page.tsx         # Trang kiến thức
+       │       ├── page.tsx         # Trang kiến thức
+       │       └── [id]/
+       │           └── page.tsx     # Trang chi tiết bài viết
 ├── package.json
 ├── tailwind.config.js       # Cấu hình Tailwind
 ├── next.config.js           # Cấu hình Next.js
