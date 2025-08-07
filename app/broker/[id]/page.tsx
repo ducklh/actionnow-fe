@@ -218,7 +218,329 @@ const forexBrokers: ForexBroker[] = [
         languages: ["Tiếng Anh", "Tiếng Trung", "Tiếng Ả Rập"],
         support: ["Live Chat", "Email", "Điện thoại"],
         paymentMethods: ["Ngân hàng", "Thẻ tín dụng", "Skrill", "Neteller", "Bitcoin"]
+    },
+    {
+        "id": 7,
+        "name": "Exness",
+        "logo": "https://via.placeholder.com/120x60/facc15/000000?text=Exness",
+        "url": "https://www.exness.com",
+        "description": "Sàn forex phổ biến với spread thấp, rút tiền siêu nhanh và đòn bẩy không giới hạn.",
+        "rating": 4.7,
+        "features": ["Spread thấp", "Rút tiền tức thì", "Đòn bẩy cao", "Tài khoản đa dạng", "Hỗ trợ tiếng Việt"],
+        "regulation": "FCA, CySEC, FSCA",
+        "minDeposit": "$1",
+        "spreads": "Từ 0.3 pips",
+        "leverage": "Không giới hạn",
+        "platforms": ["MT4", "MT5", "Exness Terminal", "Exness Mobile"],
+        "instruments": ["Forex", "Crypto", "Kim loại", "Chỉ số", "Cổ phiếu CFD"],
+        "pros": [
+            "Rút tiền siêu nhanh",
+            "Đòn bẩy không giới hạn",
+            "Nạp tối thiểu chỉ $1",
+            "Hỗ trợ tiếng Việt chuyên nghiệp",
+            "Không phí ẩn"
+        ],
+        "cons": [
+            "Không có nhiều công cụ phân tích nâng cao",
+            "Không hỗ trợ MT5 trên tất cả tài khoản",
+            "Không có dịch vụ bonus"
+        ],
+        "founded": "2008",
+        "headquarters": "Limassol, Cyprus",
+        "languages": ["Tiếng Việt", "Tiếng Anh", "Tiếng Trung"],
+        "support": ["Live Chat", "Email", "Điện thoại"],
+        "paymentMethods": ["Ngân hàng", "Thẻ tín dụng", "Skrill", "Neteller", "Bitcoin"]
+    },
+    {
+        "id": 8,
+        "name": "HotForex",
+        "logo": "https://via.placeholder.com/120x60/16a34a/ffffff?text=HotForex",
+        "url": "https://www.hotforex.com",
+        "description": "Sàn forex cung cấp nhiều loại tài khoản và dịch vụ copy trading chất lượng.",
+        "rating": 4.6,
+        "features": ["Copy Trading", "Tài khoản PAMM", "Nhiều loại tài khoản", "Giáo dục", "Nền tảng ổn định"],
+        "regulation": "FCA, DFSA, FSCA",
+        "minDeposit": "$5",
+        "spreads": "Từ 0.1 pips",
+        "leverage": "1:1000",
+        "platforms": ["MT4", "MT5", "HotForex App"],
+        "instruments": ["Forex", "Crypto", "Kim loại", "Năng lượng", "Chỉ số"],
+        "pros": [
+            "Nhiều loại tài khoản linh hoạt",
+            "Phù hợp cả người mới lẫn chuyên nghiệp",
+            "Dịch vụ copy trading tốt",
+            "Đòn bẩy cao",
+            "Nền tảng ổn định"
+        ],
+        "cons": [
+            "Không có nền tảng riêng",
+            "Phí rút tiền có thể cao",
+            "Không hỗ trợ quá nhiều công cụ nghiên cứu"
+        ],
+        "founded": "2010",
+        "headquarters": "St. Vincent & the Grenadines",
+        "languages": ["Tiếng Việt", "Tiếng Anh", "Tiếng Ả Rập"],
+        "support": ["Live Chat", "Email", "Điện thoại"],
+        "paymentMethods": ["Ngân hàng", "Thẻ tín dụng", "Skrill", "Neteller"]
+    },
+    {
+        "id": 9,
+        "name": "Tickmill",
+        "logo": "https://via.placeholder.com/120x60/d946ef/ffffff?text=Tickmill",
+        "url": "https://www.tickmill.com",
+        "description": "Sàn giao dịch ECN với chi phí thấp và tốc độ thực thi nhanh, lý tưởng cho scalping.",
+        "rating": 4.8,
+        "features": ["Chi phí thấp", "ECN Pro", "Autochartist", "Nền tảng ổn định", "Tốc độ khớp lệnh nhanh"],
+        "regulation": "FCA, CySEC, FSA",
+        "minDeposit": "$100",
+        "spreads": "Từ 0.0 pips",
+        "leverage": "1:500",
+        "platforms": ["MT4", "MT5", "Tickmill Web Trader"],
+        "instruments": ["Forex", "CFD", "Kim loại", "Trái phiếu", "Chỉ số"],
+        "pros": [
+            "Chi phí giao dịch cực thấp",
+            "Spread từ 0.0 pips",
+            "Hỗ trợ scalping và EA",
+            "Công cụ phân tích miễn phí",
+            "Giao diện đơn giản, dễ sử dụng"
+        ],
+        "cons": [
+            "Không hỗ trợ crypto",
+            "Nạp tối thiểu tương đối cao",
+            "Hạn chế phương thức thanh toán"
+        ],
+        "founded": "2014",
+        "headquarters": "London, UK",
+        "languages": ["Tiếng Việt", "Tiếng Anh", "Tiếng Trung"],
+        "support": ["Live Chat", "Email"],
+        "paymentMethods": ["Ngân hàng", "Skrill", "Neteller"]
+    },
+    {
+        "id": 10,
+        "name": "FXCM",
+        "logo": "https://via.placeholder.com/120x60/f87171/ffffff?text=FXCM",
+        "url": "https://www.fxcm.com",
+        "description": "Sàn forex toàn cầu với công cụ phân tích nâng cao và API chuyên nghiệp cho trader.",
+        "rating": 4.5,
+        "features": ["Trading Station", "API Trading", "Phân tích chuyên sâu", "MT4", "Giáo dục"],
+        "regulation": "FCA, ASIC",
+        "minDeposit": "$50",
+        "spreads": "Từ 1.3 pips",
+        "leverage": "1:400",
+        "platforms": ["Trading Station", "MT4", "NinjaTrader"],
+        "instruments": ["Forex", "CFD", "Crypto", "Kim loại", "Chỉ số"],
+        "pros": [
+            "Hỗ trợ phân tích kỹ thuật chuyên sâu",
+            "API mạnh cho các developer",
+            "Đa dạng nền tảng",
+            "Lịch sử hoạt động uy tín",
+            "Có tài khoản demo"
+        ],
+        "cons": [
+            "Spread cao hơn mặt bằng",
+            "Không hỗ trợ tiếng Việt",
+            "Không phổ biến ở châu Á"
+        ],
+        "founded": "1999",
+        "headquarters": "London, UK",
+        "languages": ["Tiếng Anh", "Tiếng Trung", "Tiếng Nhật"],
+        "support": ["Live Chat", "Email", "Điện thoại"],
+        "paymentMethods": ["Ngân hàng", "Thẻ tín dụng", "Skrill"]
+    },
+    {
+        "id": 11,
+        "name": "InstaForex",
+        "logo": "https://via.placeholder.com/120x60/22d3ee/000000?text=InstaForex",
+        "url": "https://www.instaforex.com",
+        "description": "Sàn thân thiện với người mới bắt đầu với tài khoản Cent và chương trình bonus hấp dẫn.",
+        "rating": 4.3,
+        "features": ["Bonus hấp dẫn", "Tài khoản Cent", "Copy trading", "MT4/MT5", "Dịch vụ hỗ trợ 24/7"],
+        "regulation": "BVI FSC",
+        "minDeposit": "$1",
+        "spreads": "Từ 0.8 pips",
+        "leverage": "1:1000",
+        "platforms": ["MT4", "MT5", "InstaForex App"],
+        "instruments": ["Forex", "Crypto", "CFD", "Kim loại", "Cổ phiếu"],
+        "pros": [
+            "Tài khoản Cent hỗ trợ vốn nhỏ",
+            "Bonus lên đến 100%",
+            "Copy trading dễ dùng",
+            "Đòn bẩy cao",
+            "Hỗ trợ đa ngôn ngữ"
+        ],
+        "cons": [
+            "Chênh lệch spread lớn hơn",
+            "Regulation yếu hơn các sàn khác",
+            "Không có nền tảng độc quyền"
+        ],
+        "founded": "2007",
+        "headquarters": "Kaliningrad, Nga",
+        "languages": ["Tiếng Việt", "Tiếng Anh", "Tiếng Nga"],
+        "support": ["Live Chat", "Email", "Điện thoại"],
+        "paymentMethods": ["Ngân hàng", "Bitcoin", "Skrill", "Neteller"]
+    },
+    {
+        "id": 11,
+        "name": "InstaForex",
+        "logo": "https://via.placeholder.com/120x60/22d3ee/000000?text=InstaForex",
+        "url": "https://www.instaforex.com",
+        "description": "Sàn thân thiện với người mới bắt đầu với tài khoản Cent và chương trình bonus hấp dẫn.",
+        "rating": 4.3,
+        "features": ["Bonus hấp dẫn", "Tài khoản Cent", "Copy trading", "MT4/MT5", "Dịch vụ hỗ trợ 24/7"],
+        "regulation": "BVI FSC",
+        "minDeposit": "$1",
+        "spreads": "Từ 0.8 pips",
+        "leverage": "1:1000",
+        "platforms": ["MT4", "MT5", "InstaForex App"],
+        "instruments": ["Forex", "Crypto", "CFD", "Kim loại", "Cổ phiếu"],
+        "pros": [
+            "Tài khoản Cent hỗ trợ vốn nhỏ",
+            "Bonus lên đến 100%",
+            "Copy trading dễ dùng",
+            "Đòn bẩy cao",
+            "Hỗ trợ đa ngôn ngữ"
+        ],
+        "cons": [
+            "Chênh lệch spread lớn hơn",
+            "Regulation yếu hơn các sàn khác",
+            "Không có nền tảng độc quyền"
+        ],
+        "founded": "2007",
+        "headquarters": "Kaliningrad, Nga",
+        "languages": ["Tiếng Việt", "Tiếng Anh", "Tiếng Nga"],
+        "support": ["Live Chat", "Email", "Điện thoại"],
+        "paymentMethods": ["Ngân hàng", "Bitcoin", "Skrill", "Neteller"]
     }
+    ,
+    {
+        "id": 12,
+        "name": "FBS",
+        "logo": "https://via.placeholder.com/120x60/34d399/ffffff?text=FBS",
+        "url": "https://www.fbs.com",
+        "description": "Sàn forex thân thiện với người dùng và nhiều chương trình thưởng hấp dẫn.",
+        "rating": 4.6,
+        "features": ["Leverage cao", "Chương trình thưởng", "Copy trading", "MT4/MT5", "Tài khoản Cent"],
+        "regulation": "IFSC, CySEC",
+        "minDeposit": "$1",
+        "spreads": "Từ 0.7 pips",
+        "leverage": "1:3000",
+        "platforms": ["MT4", "MT5", "FBS Trader App"],
+        "instruments": ["Forex", "Crypto", "Chỉ số", "Kim loại"],
+        "pros": [
+            "Leverage cực cao",
+            "Tài khoản Cent phù hợp người mới",
+            "Thưởng không cần nạp tiền",
+            "Nền tảng đơn giản",
+            "Copy trading hiệu quả"
+        ],
+        "cons": [
+            "Spread tương đối cao",
+            "Regulation trung bình",
+            "Giao diện hơi cũ"
+        ],
+        "founded": "2009",
+        "headquarters": "Belize",
+        "languages": ["Tiếng Việt", "Tiếng Anh", "Tiếng Thái"],
+        "support": ["Live Chat", "Email", "Điện thoại"],
+        "paymentMethods": ["Ngân hàng", "Thẻ tín dụng", "Skrill", "Neteller"]
+    },
+    {
+        "id": 13,
+        "name": "OctaFX",
+        "logo": "https://via.placeholder.com/120x60/60a5fa/ffffff?text=OctaFX",
+        "url": "https://www.octafx.com",
+        "description": "Sàn có giao diện hiện đại, dễ sử dụng với copy trading và spread thấp.",
+        "rating": 4.4,
+        "features": ["Ứng dụng di động", "Copy trading", "Spread thấp", "Hỗ trợ nhiều ngôn ngữ", "Tài khoản demo"],
+        "regulation": "CySEC",
+        "minDeposit": "$25",
+        "spreads": "Từ 0.4 pips",
+        "leverage": "1:500",
+        "platforms": ["MT4", "MT5", "OctaFX App"],
+        "instruments": ["Forex", "Crypto", "CFD", "Kim loại"],
+        "pros": [
+            "Copy trading dễ dùng",
+            "Giao diện hiện đại",
+            "Chi phí thấp",
+            "Hỗ trợ tiếng Việt",
+            "Ứng dụng mobile mượt"
+        ],
+        "cons": [
+            "Chỉ có CySEC quản lý",
+            "Không hỗ trợ nhiều sản phẩm",
+            "Phí ẩn nếu không hoạt động"
+        ],
+        "founded": "2011",
+        "headquarters": "Saint Vincent & the Grenadines",
+        "languages": ["Tiếng Việt", "Tiếng Anh", "Tiếng Thái"],
+        "support": ["Live Chat", "Email"],
+        "paymentMethods": ["Ngân hàng", "Thẻ tín dụng", "Skrill"]
+    },
+    {
+        "id": 14,
+        "name": "Admirals",
+        "logo": "https://via.placeholder.com/120x60/3b82f6/ffffff?text=Admirals",
+        "url": "https://admiralmarkets.com",
+        "description": "Sàn cung cấp phân tích chuyên sâu và đầu tư đa tài sản bao gồm cổ phiếu, ETF.",
+        "rating": 4.5,
+        "features": ["MetaTrader Supreme", "ETF", "Cổ phiếu", "Phân tích hàng ngày", "Tài khoản đa dạng"],
+        "regulation": "FCA, ASIC, CySEC",
+        "minDeposit": "$100",
+        "spreads": "Từ 0.5 pips",
+        "leverage": "1:500",
+        "platforms": ["MT4", "MT5", "Admirals App"],
+        "instruments": ["Forex", "Cổ phiếu", "ETF", "Chỉ số"],
+        "pros": [
+            "Cung cấp cả sản phẩm đầu tư",
+            "Phân tích chuyên sâu miễn phí",
+            "Nền tảng mạnh mẽ",
+            "Ứng dụng riêng chuyên nghiệp",
+            "Tài khoản đầu tư đa dạng"
+        ],
+        "cons": [
+            "Nạp tối thiểu $100",
+            "Không hỗ trợ crypto",
+            "Ít chương trình thưởng"
+        ],
+        "founded": "2001",
+        "headquarters": "Tallinn, Estonia",
+        "languages": ["Tiếng Việt", "Tiếng Anh", "Tiếng Đức"],
+        "support": ["Live Chat", "Email"],
+        "paymentMethods": ["Ngân hàng", "Thẻ tín dụng", "Skrill"]
+    },
+    {
+        "id": 15,
+        "name": "Libertex",
+        "logo": "https://via.placeholder.com/120x60/f97316/ffffff?text=Libertex",
+        "url": "https://www.libertex.com",
+        "description": "Sàn không spread, giao dịch theo mô hình hoa hồng với nhiều công cụ tài chính.",
+        "rating": 4.3,
+        "features": ["Không spread", "Ứng dụng đơn giản", "Nhiều công cụ tài chính", "Nền tảng riêng", "Giáo dục"],
+        "regulation": "CySEC",
+        "minDeposit": "$100",
+        "spreads": "0 pips + hoa hồng",
+        "leverage": "1:500",
+        "platforms": ["Libertex Platform", "MT4", "MT5"],
+        "instruments": ["Forex", "Crypto", "Cổ phiếu", "Chỉ số", "ETF"],
+        "pros": [
+            "Không có spread",
+            "Nền tảng riêng dễ dùng",
+            "Danh mục sản phẩm phong phú",
+            "Chương trình học miễn phí",
+            "Giao dịch linh hoạt"
+        ],
+        "cons": [
+            "Phí hoa hồng cao hơn bình thường",
+            "Không có tài khoản ECN",
+            "Hạn chế tính năng nâng cao"
+        ],
+        "founded": "1997",
+        "headquarters": "Limassol, Cyprus",
+        "languages": ["Tiếng Việt", "Tiếng Anh", "Tiếng Tây Ban Nha"],
+        "support": ["Live Chat", "Email", "Điện thoại"],
+        "paymentMethods": ["Ngân hàng", "Thẻ tín dụng", "Skrill", "Neteller"]
+    }
+
 ]
 
 export default function BrokerDetailPage({ params }: { params: { id: string } }) {
