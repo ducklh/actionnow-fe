@@ -150,7 +150,7 @@ const translations = {
         'crypto.news.searchPlaceholder': 'Tìm kiếm tin tức cryptocurrency...',
         'crypto.news.noNewsFound': 'Không tìm thấy tin tức',
         'crypto.news.tryDifferentKeywords': 'Thử tìm kiếm với từ khóa khác hoặc chọn danh mục khác',
-        
+
         // Crypto Categories
         'crypto.categories.all': 'Tất cả',
         'crypto.categories.market': 'Tin tức thị trường',
@@ -296,7 +296,7 @@ const translations = {
         'crypto.news.searchPlaceholder': 'Search cryptocurrency news...',
         'crypto.news.noNewsFound': 'No news found',
         'crypto.news.tryDifferentKeywords': 'Try searching with different keywords or select another category',
-        
+
         // Crypto Categories
         'crypto.categories.all': 'All',
         'crypto.categories.market': 'Market News',
