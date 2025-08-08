@@ -1,0 +1,146 @@
+[
+    {
+        "id": 1,
+        "title": "Bitcoin Surges Past $70,000",
+        "excerpt": "Bitcoin has surged past $70,000, reaching its highest level in history, driven by inflows from ETFs.",
+        "content": "Bitcoin has surged past $70,000, reaching its highest level in history, driven by inflows from Exchange Traded Funds (ETFs). This sharp rise came after Bitcoin ETFs were approved and began trading in the US. According to data from CoinGecko, Bitcoin is now trading at $71,500, up more than 5% in the past 24 hours. Experts believe this rally is mainly fueled by institutional inflows through ETFs. However, it is important to note that the crypto market remains highly volatile, and traders should be cautious. Altcoins have also rallied alongside Bitcoin, with Ethereum up 3% to $4,200 and BNB up 2% to $580.",
+        "category": "Market News",
+        "author": "Nguyen Van A",
+        "publishedAt": "2024-03-20T10:00:00Z",
+        "readTime": 4,
+        "image": "https://via.placeholder.com/800x400/f7931a/ffffff?text=Bitcoin+70k",
+        "tags": [
+            "Bitcoin",
+            "ETF",
+            "70,000",
+            "Crypto",
+            "Bull run"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Ethereum 2.0: Latest Updates on The Merge",
+        "excerpt": "Ethereum 2.0 continues to progress with new updates on The Merge, transitioning from Proof of Work to Proof of Stake.",
+        "content": "Ethereum 2.0 continues to progress with new updates on The Merge, transitioning from Proof of Work to Proof of Stake. According to the Ethereum Foundation, The Merge is expected to take place in September 2024. This transition will help Ethereum reduce energy consumption by 99% and increase transaction speed. Developers have completed testing on various testnets and are ready for the official deployment. However, it’s worth noting that this process may encounter some technical risks. Traders should closely follow announcements from the Ethereum Foundation and prepare for possible volatility during the transition period.",
+        "category": "Technical Analysis",
+        "author": "Tran Thi B",
+        "publishedAt": "2024-03-19T14:30:00Z",
+        "readTime": 5,
+        "image": "https://via.placeholder.com/800x400/627eea/ffffff?text=Ethereum+2.0",
+        "tags": [
+            "Ethereum",
+            "The Merge",
+            "Proof of Stake",
+            "ETH 2.0",
+            "DeFi"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "New DeFi Protocol Attracts $100 Million TVL",
+        "excerpt": "A new DeFi protocol has attracted $100 million in Total Value Locked (TVL) within just one week of launch.",
+        "content": "A new DeFi protocol has attracted $100 million in Total Value Locked (TVL) within just one week of launch. This protocol offers yield farming and lending services with higher interest rates than existing platforms. However, experts warn of high risks when investing in new protocols that have not been thoroughly audited. Many past DeFi protocols have been hacked or suffered rug pulls, causing millions in losses for users. Investors should exercise caution and only invest amounts they can afford to lose. They should also research the development team, smart contract audits, and the protocol's operating mechanism before investing.",
+        "category": "DeFi",
+        "author": "Le Van C",
+        "publishedAt": "2024-03-18T09:15:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/00d4aa/ffffff?text=DeFi+Protocol",
+        "tags": [
+            "DeFi",
+            "TVL",
+            "Yield farming",
+            "Rug pull",
+            "Smart contract"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "NFT Market: Bored Ape Yacht Club Prices Surge",
+        "excerpt": "The Bored Ape Yacht Club NFT collection has surged in price, with the floor price up 20% in the past 24 hours.",
+        "content": "The Bored Ape Yacht Club NFT collection has surged in price, with the floor price up 20% in the past 24 hours. Currently, BAYC’s floor price stands at 25 ETH, up from 20.8 ETH yesterday. This spike is fueled by announcements of the ApeCoin release and new projects from Yuga Labs. However, the NFT market remains highly volatile, and investors should be cautious. Many other NFT collections have also risen in value, including CryptoPunks, Doodles, and Azuki. Experts believe this sharp increase may be temporary, and the market could correct in the near future.",
+        "category": "NFT",
+        "author": "Pham Thi D",
+        "publishedAt": "2024-03-17T16:45:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/ff6b35/ffffff?text=BAYC+NFT",
+        "tags": [
+            "NFT",
+            "BAYC",
+            "ApeCoin",
+            "Yuga Labs",
+            "Floor price"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Binance Adds 5 New Coins to Listing",
+        "excerpt": "Crypto exchange Binance has added 5 new coins to its trading list, including DeFi and GameFi projects.",
+        "content": "Crypto exchange Binance has added 5 new coins to its trading list, including DeFi and GameFi projects. The newly listed coins include GameFi tokens, DeFi protocol tokens, and other new blockchain projects. Being listed on Binance often leads to a short-term price surge due to increased liquidity and accessibility. However, investors should remain cautious and avoid FOMO buying without thoroughly researching the projects. Many coins have dropped sharply in price after an initial listing rally. Traders should monitor trading volume and the project’s fundamentals before investing.",
+        "category": "Market News",
+        "author": "Hoang Van E",
+        "publishedAt": "2024-03-16T11:20:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/f0b90b/ffffff?text=Binance+Listing",
+        "tags": [
+            "Binance",
+            "Listing",
+            "GameFi",
+            "DeFi",
+            "FOMO"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Regulation: SEC Increases Crypto Oversight",
+        "excerpt": "The US Securities and Exchange Commission (SEC) has increased its oversight of the crypto market with new regulations.",
+        "content": "The US Securities and Exchange Commission (SEC) has increased its oversight of the crypto market with new regulations. These rules aim to protect investors and prevent fraudulent activities within the crypto industry. However, the crypto community is concerned that overly strict regulations could slow the sector's growth. Many crypto projects have had to adjust their operations to comply with the new rules. Traders should closely follow SEC announcements and prepare for potential volatility. Additionally, it’s wise to prioritize investments in highly compliant and transparent projects.",
+        "category": "Regulation",
+        "author": "Vu Thi F",
+        "publishedAt": "2024-03-15T13:10:00Z",
+        "readTime": 4,
+        "image": "https://via.placeholder.com/800x400/1e3a8a/ffffff?text=SEC+Regulation",
+        "tags": [
+            "SEC",
+            "Regulation",
+            "Compliance",
+            "Crypto law",
+            "Investor protection"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Layer 2 Solutions: Polygon Surges",
+        "excerpt": "Polygon (MATIC) has surged 15% after announcing integrations with major DeFi projects.",
+        "content": "Polygon (MATIC) has surged 15% after announcing integrations with major DeFi projects. Polygon is a Layer 2 solution that helps Ethereum scale and reduce transaction fees. Integration with large DeFi projects will increase Polygon’s liquidity and usability. However, the crypto market remains volatile, and traders should be cautious. Other Layer 2 solutions such as Arbitrum and Optimism are also developing rapidly. Investors should diversify their portfolios and avoid putting all their eggs in one basket.",
+        "category": "Layer 2",
+        "author": "Dang Van G",
+        "publishedAt": "2024-03-14T15:30:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/8247e5/ffffff?text=Polygon+MATIC",
+        "tags": [
+            "Polygon",
+            "MATIC",
+            "Layer 2",
+            "DeFi",
+            "Ethereum scaling"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Meme Coin: Dogecoin Surges After Elon Musk Tweet",
+        "excerpt": "Dogecoin has surged 25% after Elon Musk posted a tweet about the meme coin.",
+        "content": "Dogecoin has surged 25% after Elon Musk posted a tweet about the meme coin. This is not the first time Elon Musk’s tweets have influenced Dogecoin’s price. However, experts warn that investing in meme coins based solely on celebrity tweets is highly risky. Meme coins often lack intrinsic value and rely purely on hype. Many other meme coins have also risen, including Shiba Inu and Floki Inu. Investors should be cautious and only invest what they can afford to lose. They should also prioritize projects with intrinsic value and long-term growth potential.",
+        "category": "Meme Coin",
+        "author": "Ngo Thi H",
+        "publishedAt": "2024-03-13T10:45:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/c2a633/ffffff?text=Dogecoin+DOGE",
+        "tags": [
+            "Dogecoin",
+            "DOGE",
+            "Elon Musk",
+            "Meme coin",
+            "Hype"
+        ]
+    }
+]

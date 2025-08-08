@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "title": "Bitcoin tăng mạnh vượt ngưỡng $70,000",
+        "excerpt": "Bitcoin đã tăng mạnh vượt ngưỡng $70,000, đạt mức cao nhất trong lịch sử, được thúc đẩy bởi dòng tiền từ ETF.",
+        "content": "Bitcoin đã tăng mạnh vượt ngưỡng $70,000, đạt mức cao nhất trong lịch sử, được thúc đẩy bởi dòng tiền từ ETF (Exchange Traded Fund). Sự tăng mạnh này xảy ra sau khi các ETF Bitcoin được phê duyệt và bắt đầu giao dịch tại Mỹ. Theo dữ liệu từ CoinGecko, Bitcoin hiện đang giao dịch ở mức $71,500, tăng hơn 5% trong 24 giờ qua. Các chuyên gia cho rằng sự tăng mạnh này chủ yếu do dòng tiền từ các tổ chức đầu tư thông qua ETF. Tuy nhiên, cần lưu ý rằng thị trường crypto vẫn rất biến động và các trader nên thận trọng. Các altcoin cũng tăng mạnh theo Bitcoin, với Ethereum tăng 3% lên $4,200 và BNB tăng 2% lên $580.",
+        "category": "Tin tức thị trường",
+        "author": "Nguyễn Văn A",
+        "publishedAt": "2024-03-20T10:00:00Z",
+        "readTime": 4,
+        "image": "https://via.placeholder.com/800x400/f7931a/ffffff?text=Bitcoin+70k",
+        "tags": ["Bitcoin", "ETF", "70,000", "Crypto", "Bull run"]
+    },
+    {
+        "id": 2,
+        "title": "Ethereum 2.0: Cập nhật mới nhất về The Merge",
+        "excerpt": "Ethereum 2.0 tiếp tục phát triển với các cập nhật mới về The Merge, chuyển đổi từ Proof of Work sang Proof of Stake.",
+        "content": "Ethereum 2.0 tiếp tục phát triển với các cập nhật mới về The Merge, chuyển đổi từ Proof of Work sang Proof of Stake. Theo thông báo từ Ethereum Foundation, The Merge dự kiến sẽ diễn ra vào tháng 9 năm 2024. Sự chuyển đổi này sẽ giúp Ethereum giảm 99% lượng tiêu thụ năng lượng và tăng tốc độ giao dịch. Các nhà phát triển đã hoàn thành việc test trên các testnet và sẵn sàng cho việc triển khai chính thức. Tuy nhiên, cần lưu ý rằng quá trình này có thể gặp một số rủi ro kỹ thuật. Các trader nên theo dõi sát sao các thông báo từ Ethereum Foundation và chuẩn bị cho sự biến động có thể xảy ra trong thời gian chuyển đổi.",
+        "category": "Phân tích kỹ thuật",
+        "author": "Trần Thị B",
+        "publishedAt": "2024-03-19T14:30:00Z",
+        "readTime": 5,
+        "image": "https://via.placeholder.com/800x400/627eea/ffffff?text=Ethereum+2.0",
+        "tags": ["Ethereum", "The Merge", "Proof of Stake", "ETH 2.0", "DeFi"]
+    },
+    {
+        "id": 3,
+        "title": "DeFi Protocol mới thu hút $100 triệu TVL",
+        "excerpt": "Một protocol DeFi mới đã thu hút $100 triệu TVL (Total Value Locked) chỉ trong 1 tuần sau khi ra mắt.",
+        "content": "Một protocol DeFi mới đã thu hút $100 triệu TVL (Total Value Locked) chỉ trong 1 tuần sau khi ra mắt. Protocol này cung cấp các dịch vụ yield farming và lending với lãi suất cao hơn các protocol hiện tại. Tuy nhiên, các chuyên gia cảnh báo về rủi ro cao khi đầu tư vào các protocol mới chưa được audit kỹ lưỡng. Nhiều protocol DeFi trong quá khứ đã bị hack hoặc rug pull, gây thiệt hại hàng triệu đô la cho người dùng. Các nhà đầu tư nên thận trọng và chỉ đầu tư số tiền mà họ có thể chấp nhận mất. Đồng thời, nên tìm hiểu kỹ về team phát triển, smart contract audit, và cơ chế hoạt động của protocol trước khi đầu tư.",
+        "category": "DeFi",
+        "author": "Lê Văn C",
+        "publishedAt": "2024-03-18T09:15:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/00d4aa/ffffff?text=DeFi+Protocol",
+        "tags": ["DeFi", "TVL", "Yield farming", "Rug pull", "Smart contract"]
+    },
+    {
+        "id": 4,
+        "title": "NFT Market: Bored Ape Yacht Club tăng giá",
+        "excerpt": "Bộ sưu tập NFT Bored Ape Yacht Club đã tăng giá mạnh, với giá floor price tăng 20% trong 24 giờ qua.",
+        "content": "Bộ sưu tập NFT Bored Ape Yacht Club đã tăng giá mạnh, với giá floor price tăng 20% trong 24 giờ qua. Hiện tại, floor price của BAYC đang ở mức 25 ETH, tăng từ 20.8 ETH hôm qua. Sự tăng mạnh này được thúc đẩy bởi thông báo về việc phát hành token ApeCoin và các dự án mới của Yuga Labs. Tuy nhiên, thị trường NFT vẫn rất biến động và các nhà đầu tư nên thận trọng. Nhiều bộ sưu tập NFT khác cũng tăng giá theo, bao gồm CryptoPunks, Doodles, và Azuki. Các chuyên gia cho rằng sự tăng mạnh này có thể là tạm thời và thị trường có thể điều chỉnh trong thời gian tới.",
+        "category": "NFT",
+        "author": "Phạm Thị D",
+        "publishedAt": "2024-03-17T16:45:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/ff6b35/ffffff?text=BAYC+NFT",
+        "tags": ["NFT", "BAYC", "ApeCoin", "Yuga Labs", "Floor price"]
+    },
+    {
+        "id": 5,
+        "title": "Binance thêm 5 coin mới vào listing",
+        "excerpt": "Sàn giao dịch Binance đã thêm 5 coin mới vào danh sách giao dịch, bao gồm các dự án DeFi và GameFi.",
+        "content": "Sàn giao dịch Binance đã thêm 5 coin mới vào danh sách giao dịch, bao gồm các dự án DeFi và GameFi. Các coin mới được thêm vào bao gồm: GameFi token, DeFi protocol token, và các dự án blockchain mới. Việc được listing trên Binance thường giúp coin tăng giá mạnh trong ngắn hạn do tăng tính thanh khoản và khả năng tiếp cận. Tuy nhiên, các nhà đầu tư nên thận trọng và không FOMO vào các coin mới mà không tìm hiểu kỹ về dự án. Nhiều coin sau khi listing đã giảm giá mạnh sau đợt tăng ban đầu. Các trader nên theo dõi volume giao dịch và các thông tin cơ bản của dự án trước khi đầu tư.",
+        "category": "Tin tức thị trường",
+        "author": "Hoàng Văn E",
+        "publishedAt": "2024-03-16T11:20:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/f0b90b/ffffff?text=Binance+Listing",
+        "tags": ["Binance", "Listing", "GameFi", "DeFi", "FOMO"]
+    },
+    {
+        "id": 6,
+        "title": "Regulation: SEC tăng cường giám sát crypto",
+        "excerpt": "SEC (Ủy ban Chứng khoán Mỹ) đã tăng cường giám sát thị trường crypto với các quy định mới.",
+        "content": "SEC (Ủy ban Chứng khoán Mỹ) đã tăng cường giám sát thị trường crypto với các quy định mới. Các quy định này nhằm bảo vệ nhà đầu tư và ngăn chặn các hoạt động gian lận trong thị trường crypto. Tuy nhiên, cộng đồng crypto lo ngại rằng các quy định quá nghiêm ngặt có thể làm chậm sự phát triển của ngành. Nhiều dự án crypto đã phải thay đổi cách hoạt động để tuân thủ các quy định mới. Các trader nên theo dõi sát sao các thông báo từ SEC và chuẩn bị cho sự biến động có thể xảy ra. Đồng thời, nên ưu tiên đầu tư vào các dự án có tính tuân thủ cao và minh bạch.",
+        "category": "Regulation",
+        "author": "Vũ Thị F",
+        "publishedAt": "2024-03-15T13:10:00Z",
+        "readTime": 4,
+        "image": "https://via.placeholder.com/800x400/1e3a8a/ffffff?text=SEC+Regulation",
+        "tags": ["SEC", "Regulation", "Compliance", "Crypto law", "Investor protection"]
+    },
+    {
+        "id": 7,
+        "title": "Layer 2 Solutions: Polygon tăng mạnh",
+        "excerpt": "Polygon (MATIC) đã tăng mạnh 15% sau khi thông báo về việc tích hợp với các dự án DeFi lớn.",
+        "content": "Polygon (MATIC) đã tăng mạnh 15% sau khi thông báo về việc tích hợp với các dự án DeFi lớn. Polygon là một giải pháp Layer 2 giúp Ethereum mở rộng quy mô và giảm phí giao dịch. Việc tích hợp với các dự án DeFi lớn sẽ giúp Polygon tăng tính thanh khoản và khả năng sử dụng. Tuy nhiên, cần lưu ý rằng thị trường crypto vẫn rất biến động và các trader nên thận trọng. Các giải pháp Layer 2 khác như Arbitrum, Optimism cũng đang phát triển mạnh mẽ. Các nhà đầu tư nên đa dạng hóa danh mục đầu tư và không đặt tất cả trứng vào một giỏ.",
+        "category": "Layer 2",
+        "author": "Đặng Văn G",
+        "publishedAt": "2024-03-14T15:30:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/8247e5/ffffff?text=Polygon+MATIC",
+        "tags": ["Polygon", "MATIC", "Layer 2", "DeFi", "Ethereum scaling"]
+    },
+    {
+        "id": 8,
+        "title": "Meme Coin: Dogecoin tăng mạnh sau tweet của Elon Musk",
+        "excerpt": "Dogecoin đã tăng mạnh 25% sau khi Elon Musk đăng tweet liên quan đến meme coin này.",
+        "content": "Dogecoin đã tăng mạnh 25% sau khi Elon Musk đăng tweet liên quan đến meme coin này. Đây không phải lần đầu tiên tweet của Elon Musk ảnh hưởng đến giá của Dogecoin. Tuy nhiên, các chuyên gia cảnh báo rằng việc đầu tư vào meme coin dựa trên tweet của người nổi tiếng là rất rủi ro. Meme coin thường không có giá trị cơ bản và chỉ dựa vào hype. Nhiều meme coin khác cũng tăng giá theo, bao gồm Shiba Inu, Floki Inu. Các nhà đầu tư nên thận trọng và chỉ đầu tư số tiền mà họ có thể chấp nhận mất. Đồng thời, nên ưu tiên đầu tư vào các dự án có giá trị cơ bản và tiềm năng phát triển dài hạn.",
+        "category": "Meme Coin",
+        "author": "Ngô Thị H",
+        "publishedAt": "2024-03-13T10:45:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/c2a633/ffffff?text=Dogecoin+DOGE",
+        "tags": ["Dogecoin", "DOGE", "Elon Musk", "Meme coin", "Hype"]
+    }
+] 

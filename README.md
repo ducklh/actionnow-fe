@@ -1,40 +1,148 @@
-# Forex News - Website Tin Tức và Sàn Forex
+# Forex News & Crypto Trading Platform
 
-Website hiện đại cung cấp thông tin về các sàn forex uy tín và tin tức thị trường forex mới nhất.
+Nền tảng tin tức forex và giao dịch cryptocurrency với hỗ trợ đa ngôn ngữ (Tiếng Việt/English).
 
-## Tính năng chính
+## 🚀 Tính năng chính
 
-### 🏦 Trang Sàn Forex
-- Danh sách các sàn forex uy tín với thông tin chi tiết
-- Đánh giá và xếp hạng sàn
-- Thông tin về quy định, spread, nạp tối thiểu
-- Link trực tiếp đến website chính thức của sàn
-- Tìm kiếm và lọc sàn theo tiêu chí
+### 📊 Forex Trading
+- **Danh sách sàn forex uy tín** với đánh giá chi tiết
+- **Tin tức forex** cập nhật hàng ngày
+- **Kiến thức giao dịch** từ cơ bản đến nâng cao
+- **Phân tích kỹ thuật và cơ bản**
 
-### 📰 Trang Tin Tức
-- Tin tức forex mới nhất và cập nhật
-- Phân tích kỹ thuật và cơ bản
-- Tìm kiếm và lọc tin tức theo danh mục
-- Giao diện đẹp mắt và dễ đọc
+### 🪙 Cryptocurrency Trading
+- **Danh sách sàn crypto** với thông tin chi tiết
+- **Tin tức cryptocurrency** mới nhất
+- **Hỗ trợ DeFi, NFT, và các xu hướng crypto**
 
-### 📚 Trang Kiến Thức
-- Tài liệu học tập từ cơ bản đến nâng cao
-- 8 chuyên mục kiến thức chuyên sâu
-- 12 bài viết chi tiết về forex
-- Phân loại theo cấp độ: Cơ bản, Trung cấp, Nâng cao
-- Tìm kiếm và lọc theo chuyên mục
-- Trang chi tiết cho từng bài viết với nội dung đầy đủ
-- Bài viết liên quan và navigation thông minh
+### 🌐 Đa ngôn ngữ
+- **Tiếng Việt** và **English**
+- Chuyển đổi ngôn ngữ dễ dàng
+- Giao diện thân thiện
 
-## Công nghệ sử dụng
+### 🎨 Giao diện
+- **Dark/Light mode** tự động
+- **Responsive design** cho mọi thiết bị
+- **Modern UI/UX** với Tailwind CSS
 
-- **Next.js 14** - Framework React hiện đại
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling framework
-- **Lucide React** - Icon library
-- **Responsive Design** - Tương thích mọi thiết bị
+## 📁 Cấu trúc dự án
 
-## Cài đặt và chạy
+```
+forex-news/
+├── app/                          # Next.js App Router
+│   ├── broker/[id]/              # Chi tiết sàn forex
+│   ├── crypto/                   # Tin tức crypto
+│   │   └── [id]/                 # Chi tiết tin tức crypto
+│   ├── crypto-brokers/           # Danh sách sàn crypto
+│   │   └── [id]/                 # Chi tiết sàn crypto
+│   ├── knowledge/                # Kiến thức giao dịch
+│   │   └── [id]/                 # Chi tiết bài viết kiến thức
+│   ├── news/                     # Tin tức forex
+│   │   └── [id]/                 # Chi tiết tin tức forex
+│   ├── components/               # React components
+│   ├── contexts/                 # React contexts
+│   └── globals.css               # Global styles
+├── data/                         # Dữ liệu JSON
+│   ├── forex-brokers.json        # Dữ liệu sàn forex
+│   ├── crypto-brokers.json       # Dữ liệu sàn crypto
+│   ├── forex-news.json           # Tin tức forex
+│   ├── crypto-news.json          # Tin tức crypto
+│   └── knowledge.json            # Kiến thức giao dịch
+├── lib/                          # Utility functions
+│   └── data.ts                   # Data management
+└── public/                       # Static assets
+```
+
+## 📊 Cấu trúc dữ liệu
+
+### Forex Brokers (`data/forex-brokers.json`)
+```json
+{
+  "id": 1,
+  "name": "XM",
+  "logo": "logo_url",
+  "url": "website_url",
+  "description": "Mô tả sàn",
+  "rating": 4.8,
+  "features": ["Tính năng 1", "Tính năng 2"],
+  "regulation": "CySEC, ASIC, FCA",
+  "minDeposit": "$5",
+  "spreads": "Từ 0.6 pips",
+  "leverage": "1:888",
+  "platforms": ["MT4", "MT5"],
+  "instruments": ["Forex", "CFD"],
+  "pros": ["Ưu điểm 1", "Ưu điểm 2"],
+  "cons": ["Nhược điểm 1", "Nhược điểm 2"],
+  "founded": "2009",
+  "headquarters": "Limassol, Cyprus",
+  "languages": ["Tiếng Việt", "Tiếng Anh"],
+  "support": ["Live Chat", "Email"],
+  "paymentMethods": ["Ngân hàng", "Thẻ tín dụng"]
+}
+```
+
+### Crypto Brokers (`data/crypto-brokers.json`)
+```json
+{
+  "id": 1,
+  "name": "Binance",
+  "logo": "logo_url",
+  "url": "website_url",
+  "description": "Mô tả sàn",
+  "rating": 4.9,
+  "features": ["Giao dịch spot", "Futures"],
+  "regulation": "Đa quốc gia",
+  "minDeposit": "$10",
+  "tradingFees": "0.1%",
+  "supportedCoins": ["Bitcoin", "Ethereum"],
+  "pros": ["Ưu điểm 1", "Ưu điểm 2"],
+  "cons": ["Nhược điểm 1", "Nhược điểm 2"],
+  "founded": "2017",
+  "headquarters": "Malta",
+  "tradingVolume": "$20+ tỷ/ngày",
+  "securityFeatures": ["2FA", "Cold storage"],
+  "paymentMethods": ["Credit card", "Bank transfer"],
+  "customerSupport": ["Live chat", "Email"],
+  "mobileApp": true,
+  "apiSupport": true,
+  "detailedDescription": "Mô tả chi tiết"
+}
+```
+
+### News Articles (`data/forex-news.json`, `data/crypto-news.json`)
+```json
+{
+  "id": 1,
+  "title": "Tiêu đề bài viết",
+  "excerpt": "Tóm tắt ngắn",
+  "content": "Nội dung đầy đủ",
+  "category": "Phân tích kỹ thuật",
+  "author": "Tác giả",
+  "publishedAt": "2024-03-20T10:00:00Z",
+  "readTime": 5,
+  "image": "image_url",
+  "tags": ["Tag 1", "Tag 2"]
+}
+```
+
+### Knowledge Items (`data/knowledge.json`)
+```json
+{
+  "id": 1,
+  "title": "Tiêu đề bài viết",
+  "excerpt": "Tóm tắt ngắn",
+  "content": "Nội dung đầy đủ",
+  "category": "Kiến thức cơ bản",
+  "level": "Cơ bản",
+  "author": "Tác giả",
+  "publishedAt": "2024-03-20T10:00:00Z",
+  "readTime": 8,
+  "image": "image_url",
+  "tags": ["Tag 1", "Tag 2"]
+}
+```
+
+## 🛠️ Cài đặt và chạy
 
 ### Yêu cầu hệ thống
 - Node.js 18+ 
@@ -54,123 +162,88 @@ npm run dev
 yarn dev
 ```
 
-Website sẽ chạy tại: [http://localhost:3000](http://localhost:3000)
-
 ### Build production
 ```bash
 npm run build
-npm start
+# hoặc
+yarn build
 ```
 
-## Cấu trúc dự án
+## 🔧 Cấu hình
 
-```
-forex-news/
-       ├── app/
-       │   ├── globals.css          # CSS toàn cục
-       │   ├── layout.tsx           # Layout chính
-       │   ├── page.tsx             # Trang chủ (Sàn Forex)
-       │   ├── news/
-       │   │   └── page.tsx         # Trang tin tức
-       │   └── knowledge/
-       │       ├── page.tsx         # Trang kiến thức
-       │       └── [id]/
-       │           └── page.tsx     # Trang chi tiết bài viết
-├── package.json
-├── tailwind.config.js       # Cấu hình Tailwind
-├── next.config.js           # Cấu hình Next.js
-└── README.md
-```
+### Thêm dữ liệu mới
+1. **Thêm sàn forex**: Cập nhật `data/forex-brokers.json`
+2. **Thêm sàn crypto**: Cập nhật `data/crypto-brokers.json`
+3. **Thêm tin tức**: Cập nhật `data/forex-news.json` hoặc `data/crypto-news.json`
+4. **Thêm kiến thức**: Cập nhật `data/knowledge.json`
 
-## Tính năng nổi bật
+### Thêm bản dịch mới
+1. Cập nhật `app/contexts/LanguageContext.tsx`
+2. Thêm key-value pairs cho cả tiếng Việt và English
 
-### 🎨 Giao diện hiện đại
-- Thiết kế responsive
-- Gradient backgrounds đẹp mắt
-- Hover effects mượt mà
-- Icon trực quan
+## 🎯 Tính năng chính
 
 ### 🔍 Tìm kiếm và lọc
-- Tìm kiếm sàn forex theo tên và mô tả
-- Sắp xếp theo đánh giá hoặc tên
+- Tìm kiếm sàn theo tên, tính năng
 - Lọc tin tức theo danh mục
-- Tìm kiếm tin tức theo từ khóa
+- Sắp xếp theo đánh giá, tên
 
-### 📱 Responsive
-- Tương thích desktop, tablet, mobile
-- Layout thích ứng theo kích thước màn hình
-- Navigation menu responsive
+### 📱 Responsive Design
+- Tối ưu cho desktop, tablet, mobile
+- Giao diện thân thiện người dùng
 
-### ⚡ Performance
-- Next.js App Router
-- Optimized images
-- Fast loading times
+### 🌙 Dark/Light Mode
+- Chuyển đổi theme tự động
+- Lưu trữ preference trong localStorage
 
-## Dữ liệu mẫu
+### 🌍 Đa ngôn ngữ
+- Hỗ trợ tiếng Việt và English
+- Chuyển đổi ngôn ngữ dễ dàng
 
-Website hiện tại sử dụng dữ liệu mẫu cho:
+## 📈 Roadmap
 
-### Sàn Forex
-- XM, FXTM, IC Markets, Pepperstone, OANDA, AvaTrade
-- Thông tin chi tiết về quy định, spread, nạp tối thiểu
-- Link trực tiếp đến website chính thức
+### Phase 1 ✅
+- [x] Cấu trúc dự án cơ bản
+- [x] Trang danh sách sàn forex
+- [x] Trang tin tức forex
+- [x] Trang kiến thức
 
-### Tin Tức
-- 6 bài viết mẫu về thị trường forex
-- Phân tích EUR/USD, USD/JPY, GBP/USD, AUD/USD, USD/CAD, NZD/USD
-- Các danh mục: Phân tích kỹ thuật, Phân tích cơ bản, Tin tức thị trường
+### Phase 2 ✅
+- [x] Thêm phần crypto
+- [x] Hỗ trợ đa ngôn ngữ
+- [x] Dark/Light mode
+- [x] Responsive design
 
-### Kiến Thức
-- 12 bài viết kiến thức chuyên sâu
-- 8 chuyên mục: Kiến thức cơ bản, Phân tích kỹ thuật, Phân tích cơ bản, Quản lý rủi ro, Tâm lý giao dịch, Chiến lược giao dịch, Công cụ giao dịch
-- Phân loại theo cấp độ: Cơ bản, Trung cấp, Nâng cao
+### Phase 3 🚧
+- [ ] Thêm tính năng đăng ký newsletter
+- [ ] Thêm trang so sánh sàn
+- [ ] Thêm tính năng bookmark
+- [ ] Thêm trang profile user
 
-## Tùy chỉnh
+### Phase 4 📋
+- [ ] Thêm API backend
+- [ ] Thêm database
+- [ ] Thêm authentication
+- [ ] Thêm tính năng comment
 
-### Thêm sàn forex mới
-Chỉnh sửa mảng `forexBrokers` trong `app/page.tsx`:
+## 🤝 Đóng góp
 
-```typescript
-{
-  id: 7,
-  name: "Tên sàn mới",
-  logo: "URL logo",
-  url: "URL website",
-  description: "Mô tả sàn",
-  rating: 4.5,
-  features: ["Tính năng 1", "Tính năng 2"],
-  regulation: "Quy định",
-  minDeposit: "$100",
-  spreads: "Từ 0.5 pips"
-}
-```
+1. Fork dự án
+2. Tạo feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Mở Pull Request
 
-### Thêm tin tức mới
-Chỉnh sửa mảng `newsArticles` trong `app/news/page.tsx`:
+## 📄 License
 
-```typescript
-{
-  id: 7,
-  title: "Tiêu đề tin tức",
-  excerpt: "Tóm tắt tin tức",
-  content: "Nội dung chi tiết",
-  author: "Tác giả",
-  date: "2024-01-16",
-  category: "Danh mục",
-  image: "URL hình ảnh",
-  readTime: "5 phút",
-  tags: ["Tag 1", "Tag 2"]
-}
-```
+Dự án này được phân phối dưới MIT License. Xem `LICENSE` để biết thêm chi tiết.
 
-## License
+## 📞 Liên hệ
 
-MIT License - Xem file LICENSE để biết thêm chi tiết.
-
-## Đóng góp
-
-Mọi đóng góp đều được chào đón! Vui lòng tạo issue hoặc pull request.
+- Email: contact@forex-news.com
+- Website: https://forex-news.com
+- GitHub: https://github.com/your-username/forex-news
 
 ---
 
-**Lưu ý**: Website này chỉ mang tính chất tham khảo và giáo dục. Thông tin về các sàn forex có thể thay đổi theo thời gian. Vui lòng kiểm tra thông tin chính xác trên website chính thức của sàn trước khi đưa ra quyết định đầu tư. 
+**Lưu ý**: Dự án này chỉ cung cấp thông tin tham khảo. Không phải là lời khuyên đầu tư. Hãy tự nghiên cứu và chịu trách nhiệm với quyết định đầu tư của mình. 

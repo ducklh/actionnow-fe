@@ -1,0 +1,154 @@
+[
+    {
+        "id": 1,
+        "title": "What is Forex? A Beginner's Guide",
+        "excerpt": "Forex (Foreign Exchange) is the global currency trading market, where currencies are exchanged with each other.",
+        "content": "Forex (Foreign Exchange) is the global currency trading market, where currencies are exchanged with each other. This is the largest financial market in the world with a daily trading volume of up to USD 6.6 trillion. The forex market operates 24/7, from Monday to Friday, allowing traders to trade at any time. Major currency pairs include EUR/USD, GBP/USD, USD/JPY, USD/CHF, AUD/USD, USD/CAD, and NZD/USD. Forex trading can bring high profits but also carries significant risks. Therefore, beginners should learn thoroughly before engaging in live trading. Basic concepts to master include: pip, lot, spread, leverage, margin, and order types.",
+        "category": "Basic Knowledge",
+        "level": "Beginner",
+        "author": "Nguyen Van A",
+        "publishedAt": "2024-03-20T10:00:00Z",
+        "readTime": 8,
+        "image": "https://via.placeholder.com/800x400/2563eb/ffffff?text=Forex+Basics",
+        "tags": [
+            "Forex",
+            "Beginner",
+            "Trading",
+            "Currency",
+            "Market"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Technical Analysis: Important Chart Patterns",
+        "excerpt": "Technical analysis is a method of predicting price trends based on chart patterns and technical indicators.",
+        "content": "Technical analysis is a method of predicting price trends based on chart patterns and technical indicators. Important chart patterns include: Head and Shoulders, Double Top/Bottom, Triangle, Flag, Pennant, and Cup and Handle. Each pattern has a different meaning and can signal either an uptrend or downtrend. Popular technical indicators include: Moving Average, RSI, MACD, Bollinger Bands, and Stochastic. Combining multiple indicators and patterns can increase analysis accuracy. However, note that technical analysis is not perfect and may contain errors. Traders should combine it with fundamental analysis for a more comprehensive market view.",
+        "category": "Technical Analysis",
+        "level": "Intermediate",
+        "author": "Tran Thi B",
+        "publishedAt": "2024-03-19T14:30:00Z",
+        "readTime": 12,
+        "image": "https://via.placeholder.com/800x400/10b981/ffffff?text=Technical+Analysis",
+        "tags": [
+            "Technical Analysis",
+            "Chart Patterns",
+            "Indicators",
+            "RSI",
+            "MACD"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Fundamental Analysis: Factors Affecting Exchange Rates",
+        "excerpt": "Fundamental analysis focuses on economic, political, and social factors affecting currency exchange rates.",
+        "content": "Fundamental analysis focuses on economic, political, and social factors affecting currency exchange rates. Key economic factors include GDP, inflation, interest rates, unemployment rate, and trade balance. Political factors include elections, government policies, and international relations. Social factors include natural disasters, pandemics, and major events. Important economic reports to follow include: Non-Farm Payrolls, CPI, GDP, and central bank meetings. Understanding these factors will help traders make more accurate trading decisions.",
+        "category": "Fundamental Analysis",
+        "level": "Intermediate",
+        "author": "Le Van C",
+        "publishedAt": "2024-03-18T09:15:00Z",
+        "readTime": 10,
+        "image": "https://via.placeholder.com/800x400/f59e0b/ffffff?text=Fundamental+Analysis",
+        "tags": [
+            "Fundamental Analysis",
+            "GDP",
+            "Inflation",
+            "Interest Rates",
+            "Economic Reports"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Risk Management in Forex Trading",
+        "excerpt": "Risk management is the most important factor in forex trading, helping protect capital and maximize profits.",
+        "content": "Risk management is the most important factor in forex trading, helping protect capital and maximize profits. The basic principle of risk management is never to risk more than 1–2% of capital on each trade. Risk management tools include: Stop Loss, Take Profit, and Position Sizing. Stop Loss helps limit losses, Take Profit helps secure profits, and Position Sizing helps calculate appropriate trade volume. Traders should also diversify their portfolios and avoid putting all eggs in one basket. Keeping a trading journal helps track performance and learn from mistakes.",
+        "category": "Risk Management",
+        "level": "Intermediate",
+        "author": "Pham Thi D",
+        "publishedAt": "2024-03-17T16:45:00Z",
+        "readTime": 8,
+        "image": "https://via.placeholder.com/800x400/ef4444/ffffff?text=Risk+Management",
+        "tags": [
+            "Risk Management",
+            "Stop Loss",
+            "Take Profit",
+            "Position Sizing",
+            "Capital"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Trading Psychology: Controlling Emotions",
+        "excerpt": "Trading psychology plays a vital role in a trader's success, directly influencing trading decisions.",
+        "content": "Trading psychology plays a vital role in a trader's success, directly influencing trading decisions. Common negative emotions include fear, greed, and hope. Fear can cause traders to close trades too early or hesitate to enter. Greed can lead traders to hold positions too long or increase trade size excessively. Hope can make traders ignore sell signals. To control emotions, traders should follow a trading plan, avoid trading in a bad mood, and practice meditation. Keeping an emotional journal also helps identify and control negative emotions.",
+        "category": "Trading Psychology",
+        "level": "Advanced",
+        "author": "Hoang Van E",
+        "publishedAt": "2024-03-16T11:20:00Z",
+        "readTime": 6,
+        "image": "https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Trading+Psychology",
+        "tags": [
+            "Trading Psychology",
+            "Emotions",
+            "Fear",
+            "Greed",
+            "Trading Plan"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Trading Strategies: Scalping vs Swing Trading",
+        "excerpt": "Scalping and Swing Trading are two popular trading strategies with different characteristics and risks.",
+        "content": "Scalping and Swing Trading are two popular trading strategies with different characteristics and risks. Scalping is a short-term trading strategy, usually holding trades for a few seconds to a few minutes. This strategy is suitable for experienced traders who can spend a lot of time monitoring the market. Swing Trading is a medium-term trading strategy, usually holding trades for a few days to a few weeks. This strategy is suitable for part-time traders who don’t want to spend too much time monitoring the market. Each strategy has its own pros and cons, and traders should choose one that fits their personality and lifestyle.",
+        "category": "Trading Strategies",
+        "level": "Intermediate",
+        "author": "Vu Thi F",
+        "publishedAt": "2024-03-15T13:10:00Z",
+        "readTime": 7,
+        "image": "https://via.placeholder.com/800x400/06b6d4/ffffff?text=Trading+Strategy",
+        "tags": [
+            "Trading Strategies",
+            "Scalping",
+            "Swing Trading",
+            "Short-Term",
+            "Medium-Term"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Trading Tools: MetaTrader 4 and 5",
+        "excerpt": "MetaTrader 4 and 5 are the most popular trading platforms in the forex market.",
+        "content": "MetaTrader 4 and 5 are the most popular trading platforms in the forex market. MetaTrader 4 was developed in 2005 and is still widely used. MetaTrader 5 was developed in 2010 with more advanced features. Key features include price charts, technical indicators, Expert Advisors (EA), and backtesting. MetaTrader 5 adds features such as stock, futures, and options trading. Both platforms support automated trading via EA and can be customized to suit trader needs. Learning how to use these platforms is an important step in becoming a professional trader.",
+        "category": "Trading Tools",
+        "level": "Beginner",
+        "author": "Dang Van G",
+        "publishedAt": "2024-03-14T15:30:00Z",
+        "readTime": 9,
+        "image": "https://via.placeholder.com/800x400/16a34a/ffffff?text=MetaTrader",
+        "tags": [
+            "MetaTrader",
+            "MT4",
+            "MT5",
+            "EA",
+            "Backtesting"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Automated Trading with Expert Advisors",
+        "excerpt": "Expert Advisors (EA) are programs that automatically execute trades based on pre-programmed rules.",
+        "content": "Expert Advisors (EA) are programs that automatically execute trades based on pre-programmed rules. EA can help traders eliminate emotions and trade 24/7. However, using EA also carries high risks if not properly programmed and tested. Popular types of EA include: Trend Following, Mean Reversion, and Arbitrage. Before using EA in live trading, traders should test it on demo accounts and backtest with historical data. Understanding EA logic and having programming skills will help traders customize and optimize EA to their needs.",
+        "category": "Trading Tools",
+        "level": "Advanced",
+        "author": "Ngo Thi H",
+        "publishedAt": "2024-03-13T10:45:00Z",
+        "readTime": 11,
+        "image": "https://via.placeholder.com/800x400/d946ef/ffffff?text=Expert+Advisors",
+        "tags": [
+            "Expert Advisors",
+            "EA",
+            "Automated Trading",
+            "MQL",
+            "Backtesting"
+        ]
+    }
+]

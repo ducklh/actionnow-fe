@@ -1,0 +1,146 @@
+[
+    {
+        "id": 1,
+        "title": "Fed tăng lãi suất 0.25%, USD tăng mạnh",
+        "excerpt": "Cục Dự trữ Liên bang Mỹ (Fed) đã quyết định tăng lãi suất thêm 0.25% trong cuộc họp tháng 3, đẩy USD lên cao nhất trong 3 tháng.",
+        "content": "Cục Dự trữ Liên bang Mỹ (Fed) đã quyết định tăng lãi suất thêm 0.25% trong cuộc họp tháng 3, đẩy USD lên cao nhất trong 3 tháng. Quyết định này được đưa ra trong bối cảnh lạm phát vẫn cao hơn mục tiêu 2% của Fed. Chủ tịch Fed Jerome Powell cho biết ngân hàng trung ương sẽ tiếp tục theo dõi chặt chẽ các chỉ số kinh tế để đưa ra quyết định phù hợp trong các cuộc họp tiếp theo. Thị trường forex đã phản ứng mạnh với thông tin này, với USD tăng mạnh so với các đồng tiền chính khác. EUR/USD giảm xuống 1.0850, GBP/USD giảm xuống 1.2650, và USD/JPY tăng lên 150.50. Các chuyên gia dự đoán USD có thể tiếp tục tăng trong ngắn hạn do chênh lệch lãi suất thuận lợi.",
+        "category": "Phân tích cơ bản",
+        "author": "Nguyễn Văn A",
+        "publishedAt": "2024-03-20T10:00:00Z",
+        "readTime": 5,
+        "image": "https://via.placeholder.com/800x400/2563eb/ffffff?text=Fed+Rate+Hike",
+        "tags": [
+            "Fed",
+            "USD",
+            "Lãi suất",
+            "EUR/USD",
+            "GBP/USD"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "EUR/USD phá vỡ ngưỡng hỗ trợ 1.0800",
+        "excerpt": "Cặp tiền EUR/USD đã phá vỡ ngưỡng hỗ trợ quan trọng 1.0800, mở ra cơ hội giao dịch cho các trader.",
+        "content": "Cặp tiền EUR/USD đã phá vỡ ngưỡng hỗ trợ quan trọng 1.0800 trong phiên giao dịch hôm nay, mở ra cơ hội giao dịch cho các trader. Sự phá vỡ này xảy ra sau khi Fed tăng lãi suất và ECB (Ngân hàng Trung ương châu Âu) giữ nguyên lãi suất. Theo phân tích kỹ thuật, EUR/USD hiện đang trong xu hướng giảm ngắn hạn với các mục tiêu hỗ trợ tiếp theo tại 1.0750 và 1.0700. RSI đang ở mức 30, cho thấy thị trường đang oversold và có thể có đợt phục hồi nhẹ. Tuy nhiên, xu hướng chính vẫn là giảm do chênh lệch lãi suất thuận lợi cho USD. Các trader nên chú ý đến các sự kiện kinh tế quan trọng sắp tới như báo cáo việc làm phi nông nghiệp của Mỹ và cuộc họp ECB.",
+        "category": "Phân tích kỹ thuật",
+        "author": "Trần Thị B",
+        "publishedAt": "2024-03-19T14:30:00Z",
+        "readTime": 4,
+        "image": "https://via.placeholder.com/800x400/10b981/ffffff?text=EUR+USD+Chart",
+        "tags": [
+            "EUR/USD",
+            "Phân tích kỹ thuật",
+            "Hỗ trợ",
+            "Kháng cự",
+            "RSI"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "GBP/USD tăng mạnh sau báo cáo lạm phát Anh",
+        "excerpt": "Đồng bảng Anh tăng mạnh sau khi dữ liệu lạm phát Anh cao hơn dự kiến, tăng kỳ vọng BoE sẽ tăng lãi suất.",
+        "content": "Đồng bảng Anh tăng mạnh sau khi dữ liệu lạm phát Anh cao hơn dự kiến, tăng kỳ vọng BoE (Ngân hàng Trung ương Anh) sẽ tăng lãi suất trong cuộc họp tiếp theo. Chỉ số CPI của Anh tăng 4.0% so với cùng kỳ năm trước, cao hơn dự kiến 3.8%. Điều này khiến GBP/USD tăng từ 1.2650 lên 1.2750 trong phiên giao dịch. Các chuyên gia cho rằng BoE có thể sẽ tăng lãi suất thêm 0.25% trong tháng tới để kiểm soát lạm phát. Tuy nhiên, cần lưu ý rằng nền kinh tế Anh đang gặp khó khăn và việc tăng lãi suất có thể làm chậm tăng trưởng. Các trader nên theo dõi các báo cáo kinh tế quan trọng của Anh trong tuần tới.",
+        "category": "Tin tức thị trường",
+        "author": "Lê Văn C",
+        "publishedAt": "2024-03-18T09:15:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/f59e0b/ffffff?text=GBP+USD+Rally",
+        "tags": [
+            "GBP/USD",
+            "BoE",
+            "Lạm phát",
+            "CPI",
+            "Lãi suất"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "USD/JPY tiếp cận ngưỡng 151.00",
+        "excerpt": "Cặp tiền USD/JPY đang tiếp cận ngưỡng 151.00, mức cao nhất trong 34 năm, gây lo ngại về can thiệp của BoJ.",
+        "content": "Cặp tiền USD/JPY đang tiếp cận ngưỡng 151.00, mức cao nhất trong 34 năm, gây lo ngại về can thiệp của BoJ (Ngân hàng Trung ương Nhật Bản). Sự tăng mạnh của USD/JPY chủ yếu do chênh lệch lãi suất lớn giữa Mỹ và Nhật Bản. Fed đang duy trì lãi suất cao trong khi BoJ vẫn giữ lãi suất gần 0%. Các chuyên gia cho rằng BoJ có thể can thiệp vào thị trường nếu USD/JPY vượt qua 151.00 để bảo vệ đồng yen. Tuy nhiên, hiệu quả của việc can thiệp có thể hạn chế do chênh lệch lãi suất cơ bản. Các trader nên thận trọng khi giao dịch USD/JPY trong thời gian này và theo dõi các tuyên bố của BoJ.",
+        "category": "Phân tích cơ bản",
+        "author": "Phạm Thị D",
+        "publishedAt": "2024-03-17T16:45:00Z",
+        "readTime": 4,
+        "image": "https://via.placeholder.com/800x400/ef4444/ffffff?text=USD+JPY+Chart",
+        "tags": [
+            "USD/JPY",
+            "BoJ",
+            "Can thiệp",
+            "Yen",
+            "Lãi suất"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "AUD/USD giảm sau báo cáo việc làm yếu",
+        "excerpt": "Đồng đô la Úc giảm mạnh sau khi báo cáo việc làm tháng 2 yếu hơn dự kiến, tăng kỳ vọng RBA sẽ cắt giảm lãi suất.",
+        "content": "Đồng đô la Úc giảm mạnh sau khi báo cáo việc làm tháng 2 yếu hơn dự kiến, tăng kỳ vọng RBA (Ngân hàng Trung ương Úc) sẽ cắt giảm lãi suất trong thời gian tới. Số lượng việc làm mới chỉ tăng 5,000 so với dự kiến 25,000, và tỷ lệ thất nghiệp tăng từ 3.9% lên 4.1%. Điều này khiến AUD/USD giảm từ 0.6650 xuống 0.6600. Các chuyên gia cho rằng RBA có thể sẽ cắt giảm lãi suất sớm hơn dự kiến để hỗ trợ nền kinh tế. Tuy nhiên, cần lưu ý rằng lạm phát vẫn cao và RBA có thể sẽ thận trọng trong việc cắt giảm lãi suất. Các trader nên theo dõi các báo cáo kinh tế quan trọng của Úc trong tuần tới.",
+        "category": "Tin tức thị trường",
+        "author": "Hoàng Văn E",
+        "publishedAt": "2024-03-16T11:20:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/8b5cf6/ffffff?text=AUD+USD+Drop",
+        "tags": [
+            "AUD/USD",
+            "RBA",
+            "Việc làm",
+            "Thất nghiệp",
+            "Lãi suất"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "USD/CAD tăng sau báo cáo GDP Canada",
+        "excerpt": "Cặp tiền USD/CAD tăng mạnh sau khi báo cáo GDP Canada quý 4/2023 thấp hơn dự kiến.",
+        "content": "Cặp tiền USD/CAD tăng mạnh sau khi báo cáo GDP Canada quý 4/2023 thấp hơn dự kiến. Tăng trưởng GDP chỉ đạt 0.2% so với dự kiến 0.5%, cho thấy nền kinh tế Canada đang chậm lại. Điều này khiến USD/CAD tăng từ 1.3500 lên 1.3600. Các chuyên gia cho rằng BoC (Ngân hàng Trung ương Canada) có thể sẽ cắt giảm lãi suất sớm hơn dự kiến để hỗ trợ nền kinh tế. Tuy nhiên, cần lưu ý rằng giá dầu thô (WTI) đang tăng mạnh, điều này có thể hỗ trợ đồng đô la Canada. Các trader nên theo dõi các báo cáo kinh tế quan trọng của Canada và giá dầu thô trong thời gian tới.",
+        "category": "Phân tích cơ bản",
+        "author": "Vũ Thị F",
+        "publishedAt": "2024-03-15T13:10:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/06b6d4/ffffff?text=USD+CAD+Rise",
+        "tags": [
+            "USD/CAD",
+            "BoC",
+            "GDP",
+            "Dầu thô",
+            "Kinh tế Canada"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "NZD/USD tăng sau báo cáo lạm phát New Zealand",
+        "excerpt": "Đồng đô la New Zealand tăng mạnh sau khi báo cáo lạm phát quý 4/2023 cao hơn dự kiến.",
+        "content": "Đồng đô la New Zealand tăng mạnh sau khi báo cáo lạm phát quý 4/2023 cao hơn dự kiến. Chỉ số CPI tăng 4.7% so với cùng kỳ năm trước, cao hơn dự kiến 4.3%. Điều này khiến NZD/USD tăng từ 0.6150 lên 0.6200. Các chuyên gia cho rằng RBNZ (Ngân hàng Trung ương New Zealand) có thể sẽ duy trì lãi suất cao lâu hơn để kiểm soát lạm phát. Tuy nhiên, cần lưu ý rằng nền kinh tế New Zealand đang gặp khó khăn và việc duy trì lãi suất cao có thể làm chậm tăng trưởng. Các trader nên theo dõi các báo cáo kinh tế quan trọng của New Zealand trong thời gian tới.",
+        "category": "Tin tức thị trường",
+        "author": "Đặng Văn G",
+        "publishedAt": "2024-03-14T15:30:00Z",
+        "readTime": 3,
+        "image": "https://via.placeholder.com/800x400/16a34a/ffffff?text=NZD+USD+Rise",
+        "tags": [
+            "NZD/USD",
+            "RBNZ",
+            "Lạm phát",
+            "CPI",
+            "Lãi suất"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Phân tích kỹ thuật: EUR/GBP có thể tăng",
+        "excerpt": "Theo phân tích kỹ thuật, cặp tiền EUR/GBP có thể tăng trong ngắn hạn do các chỉ báo kỹ thuật thuận lợi.",
+        "content": "Theo phân tích kỹ thuật, cặp tiền EUR/GBP có thể tăng trong ngắn hạn do các chỉ báo kỹ thuật thuận lợi. Cặp tiền này đang hình thành mô hình double bottom tại mức 0.8550, cho thấy có thể có đợt phục hồi. RSI đang ở mức 35, cho thấy thị trường đang oversold và có thể có đợt phục hồi. MACD cũng đang cho tín hiệu bullish divergence. Tuy nhiên, cần lưu ý rằng xu hướng dài hạn vẫn là giảm và các trader nên thận trọng. Mục tiêu tăng ngắn hạn có thể là 0.8600 và 0.8650. Các trader nên theo dõi các sự kiện kinh tế quan trọng của cả Eurozone và Anh trong thời gian tới.",
+        "category": "Phân tích kỹ thuật",
+        "author": "Ngô Thị H",
+        "publishedAt": "2024-03-13T10:45:00Z",
+        "readTime": 4,
+        "image": "https://via.placeholder.com/800x400/d946ef/ffffff?text=EUR+GBP+Chart",
+        "tags": [
+            "EUR/GBP",
+            "Phân tích kỹ thuật",
+            "Double bottom",
+            "RSI",
+            "MACD"
+        ]
+    }
+]

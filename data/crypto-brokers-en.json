@@ -1,0 +1,464 @@
+[
+    {
+        "id": 1,
+        "name": "Binance",
+        "logo": "https://cryptologos.cc/logos/binance-coin-bnb-logo.png",
+        "url": "https://www.binance.com",
+        "description": "The largest cryptocurrency exchange in the world with over 350+ coins",
+        "rating": 4.9,
+        "features": [
+            "Spot trading",
+            "Futures",
+            "Staking",
+            "Launchpad"
+        ],
+        "regulation": "Multi-national",
+        "minDeposit": "$10",
+        "tradingFees": "0.1%",
+        "supportedCoins": [
+            "Bitcoin",
+            "Ethereum",
+            "BNB",
+            "Cardano",
+            "Solana",
+            "XRP"
+        ],
+        "pros": [
+            "Largest trading volume in the world",
+            "Supports over 350+ cryptocurrencies",
+            "Low trading fees",
+            "Many advanced features"
+        ],
+        "cons": [
+            "Complex interface for beginners",
+            "Restricted in some countries"
+        ],
+        "founded": "2017",
+        "headquarters": "Malta",
+        "tradingVolume": "$20+ billion/day",
+        "securityFeatures": [
+            "Two-factor authentication (2FA)",
+            "Cold storage",
+            "SAFU fund"
+        ],
+        "paymentMethods": [
+            "Credit/Debit card",
+            "Bank transfer",
+            "P2P trading"
+        ],
+        "customerSupport": [
+            "24/7 live chat",
+            "Email support",
+            "Help center"
+        ],
+        "mobileApp": true,
+        "apiSupport": true,
+        "detailedDescription": "Binance is the largest cryptocurrency exchange in the world, founded in 2017. With a daily trading volume exceeding $20 billion, Binance offers a comprehensive trading platform for both beginners and professional traders."
+    },
+    {
+        "id": 2,
+        "name": "Coinbase",
+        "logo": "https://cryptologos.cc/logos/coinbase-coin-logo.png",
+        "url": "https://www.coinbase.com",
+        "description": "A reputable and beginner-friendly cryptocurrency exchange",
+        "rating": 4.7,
+        "features": [
+            "Simple trading",
+            "Integrated wallet",
+            "Earn rewards",
+            "Pro trading"
+        ],
+        "regulation": "SEC, FINRA",
+        "minDeposit": "$2",
+        "tradingFees": "0.5% - 3.99%",
+        "supportedCoins": [
+            "Bitcoin",
+            "Ethereum",
+            "Litecoin",
+            "Bitcoin Cash",
+            "Ethereum Classic",
+            "Cardano",
+            "Solana",
+            "Polkadot"
+        ],
+        "pros": [
+            "Beginner-friendly interface",
+            "Regulated by SEC and FINRA",
+            "High security",
+            "Excellent mobile app"
+        ],
+        "cons": [
+            "Higher fees compared to competitors",
+            "Limited coin selection",
+            "Few advanced features"
+        ],
+        "founded": "2012",
+        "headquarters": "San Francisco, USA",
+        "tradingVolume": "$2+ billion/day",
+        "securityFeatures": [
+            "98% of assets stored offline",
+            "FDIC insurance",
+            "Two-factor authentication"
+        ],
+        "paymentMethods": [
+            "Credit/Debit card",
+            "Bank transfer (ACH)",
+            "Wire transfer"
+        ],
+        "customerSupport": [
+            "Email support",
+            "Phone support",
+            "Help center"
+        ],
+        "mobileApp": true,
+        "apiSupport": true,
+        "detailedDescription": "Coinbase is one of the oldest and most reputable cryptocurrency exchanges, founded in 2012. It is known for providing a simple and secure trading experience for beginners."
+    },
+    {
+        "id": 3,
+        "name": "Kraken",
+        "logo": "https://cryptologos.cc/logos/kraken-logo.png",
+        "url": "https://www.kraken.com",
+        "description": "A long-standing cryptocurrency exchange with high security",
+        "rating": 4.8,
+        "features": [
+            "High security",
+            "Staking",
+            "Margin trading",
+            "Futures"
+        ],
+        "regulation": "FCA, FinCEN",
+        "minDeposit": "$10",
+        "tradingFees": "0.16% - 0.26%",
+        "supportedCoins": [
+            "Bitcoin",
+            "Ethereum",
+            "Litecoin",
+            "Ripple",
+            "Cardano",
+            "Polkadot",
+            "Chainlink",
+            "Uniswap",
+            "Tezos"
+        ],
+        "pros": [
+            "High security, never hacked",
+            "Regulated by FCA",
+            "Competitive fees",
+            "Supports many countries"
+        ],
+        "cons": [
+            "Complex interface",
+            "Limited coin selection",
+            "Long account verification time"
+        ],
+        "founded": "2011",
+        "headquarters": "San Francisco, USA",
+        "tradingVolume": "$1+ billion/day",
+        "securityFeatures": [
+            "95% cold storage",
+            "Two-factor authentication",
+            "Advanced encryption"
+        ],
+        "paymentMethods": [
+            "Bank transfer (SEPA)",
+            "Wire transfer",
+            "Credit/Debit card"
+        ],
+        "customerSupport": [
+            "24/7 live chat",
+            "Email support",
+            "Phone support"
+        ],
+        "mobileApp": true,
+        "apiSupport": true,
+        "detailedDescription": "Kraken is one of the oldest cryptocurrency exchanges, founded in 2011. It is renowned for its high security standards and has never been hacked."
+    },
+    {
+        "id": 4,
+        "name": "KuCoin",
+        "logo": "https://cryptologos.cc/logos/kucoin-token-kcs-logo.png",
+        "url": "https://www.kucoin.com",
+        "description": "A cryptocurrency exchange with many altcoins and new tokens",
+        "rating": 4.6,
+        "features": [
+            "Altcoin trading",
+            "KuCoin Earn",
+            "Trading bots",
+            "P2P trading"
+        ],
+        "regulation": "Seychelles",
+        "minDeposit": "$1",
+        "tradingFees": "0.1%",
+        "supportedCoins": [
+            "Bitcoin",
+            "Ethereum",
+            "KuCoin Token",
+            "Tether",
+            "Chainlink",
+            "Uniswap"
+        ],
+        "pros": [
+            "Wide variety of altcoins and new tokens",
+            "KuCoin Earn feature",
+            "Automated trading bots",
+            "P2P trading"
+        ],
+        "cons": [
+            "Weaker regulation",
+            "Complex interface",
+            "Slow customer support"
+        ],
+        "founded": "2017",
+        "headquarters": "Seychelles",
+        "tradingVolume": "$500+ million/day",
+        "securityFeatures": [
+            "Multi-layer security",
+            "Two-factor authentication",
+            "Cold storage"
+        ],
+        "paymentMethods": [
+            "Credit/Debit card",
+            "Bank transfer",
+            "P2P trading"
+        ],
+        "customerSupport": [
+            "Live chat",
+            "Email support",
+            "Help center"
+        ],
+        "mobileApp": true,
+        "apiSupport": true,
+        "detailedDescription": "KuCoin is known as the 'People's Exchange', offering a wide range of altcoins and the newest tokens in the market."
+    },
+    {
+        "id": 5,
+        "name": "OKX",
+        "logo": "https://cryptologos.cc/logos/okb-okb-logo.png",
+        "url": "https://www.okx.com",
+        "description": "A global cryptocurrency exchange with a variety of financial products",
+        "rating": 4.5,
+        "features": [
+            "Spot trading",
+            "Futures",
+            "Options",
+            "DeFi",
+            "NFT"
+        ],
+        "regulation": "Multi-national",
+        "minDeposit": "$10",
+        "tradingFees": "0.1%",
+        "supportedCoins": [
+            "Bitcoin",
+            "Ethereum",
+            "OKB",
+            "Tether",
+            "Cardano",
+            "Solana"
+        ],
+        "pros": [
+            "Diverse financial products",
+            "Futures and options trading",
+            "Supports DeFi and NFT",
+            "Stable platform"
+        ],
+        "cons": [
+            "Complex interface",
+            "No Vietnamese language support",
+            "Unclear regulation"
+        ],
+        "founded": "2017",
+        "headquarters": "Malta",
+        "tradingVolume": "$1+ billion/day",
+        "securityFeatures": [
+            "Multi-signature technology",
+            "Cold storage",
+            "Real-time monitoring"
+        ],
+        "paymentMethods": [
+            "Credit/Debit card",
+            "Bank transfer",
+            "P2P trading"
+        ],
+        "customerSupport": [
+            "Live chat",
+            "Email support",
+            "Help center"
+        ],
+        "mobileApp": true,
+        "apiSupport": true,
+        "detailedDescription": "OKX is one of the largest cryptocurrency exchanges in the world, offering a wide range of products from spot trading to futures and options."
+    },
+    {
+        "id": 6,
+        "name": "Bybit",
+        "logo": "https://cryptologos.cc/logos/bybit-logo.png",
+        "url": "https://www.bybit.com",
+        "description": "A cryptocurrency exchange specializing in futures and derivatives",
+        "rating": 4.4,
+        "features": [
+            "Futures trading",
+            "Options",
+            "Copy trading",
+            "Staking"
+        ],
+        "regulation": "Multi-national",
+        "minDeposit": "$1",
+        "tradingFees": "0.1%",
+        "supportedCoins": [
+            "Bitcoin",
+            "Ethereum",
+            "Tether",
+            "Cardano",
+            "Solana",
+            "Polygon"
+        ],
+        "pros": [
+            "Specializes in futures trading",
+            "Effective copy trading",
+            "Modern interface",
+            "Supports many countries"
+        ],
+        "cons": [
+            "Few spot trading coins",
+            "Complex for beginners",
+            "High risk with futures"
+        ],
+        "founded": "2018",
+        "headquarters": "Singapore",
+        "tradingVolume": "$800+ million/day",
+        "securityFeatures": [
+            "Multi-signature technology",
+            "Cold storage",
+            "Real-time monitoring"
+        ],
+        "paymentMethods": [
+            "Credit/Debit card",
+            "Bank transfer",
+            "P2P trading"
+        ],
+        "customerSupport": [
+            "24/7 live chat",
+            "Email support",
+            "Help center"
+        ],
+        "mobileApp": true,
+        "apiSupport": true,
+        "detailedDescription": "Bybit specializes in futures trading and derivatives, suitable for experienced traders who want to trade with high leverage."
+    },
+    {
+        "id": 7,
+        "name": "Gate.io",
+        "logo": "https://cryptologos.cc/logos/gate-logo.png",
+        "url": "https://www.gate.io",
+        "description": "A cryptocurrency exchange with over 1400+ coins and tokens",
+        "rating": 4.3,
+        "features": [
+            "Wide coin selection",
+            "HODL & Earn",
+            "Startup",
+            "Liquidity mining"
+        ],
+        "regulation": "Cayman Islands",
+        "minDeposit": "$1",
+        "tradingFees": "0.2%",
+        "supportedCoins": [
+            "Bitcoin",
+            "Ethereum",
+            "Gate Token",
+            "Tether",
+            "Chainlink",
+            "Uniswap"
+        ],
+        "pros": [
+            "Over 1400+ coins and tokens",
+            "Many DeFi features",
+            "High-interest HODL & Earn",
+            "Startup Launchpad"
+        ],
+        "cons": [
+            "Weak regulation",
+            "Complex interface",
+            "Slow customer support"
+        ],
+        "founded": "2013",
+        "headquarters": "Cayman Islands",
+        "tradingVolume": "$300+ million/day",
+        "securityFeatures": [
+            "Multi-layer security",
+            "Two-factor authentication",
+            "Cold storage"
+        ],
+        "paymentMethods": [
+            "Credit/Debit card",
+            "Bank transfer",
+            "P2P trading"
+        ],
+        "customerSupport": [
+            "Live chat",
+            "Email support",
+            "Help center"
+        ],
+        "mobileApp": true,
+        "apiSupport": true,
+        "detailedDescription": "Gate.io is famous for offering the newest coins and tokens, especially in the DeFi and startup sectors."
+    },
+    {
+        "id": 8,
+        "name": "Huobi",
+        "logo": "https://cryptologos.cc/logos/huobi-token-ht-logo.png",
+        "url": "https://www.huobi.com",
+        "description": "A major cryptocurrency exchange with a wide range of financial products",
+        "rating": 4.2,
+        "features": [
+            "Spot trading",
+            "Futures",
+            "Options",
+            "Staking",
+            "Liquidity mining"
+        ],
+        "regulation": "Multi-national",
+        "minDeposit": "$10",
+        "tradingFees": "0.2%",
+        "supportedCoins": [
+            "Bitcoin",
+            "Ethereum",
+            "Huobi Token",
+            "Tether",
+            "Cardano",
+            "Polkadot"
+        ],
+        "pros": [
+            "Long history",
+            "Diverse product range",
+            "Supports many countries",
+            "Stable platform"
+        ],
+        "cons": [
+            "Complex interface",
+            "No Vietnamese language support",
+            "Unclear regulation"
+        ],
+        "founded": "2013",
+        "headquarters": "Singapore",
+        "tradingVolume": "$600+ million/day",
+        "securityFeatures": [
+            "Multi-signature technology",
+            "Cold storage",
+            "Real-time monitoring"
+        ],
+        "paymentMethods": [
+            "Credit/Debit card",
+            "Bank transfer",
+            "P2P trading"
+        ],
+        "customerSupport": [
+            "Live chat",
+            "Email support",
+            "Help center"
+        ],
+        "mobileApp": true,
+        "apiSupport": true,
+        "detailedDescription": "Huobi is one of the oldest cryptocurrency exchanges, founded in 2013, with a strong history of growth."
+    }
+]
