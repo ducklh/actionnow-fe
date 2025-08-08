@@ -187,6 +187,12 @@ export default function KnowledgePage() {
                             <Link href="/" className="text-gray-500 hover:text-gray-900 transition-colors dark:text-gray-400 dark:hover:text-white">
                                 {t('nav.forex')}
                             </Link>
+                            <Link href="/crypto" className="text-gray-500 hover:text-orange-600 transition-colors dark:text-gray-400 dark:hover:text-orange-400">
+                                Crypto News
+                            </Link>
+                            <Link href="/crypto-brokers" className="text-gray-500 hover:text-orange-600 transition-colors dark:text-gray-400 dark:hover:text-orange-400">
+                                Crypto Brokers
+                            </Link>
                             <Link href="/news" className="text-gray-500 hover:text-gray-900 transition-colors dark:text-gray-400 dark:hover:text-white">
                                 {t('nav.news')}
                             </Link>
@@ -294,7 +300,7 @@ export default function KnowledgePage() {
                                         ))}
                                     </div>
 
-                                    <Link 
+                                    <Link
                                         href={`/knowledge/${item.id}`}
                                         className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium text-center block"
                                     >
