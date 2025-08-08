@@ -93,9 +93,9 @@ export default function CryptoBrokerDetailPage() {
         return (
             <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
                 <div className="text-center">
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Không tìm thấy sàn giao dịch</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('crypto.notFound.broker')}</h2>
                     <Link href="/crypto-brokers" className="text-orange-600 hover:text-orange-700 font-medium">
-                        Quay lại danh sách sàn
+                        {t('crypto.backToList')}
                     </Link>
                 </div>
             </div>
@@ -141,7 +141,7 @@ export default function CryptoBrokerDetailPage() {
                     className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium mb-8"
                 >
                     <ArrowLeft className="h-4 w-4 mr-2" />
-                    Quay lại danh sách sàn
+                    {t('crypto.backToList')}
                 </Link>
 
                 {/* Broker Header */}
@@ -183,7 +183,7 @@ export default function CryptoBrokerDetailPage() {
                                 className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors font-medium flex items-center"
                             >
                                 <ExternalLink className="h-4 w-4 mr-2" />
-                                Truy cập sàn
+                                {t('crypto.visit')}
                             </Link>
                         </div>
                     </div>
@@ -196,19 +196,19 @@ export default function CryptoBrokerDetailPage() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         <div className="text-center">
                             <div className="text-2xl font-bold text-gray-900 dark:text-white">{broker.founded}</div>
-                            <div className="text-sm text-gray-600 dark:text-gray-400">Năm thành lập</div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">{t('crypto.founded')}</div>
                         </div>
                         <div className="text-center">
                             <div className="text-2xl font-bold text-gray-900 dark:text-white">{broker.tradingVolume}</div>
-                            <div className="text-sm text-gray-600 dark:text-gray-400">Khối lượng giao dịch</div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">{t('crypto.tradingVolume')}</div>
                         </div>
                         <div className="text-center">
                             <div className="text-2xl font-bold text-gray-900 dark:text-white">{broker.minDeposit}</div>
-                            <div className="text-sm text-gray-600 dark:text-gray-400">Nạp tối thiểu</div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">{t('crypto.minDeposit')}</div>
                         </div>
                         <div className="text-center">
                             <div className="text-2xl font-bold text-gray-900 dark:text-white">{broker.tradingFees}</div>
-                            <div className="text-sm text-gray-600 dark:text-gray-400">Phí giao dịch</div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">{t('crypto.tradingFees')}</div>
                         </div>
                     </div>
                 </div>
@@ -219,7 +219,7 @@ export default function CryptoBrokerDetailPage() {
                         {/* Detailed Description */}
                         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
                             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                                Thông tin chi tiết
+                                {t('crypto.detailedInfo')}
                             </h2>
                             <div className="prose prose-lg max-w-none dark:prose-invert">
                                 <div className="whitespace-pre-line text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -232,7 +232,7 @@ export default function CryptoBrokerDetailPage() {
                         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
                             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
                                 <TrendingUp className="h-6 w-6 mr-3 text-orange-600" />
-                                Tính năng chính
+                                {t('crypto.features')}
                             </h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {broker.features.map((feature, index) => (
@@ -248,7 +248,7 @@ export default function CryptoBrokerDetailPage() {
                         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
                             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
                                 <DollarSign className="h-6 w-6 mr-3 text-green-600" />
-                                Coin hỗ trợ
+                                {t('crypto.supportedCoins')}
                             </h2>
                             <div className="flex flex-wrap gap-3">
                                 {broker.supportedCoins.map((coin, index) => (
@@ -267,13 +267,13 @@ export default function CryptoBrokerDetailPage() {
                     <div className="space-y-8">
                         {/* Pros & Cons */}
                         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Đánh giá</h3>
+                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{t('common.category')}</h3>
 
                             {/* Pros */}
                             <div className="mb-6">
                                 <h4 className="font-semibold text-green-600 mb-3 flex items-center">
                                     <CheckCircle className="h-4 w-4 mr-2" />
-                                    Ưu điểm
+                                    {t('crypto.pros')}
                                 </h4>
                                 <ul className="space-y-2">
                                     {broker.pros.map((pro, index) => (
@@ -289,7 +289,7 @@ export default function CryptoBrokerDetailPage() {
                             <div>
                                 <h4 className="font-semibold text-red-600 mb-3 flex items-center">
                                     <AlertTriangle className="h-4 w-4 mr-2" />
-                                    Nhược điểm
+                                    {t('crypto.cons')}
                                 </h4>
                                 <ul className="space-y-2">
                                     {broker.cons.map((con, index) => (
@@ -306,7 +306,7 @@ export default function CryptoBrokerDetailPage() {
                         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
                             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                                 <Shield className="h-5 w-5 mr-2 text-blue-600" />
-                                Bảo mật
+                                {t('crypto.security')}
                             </h3>
                             <ul className="space-y-2">
                                 {broker.securityFeatures.map((feature, index) => (
@@ -322,7 +322,7 @@ export default function CryptoBrokerDetailPage() {
                         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
                             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                                 <DollarSign className="h-5 w-5 mr-2 text-green-600" />
-                                Phương thức thanh toán
+                                {t('crypto.paymentMethods')}
                             </h3>
                             <ul className="space-y-2">
                                 {broker.paymentMethods.map((method, index) => (
@@ -338,7 +338,7 @@ export default function CryptoBrokerDetailPage() {
                         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
                             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                                 <Users className="h-5 w-5 mr-2 text-purple-600" />
-                                Hỗ trợ khách hàng
+                                {t('crypto.customerSupport')}
                             </h3>
                             <ul className="space-y-2">
                                 {broker.customerSupport.map((support, index) => (
@@ -354,27 +354,27 @@ export default function CryptoBrokerDetailPage() {
                         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
                             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                                 <Globe className="h-5 w-5 mr-2 text-indigo-600" />
-                                Thông tin khác
+                                {t('crypto.additionalInfo')}
                             </h3>
                             <div className="space-y-3">
                                 <div className="flex justify-between">
-                                    <span className="text-sm text-gray-600 dark:text-gray-400">Trụ sở:</span>
+                                    <span className="text-sm text-gray-600 dark:text-gray-400">{t('crypto.headquarters')}:</span>
                                     <span className="text-sm font-medium text-gray-900 dark:text-white">{broker.headquarters}</span>
                                 </div>
                                 <div className="flex justify-between">
-                                    <span className="text-sm text-gray-600 dark:text-gray-400">Giấy phép:</span>
+                                    <span className="text-sm text-gray-600 dark:text-gray-400">{t('crypto.regulation')}:</span>
                                     <span className="text-sm font-medium text-gray-900 dark:text-white">{broker.regulation}</span>
                                 </div>
                                 <div className="flex justify-between">
-                                    <span className="text-sm text-gray-600 dark:text-gray-400">Mobile App:</span>
+                                    <span className="text-sm text-gray-600 dark:text-gray-400">{t('crypto.mobileApp')}:</span>
                                     <span className="text-sm font-medium text-gray-900 dark:text-white">
-                                        {broker.mobileApp ? 'Có' : 'Không'}
+                                        {broker.mobileApp ? t('crypto.yes') : t('crypto.no')}
                                     </span>
                                 </div>
                                 <div className="flex justify-between">
-                                    <span className="text-sm text-gray-600 dark:text-gray-400">API Support:</span>
+                                    <span className="text-sm text-gray-600 dark:text-gray-400">{t('crypto.apiSupport')}:</span>
                                     <span className="text-sm font-medium text-gray-900 dark:text-white">
-                                        {broker.apiSupport ? 'Có' : 'Không'}
+                                        {broker.apiSupport ? t('crypto.yes') : t('crypto.no')}
                                     </span>
                                 </div>
                             </div>

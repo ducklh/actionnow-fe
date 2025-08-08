@@ -180,10 +180,10 @@ export default function CryptoBrokersPage() {
                 {/* Hero Section */}
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        Sàn Giao Dịch Cryptocurrency Tốt Nhất
+                        {t('crypto.title')}
                     </h2>
                     <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                        So sánh và chọn sàn giao dịch cryptocurrency phù hợp nhất với nhu cầu của bạn
+                        {t('crypto.subtitle')}
                     </p>
                 </div>
 
@@ -195,7 +195,7 @@ export default function CryptoBrokersPage() {
                                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
                                 <input
                                     type="text"
-                                    placeholder="Tìm kiếm sàn giao dịch hoặc coin..."
+                                    placeholder={t('crypto.searchPlaceholder')}
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                     className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
@@ -204,14 +204,14 @@ export default function CryptoBrokersPage() {
                         </div>
                         <div className="flex items-center space-x-4">
                             <Filter className="h-5 w-5 text-gray-400" />
-                            <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Sắp xếp theo:</label>
+                            <label className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('common.sort')}:</label>
                             <select
                                 value={sortBy}
                                 onChange={(e) => setSortBy(e.target.value as 'rating' | 'name')}
                                 className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                             >
-                                <option value="rating">Đánh giá cao nhất</option>
-                                <option value="name">Tên A-Z</option>
+                                <option value="rating">{t('crypto.sortByRating')}</option>
+                                <option value="name">{t('crypto.sortByName')}</option>
                             </select>
                         </div>
                     </div>
@@ -248,7 +248,7 @@ export default function CryptoBrokersPage() {
                                 <div className="mb-6">
                                     <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center">
                                         <TrendingUp className="h-4 w-4 mr-2 text-orange-600" />
-                                        Tính năng chính
+                                        {t('crypto.features')}
                                     </h4>
                                     <div className="flex flex-wrap gap-2">
                                         {broker.features.map((feature, index) => (
@@ -265,15 +265,15 @@ export default function CryptoBrokersPage() {
                                 {/* Trading Info */}
                                 <div className="space-y-3 mb-6">
                                     <div className="flex justify-between items-center">
-                                        <span className="text-gray-600 dark:text-gray-400 text-sm">Phí giao dịch:</span>
+                                        <span className="text-gray-600 dark:text-gray-400 text-sm">{t('crypto.tradingFees')}:</span>
                                         <span className="font-semibold text-gray-900 dark:text-white">{broker.tradingFees}</span>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <span className="text-gray-600 dark:text-gray-400 text-sm">Nạp tối thiểu:</span>
+                                        <span className="text-gray-600 dark:text-gray-400 text-sm">{t('crypto.minDeposit')}:</span>
                                         <span className="font-semibold text-gray-900 dark:text-white">{broker.minDeposit}</span>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <span className="text-gray-600 dark:text-gray-400 text-sm">Giấy phép:</span>
+                                        <span className="text-gray-600 dark:text-gray-400 text-sm">{t('crypto.regulation')}:</span>
                                         <span className="font-semibold text-gray-900 dark:text-white">{broker.regulation}</span>
                                     </div>
                                 </div>
@@ -282,7 +282,7 @@ export default function CryptoBrokersPage() {
                                 <div className="mb-6">
                                     <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center">
                                         <DollarSign className="h-4 w-4 mr-2 text-green-600" />
-                                        Coin hỗ trợ
+                                        {t('crypto.supportedCoins')}
                                     </h4>
                                     <div className="flex flex-wrap gap-2">
                                         {broker.supportedCoins.slice(0, 4).map((coin, index) => (
@@ -295,7 +295,7 @@ export default function CryptoBrokersPage() {
                                         ))}
                                         {broker.supportedCoins.length > 4 && (
                                             <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs rounded-full">
-                                                +{broker.supportedCoins.length - 4} khác
+                                                +{broker.supportedCoins.length - 4} {t('crypto.others')}
                                             </span>
                                         )}
                                     </div>
@@ -310,13 +310,13 @@ export default function CryptoBrokersPage() {
                                         className="flex-1 bg-orange-600 text-white py-2 px-4 rounded-lg hover:bg-orange-700 transition-colors font-medium text-center flex items-center justify-center"
                                     >
                                         <ExternalLink className="h-4 w-4 mr-2" />
-                                        Truy cập
+                                        {t('crypto.visit')}
                                     </Link>
                                     <Link
                                         href={`/crypto-brokers/${broker.id}`}
                                         className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white py-2 px-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors font-medium text-center"
                                     >
-                                        Chi tiết
+                                        {t('crypto.viewDetails')}
                                     </Link>
                                 </div>
                             </div>
@@ -328,26 +328,26 @@ export default function CryptoBrokersPage() {
                 {filteredBrokers.length === 0 && (
                     <div className="text-center py-12">
                         <Search className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                        <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">Không tìm thấy sàn giao dịch</h3>
-                        <p className="text-gray-600 dark:text-gray-400">Thử tìm kiếm với từ khóa khác</p>
+                        <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">{t('crypto.notFound.title')}</h3>
+                        <p className="text-gray-600 dark:text-gray-400">{t('crypto.notFound.subtitle')}</p>
                     </div>
                 )}
 
                 {/* Newsletter Signup */}
                 <div className="bg-gradient-to-r from-orange-600 to-purple-600 rounded-lg p-8 mt-12 text-white">
                     <div className="text-center">
-                        <h3 className="text-2xl font-bold mb-4">Nhận thông tin sàn giao dịch mới nhất</h3>
+                        <h3 className="text-2xl font-bold mb-4">{t('crypto.newsletter.title')}</h3>
                         <p className="text-orange-100 mb-6">
-                            Đăng ký để nhận thông tin về các sàn giao dịch cryptocurrency mới và cập nhật
+                            {t('crypto.newsletter.subtitle')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                             <input
                                 type="email"
-                                placeholder="Nhập email của bạn"
+                                placeholder={t('crypto.newsletter.placeholder')}
                                 className="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:outline-none bg-white"
                             />
                             <button className="bg-white text-orange-600 font-medium px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors">
-                                Đăng ký
+                                {t('crypto.newsletter.button')}
                             </button>
                         </div>
                     </div>
