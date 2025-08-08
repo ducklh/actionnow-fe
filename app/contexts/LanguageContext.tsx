@@ -310,15 +310,18 @@ const translations = {
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-    const [language, setLanguageState] = useState<Language>('vi')
+    const [language, setLanguageState] = useState<Language>('en')
     const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
         setMounted(true)
-        // Lấy language từ localStorage
+        // Lấy language từ localStorage, mặc định là 'en'
         const savedLanguage = localStorage.getItem('language') as Language
         if (savedLanguage) {
             setLanguageState(savedLanguage)
+        } else {
+            // Nếu chưa có trong localStorage, set mặc định là 'en'
+            localStorage.setItem('language', 'en')
         }
     }, [])
 

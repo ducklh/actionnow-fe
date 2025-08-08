@@ -13,16 +13,19 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-    const [theme, setTheme] = useState<Theme>('light')
+    const [theme, setTheme] = useState<Theme>('dark')
     const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
         setMounted(true)
-        // Lấy theme từ localStorage hoặc system preference
+        // Lấy theme từ localStorage, mặc định là 'dark'
         const savedTheme = localStorage.getItem('theme') as Theme
-        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-        const initialTheme = savedTheme || systemTheme
-        setTheme(initialTheme)
+        if (savedTheme) {
+            setTheme(savedTheme)
+        } else {
+            // Nếu chưa có trong localStorage, set mặc định là 'dark'
+            localStorage.setItem('theme', 'dark')
+        }
     }, [])
 
     useEffect(() => {

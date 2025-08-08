@@ -25,7 +25,7 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="vi" suppressHydrationWarning>
+        <html lang="en" suppressHydrationWarning>
             <head suppressHydrationWarning>
                 <script
                     dangerouslySetInnerHTML={{
@@ -33,8 +33,7 @@ export default function RootLayout({
                             (function() {
                                 try {
                                     var theme = localStorage.getItem('theme');
-                                    var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                                    var initialTheme = theme || systemTheme;
+                                    var initialTheme = theme || 'dark';
                                     document.documentElement.classList.add(initialTheme);
                                 } catch (e) {}
                             })();
