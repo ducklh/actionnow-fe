@@ -5,8 +5,8 @@ import { ArrowLeft, ExternalLink, Shield, DollarSign, TrendingUp, Globe, Star, C
 import { useLanguage } from '../../contexts/LanguageContext'
 import { getForexBrokerById } from '../../../lib/data'
 export default function BrokerDetailPage({ params }: { params: { id: string } }) {
-    const { t } = useLanguage()
-    const broker = getForexBrokerById(parseInt(params.id))
+    const { t, language } = useLanguage()
+    const broker = getForexBrokerById(parseInt(params.id), language)
 
     if (!broker) {
         return (

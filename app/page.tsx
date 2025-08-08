@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { ExternalLink, TrendingUp, Shield, DollarSign, Globe } from 'lucide-react'
 import { useLanguage } from './contexts/LanguageContext'
+import { getForexBrokers, searchForexBrokers } from '../lib/data'
 
 interface ForexBroker {
     id: number
@@ -203,21 +204,21 @@ const forexBrokers: ForexBroker[] = [
 ]
 
 export default function Home() {
-    const { t } = useLanguage()
+    const { t, language } = useLanguage()
     const [searchTerm, setSearchTerm] = useState('')
     const [sortBy, setSortBy] = useState<'rating' | 'name'>('rating')
 
-    const filteredBrokers = forexBrokers
-        .filter(broker =>
-            broker.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            broker.description.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-        .sort((a, b) => {
-            if (sortBy === 'rating') {
-                return b.rating - a.rating
-            }
-            return a.name.localeCompare(b.name)
-        })
+    const forexBrokers = getForexBrokers(language)
+
+    const filteredBrokers = searchTerm
+        ? searchForexBrokers(searchTerm, language)
+        : forexBrokers
+    const sortedBrokers = filteredBrokers.sort((a, b) => {
+        if (sortBy === 'rating') {
+            return b.rating - a.rating
+        }
+        return a.name.localeCompare(b.name)
+    })
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
@@ -290,7 +291,7 @@ export default function Home() {
 
                 {/* Brokers Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-                    {filteredBrokers.map((broker) => (
+                    {sortedBrokers.map((broker) => (
                         <div key={broker.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col h-full">
                             {/* Broker Header */}
                             <div className="p-6 border-b border-gray-100 dark:border-gray-700 flex-shrink-0">
@@ -366,7 +367,7 @@ export default function Home() {
                 </div>
 
                 {/* Empty State */}
-                {filteredBrokers.length === 0 && (
+                {sortedBrokers.length === 0 && (
                     <div className="text-center py-12">
                         <TrendingUp className="h-12 w-12 text-gray-400 mx-auto mb-4" />
                         <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">Không tìm thấy sàn forex</h3>

@@ -4,145 +4,26 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { ExternalLink, TrendingUp, Shield, DollarSign, Bitcoin, Search, Filter } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { getCryptoBrokers, searchCryptoBrokers } from '../../lib/data'
 
-interface CryptoBroker {
-    id: number
-    name: string
-    logo: string
-    url: string
-    description: string
-    rating: number
-    features: string[]
-    regulation: string
-    minDeposit: string
-    tradingFees: string
-    supportedCoins: string[]
-}
 
-const cryptoBrokers: CryptoBroker[] = [
-    {
-        id: 1,
-        name: "Binance",
-        logo: "https://cryptologos.cc/logos/binance-coin-bnb-logo.png",
-        url: "https://www.binance.com",
-        description: "Sàn giao dịch cryptocurrency lớn nhất thế giới với hơn 350+ coin",
-        rating: 4.9,
-        features: ["Giao dịch spot", "Futures", "Staking", "Launchpad"],
-        regulation: "Đa quốc gia",
-        minDeposit: "$10",
-        tradingFees: "0.1%",
-        supportedCoins: ["Bitcoin", "Ethereum", "BNB", "Cardano", "Solana", "XRP"]
-    },
-    {
-        id: 2,
-        name: "Coinbase",
-        logo: "https://cryptologos.cc/logos/coinbase-coin-logo.png",
-        url: "https://www.coinbase.com",
-        description: "Sàn giao dịch cryptocurrency uy tín và dễ sử dụng cho người mới",
-        rating: 4.7,
-        features: ["Giao dịch đơn giản", "Ví tích hợp", "Earn rewards", "Pro trading"],
-        regulation: "SEC, FINRA",
-        minDeposit: "$2",
-        tradingFees: "0.5% - 3.99%",
-        supportedCoins: ["Bitcoin", "Ethereum", "Litecoin", "Bitcoin Cash", "Ethereum Classic"]
-    },
-    {
-        id: 3,
-        name: "Kraken",
-        logo: "https://cryptologos.cc/logos/kraken-logo.png",
-        url: "https://www.kraken.com",
-        description: "Sàn giao dịch cryptocurrency lâu đời với bảo mật cao",
-        rating: 4.8,
-        features: ["Bảo mật cao", "Staking", "Margin trading", "Futures"],
-        regulation: "FCA, FinCEN",
-        minDeposit: "$10",
-        tradingFees: "0.16% - 0.26%",
-        supportedCoins: ["Bitcoin", "Ethereum", "Litecoin", "Ripple", "Cardano", "Polkadot"]
-    },
-    {
-        id: 4,
-        name: "KuCoin",
-        logo: "https://cryptologos.cc/logos/kucoin-token-kcs-logo.png",
-        url: "https://www.kucoin.com",
-        description: "Sàn giao dịch cryptocurrency với nhiều altcoin và token mới",
-        rating: 4.6,
-        features: ["Altcoin trading", "KuCoin Earn", "Trading bots", "P2P trading"],
-        regulation: "Seychelles",
-        minDeposit: "$1",
-        tradingFees: "0.1%",
-        supportedCoins: ["Bitcoin", "Ethereum", "KuCoin Token", "Tether", "Chainlink", "Uniswap"]
-    },
-    {
-        id: 5,
-        name: "OKX",
-        logo: "https://cryptologos.cc/logos/okb-okb-logo.png",
-        url: "https://www.okx.com",
-        description: "Sàn giao dịch cryptocurrency toàn cầu với nhiều sản phẩm tài chính",
-        rating: 4.5,
-        features: ["Spot trading", "Futures", "Options", "DeFi", "NFT"],
-        regulation: "Đa quốc gia",
-        minDeposit: "$10",
-        tradingFees: "0.1%",
-        supportedCoins: ["Bitcoin", "Ethereum", "OKB", "Tether", "Cardano", "Solana"]
-    },
-    {
-        id: 6,
-        name: "Bybit",
-        logo: "https://cryptologos.cc/logos/bybit-logo.png",
-        url: "https://www.bybit.com",
-        description: "Sàn giao dịch cryptocurrency chuyên về futures và derivatives",
-        rating: 4.4,
-        features: ["Futures trading", "Options", "Copy trading", "Staking"],
-        regulation: "Đa quốc gia",
-        minDeposit: "$1",
-        tradingFees: "0.1%",
-        supportedCoins: ["Bitcoin", "Ethereum", "Tether", "Cardano", "Solana", "Polygon"]
-    },
-    {
-        id: 7,
-        name: "Gate.io",
-        logo: "https://cryptologos.cc/logos/gate-logo.png",
-        url: "https://www.gate.io",
-        description: "Sàn giao dịch cryptocurrency với hơn 1400+ coin và token",
-        rating: 4.3,
-        features: ["Đa dạng coin", "HODL & Earn", "Startup", "Liquidity mining"],
-        regulation: "Cayman Islands",
-        minDeposit: "$1",
-        tradingFees: "0.2%",
-        supportedCoins: ["Bitcoin", "Ethereum", "Gate Token", "Tether", "Chainlink", "Uniswap"]
-    },
-    {
-        id: 8,
-        name: "Huobi",
-        logo: "https://cryptologos.cc/logos/huobi-token-ht-logo.png",
-        url: "https://www.huobi.com",
-        description: "Sàn giao dịch cryptocurrency lớn với nhiều sản phẩm tài chính",
-        rating: 4.2,
-        features: ["Spot trading", "Futures", "Options", "Staking", "Liquidity mining"],
-        regulation: "Đa quốc gia",
-        minDeposit: "$10",
-        tradingFees: "0.2%",
-        supportedCoins: ["Bitcoin", "Ethereum", "Huobi Token", "Tether", "Cardano", "Polkadot"]
-    }
-]
 
 export default function CryptoBrokersPage() {
-    const { t } = useLanguage()
+    const { t, language } = useLanguage()
     const [searchTerm, setSearchTerm] = useState('')
     const [sortBy, setSortBy] = useState<'rating' | 'name'>('rating')
 
-    const filteredBrokers = cryptoBrokers
-        .filter(broker =>
-            broker.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            broker.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            broker.supportedCoins.some(coin => coin.toLowerCase().includes(searchTerm.toLowerCase()))
-        )
-        .sort((a, b) => {
-            if (sortBy === 'rating') {
-                return b.rating - a.rating
-            }
-            return a.name.localeCompare(b.name)
-        })
+    const cryptoBrokers = getCryptoBrokers(language)
+
+    const filteredBrokers = searchTerm
+        ? searchCryptoBrokers(searchTerm, language)
+        : cryptoBrokers
+    const sortedBrokers = filteredBrokers.sort((a, b) => {
+        if (sortBy === 'rating') {
+            return b.rating - a.rating
+        }
+        return a.name.localeCompare(b.name)
+    })
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
@@ -219,7 +100,7 @@ export default function CryptoBrokersPage() {
 
                 {/* Brokers Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-                    {filteredBrokers.map((broker) => (
+                    {sortedBrokers.map((broker) => (
                         <div key={broker.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col h-full">
                             {/* Broker Header */}
                             <div className="p-6 border-b border-gray-100 dark:border-gray-700 flex-shrink-0">

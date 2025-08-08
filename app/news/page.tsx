@@ -4,94 +4,9 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { TrendingUp, Calendar, User, ArrowRight, Search, Filter } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { getForexNews, searchForexNews, NewsArticle } from '../../lib/data'
 
-interface NewsArticle {
-    id: number
-    title: string
-    excerpt: string
-    content: string
-    author: string
-    date: string
-    category: string
-    image: string
-    readTime: string
-    tags: string[]
-}
 
-const newsArticles: NewsArticle[] = [
-    {
-        id: 1,
-        title: "EUR/USD tăng mạnh sau quyết định lãi suất của ECB",
-        excerpt: "Cặp tiền EUR/USD đã tăng hơn 100 pips sau khi Ngân hàng Trung ương Châu Âu (ECB) quyết định giữ nguyên lãi suất và đưa ra tín hiệu hawkish về chính sách tiền tệ.",
-        content: "Ngân hàng Trung ương Châu Âu (ECB) đã quyết định giữ nguyên lãi suất chính ở mức 4.5% trong cuộc họp chính sách tiền tệ tháng 12. Tuy nhiên, Chủ tịch ECB Christine Lagarde đã đưa ra những tín hiệu hawkish về tương lai của chính sách tiền tệ, khiến thị trường kỳ vọng về việc lãi suất sẽ được duy trì ở mức cao trong thời gian dài hơn so với dự kiến ban đầu.",
-        author: "Nguyễn Văn A",
-        date: "2024-01-15",
-        category: "Phân tích kỹ thuật",
-        image: "https://media.vneconomy.vn/images/upload/2022/07/22/usd-euro-16581227671331631804271.jpg",
-        readTime: "5 phút",
-        tags: ["EUR/USD", "ECB", "Lãi suất", "Phân tích"]
-    },
-    {
-        id: 2,
-        title: "USD/JPY giảm mạnh do lo ngại về suy thoái kinh tế Mỹ",
-        excerpt: "Đồng đô la Mỹ giảm giá mạnh so với đồng yên Nhật sau khi dữ liệu kinh tế Mỹ cho thấy dấu hiệu suy yếu, làm dấy lên lo ngại về khả năng suy thoái.",
-        content: "Dữ liệu kinh tế Mỹ mới nhất cho thấy chỉ số PMI sản xuất giảm xuống mức 48.2, thấp hơn mức kỳ vọng 49.5. Điều này đã làm dấy lên lo ngại về khả năng suy thoái kinh tế Mỹ, khiến các nhà đầu tư chuyển sang tài sản an toàn như đồng yên Nhật.",
-        author: "Trần Thị B",
-        date: "2024-01-14",
-        category: "Tin tức thị trường",
-        image: "https://media.vneconomy.vn/w800/images/upload/2025/06/10/anh-man-hinh-2025-06-10-luc-21-51-02.png",
-        readTime: "4 phút",
-        tags: ["USD/JPY", "Kinh tế Mỹ", "PMI", "Suy thoái"]
-    },
-    {
-        id: 3,
-        title: "GBP/USD phục hồi sau dữ liệu lạm phát Anh",
-        excerpt: "Đồng bảng Anh tăng giá so với đô la Mỹ sau khi dữ liệu lạm phát Anh cho thấy CPI tăng cao hơn dự kiến, làm tăng kỳ vọng về việc BoE sẽ duy trì lãi suất cao.",
-        content: "Chỉ số giá tiêu dùng (CPI) của Anh trong tháng 12 đã tăng 4.0% so với cùng kỳ năm trước, cao hơn mức kỳ vọng 3.8%. Điều này đã làm tăng kỳ vọng về việc Ngân hàng Trung ương Anh (BoE) sẽ duy trì lãi suất ở mức cao trong thời gian dài hơn.",
-        author: "Lê Văn C",
-        date: "2024-01-13",
-        category: "Phân tích cơ bản",
-        image: "https://editorial.fxsstatic.com/miscelaneous/_GBP_USD_2025-08-04_12-31-39-1754291567265-1754291567275.png",
-        readTime: "6 phút",
-        tags: ["GBP/USD", "BoE", "Lạm phát", "CPI"]
-    },
-    {
-        id: 4,
-        title: "AUD/USD tăng mạnh nhờ dữ liệu việc làm tích cực",
-        excerpt: "Đồng đô la Úc tăng giá mạnh so với đô la Mỹ sau khi dữ liệu việc làm Úc cho thấy tỷ lệ thất nghiệp giảm xuống mức thấp nhất trong 50 năm.",
-        content: "Dữ liệu việc làm Úc cho thấy tỷ lệ thất nghiệp đã giảm xuống 3.4% trong tháng 12, thấp nhất trong 50 năm qua. Điều này đã làm tăng kỳ vọng về việc Ngân hàng Dự trữ Úc (RBA) sẽ tiếp tục tăng lãi suất trong các cuộc họp tới.",
-        author: "Phạm Thị D",
-        date: "2024-01-12",
-        category: "Tin tức thị trường",
-        image: "https://gldt.mql5.vn/2025/02/shutterstock_1018406737-640x420.jpg",
-        readTime: "3 phút",
-        tags: ["AUD/USD", "RBA", "Việc làm", "Thất nghiệp"]
-    },
-    {
-        id: 5,
-        title: "USD/CAD giảm do giá dầu tăng mạnh",
-        excerpt: "Đồng đô la Canada tăng giá so với đô la Mỹ sau khi giá dầu thô tăng mạnh do căng thẳng địa chính trị ở Trung Đông.",
-        content: "Giá dầu thô Brent đã tăng hơn 3% trong phiên giao dịch hôm nay do căng thẳng địa chính trị gia tăng ở Trung Đông. Điều này đã hỗ trợ đồng đô la Canada, một loại tiền tệ hàng hóa, tăng giá so với đô la Mỹ.",
-        author: "Hoàng Văn E",
-        date: "2024-01-11",
-        category: "Phân tích kỹ thuật",
-        image: "https://gldt.mql5.vn/2025/06/USDCAD-ph-c-h-i-l-n-g-n-1-3600-khi-gi--d-u--i-u-ch-nh-gi-m--H-i-ngh--th--ng---nh-G7----c-ch---.jpg",
-        readTime: "4 phút",
-        tags: ["USD/CAD", "Dầu thô", "Địa chính trị", "Hàng hóa"]
-    },
-    {
-        id: 6,
-        title: "NZD/USD tăng nhờ dữ liệu bán lẻ tích cực",
-        excerpt: "Đồng đô la New Zealand tăng giá so với đô la Mỹ sau khi dữ liệu bán lẻ cho thấy chi tiêu tiêu dùng tăng mạnh hơn dự kiến.",
-        content: "Dữ liệu bán lẻ New Zealand cho thấy chi tiêu tiêu dùng đã tăng 1.2% trong tháng 12, cao hơn mức kỳ vọng 0.8%. Điều này đã làm tăng kỳ vọng về việc Ngân hàng Dự trữ New Zealand (RBNZ) sẽ duy trì lãi suất ở mức cao.",
-        author: "Vũ Thị F",
-        date: "2024-01-10",
-        category: "Phân tích cơ bản",
-        image: "https://gldt.mql5.vn/2025/05/NZDUSD-t-ng-m-nh-l-n-g-n-0-5900-tr--c-d--li-u-Doanh-s--b-n-l--v--PPI-c-a-Hoa-K-.jpg",
-        readTime: "5 phút",
-        tags: ["NZD/USD", "RBNZ", "Bán lẻ", "Tiêu dùng"]
-    }
-]
 
 const categories = [
     "Tất cả",
@@ -101,9 +16,11 @@ const categories = [
 ]
 
 export default function NewsPage() {
-    const { t } = useLanguage()
+    const { t, language } = useLanguage()
     const [searchTerm, setSearchTerm] = useState('')
     const [selectedCategory, setSelectedCategory] = useState('Tất cả')
+
+    const newsArticles = getForexNews(language)
 
     const filteredArticles = newsArticles.filter(article => {
         const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -208,11 +125,11 @@ export default function NewsPage() {
                                         </div>
                                         <div className="flex items-center">
                                             <Calendar className="h-4 w-4 mr-1" />
-                                            {new Date(article.date).toLocaleDateString('vi-VN')}
+                                            {new Date(article.publishedAt).toLocaleDateString('vi-VN')}
                                         </div>
                                     </div>
                                     <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">
-                                        {article.readTime}
+                                        {article.readTime} phút
                                     </span>
                                 </div>
 

@@ -5,89 +5,20 @@ import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { ArrowLeft, ExternalLink, TrendingUp, Shield, DollarSign, Bitcoin, Star, CheckCircle, AlertTriangle, Users, Globe } from 'lucide-react'
 import { useLanguage } from '../../contexts/LanguageContext'
+import { getCryptoBrokerById, CryptoBroker } from '../../../lib/data'
 
-interface CryptoBroker {
-    id: number
-    name: string
-    logo: string
-    url: string
-    description: string
-    rating: number
-    features: string[]
-    regulation: string
-    minDeposit: string
-    tradingFees: string
-    supportedCoins: string[]
-    pros: string[]
-    cons: string[]
-    founded: string
-    headquarters: string
-    tradingVolume: string
-    securityFeatures: string[]
-    paymentMethods: string[]
-    customerSupport: string[]
-    mobileApp: boolean
-    apiSupport: boolean
-    detailedDescription: string
-}
 
-const cryptoBrokers: CryptoBroker[] = [
-    {
-        id: 1,
-        name: "Binance",
-        logo: "https://cryptologos.cc/logos/binance-coin-bnb-logo.png",
-        url: "https://www.binance.com",
-        description: "Sàn giao dịch cryptocurrency lớn nhất thế giới với hơn 350+ coin",
-        rating: 4.9,
-        features: ["Giao dịch spot", "Futures", "Staking", "Launchpad"],
-        regulation: "Đa quốc gia",
-        minDeposit: "$10",
-        tradingFees: "0.1%",
-        supportedCoins: ["Bitcoin", "Ethereum", "BNB", "Cardano", "Solana", "XRP"],
-        pros: [
-            "Khối lượng giao dịch lớn nhất thế giới",
-            "Hỗ trợ hơn 350+ cryptocurrency",
-            "Phí giao dịch thấp",
-            "Nhiều tính năng nâng cao"
-        ],
-        cons: [
-            "Giao diện phức tạp cho người mới",
-            "Một số quốc gia bị hạn chế"
-        ],
-        founded: "2017",
-        headquarters: "Malta",
-        tradingVolume: "$20+ tỷ/ngày",
-        securityFeatures: [
-            "Two-factor authentication (2FA)",
-            "Cold storage",
-            "SAFU fund"
-        ],
-        paymentMethods: [
-            "Credit/Debit card",
-            "Bank transfer",
-            "P2P trading"
-        ],
-        customerSupport: [
-            "Live chat 24/7",
-            "Email support",
-            "Help center"
-        ],
-        mobileApp: true,
-        apiSupport: true,
-        detailedDescription: `Binance là sàn giao dịch cryptocurrency lớn nhất thế giới, được thành lập vào năm 2017. Với khối lượng giao dịch hàng ngày vượt 20 tỷ USD, Binance cung cấp nền tảng giao dịch toàn diện cho cả người mới và trader chuyên nghiệp.`
-    }
-]
 
 export default function CryptoBrokerDetailPage() {
-    const { t } = useLanguage()
+    const { t, language } = useLanguage()
     const params = useParams()
     const [broker, setBroker] = useState<CryptoBroker | null>(null)
 
     useEffect(() => {
         const id = parseInt(params.id as string)
-        const foundBroker = cryptoBrokers.find(b => b.id === id)
+        const foundBroker = getCryptoBrokerById(id, language)
         setBroker(foundBroker || null)
-    }, [params.id])
+    }, [params.id, language])
 
     if (!broker) {
         return (
