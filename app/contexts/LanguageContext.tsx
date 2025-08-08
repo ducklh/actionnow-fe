@@ -39,6 +39,11 @@ const translations = {
         'home.sortByName': 'Tên A-Z',
         'home.visit': 'Truy cập',
         'home.viewDetails': 'Xem chi tiết',
+        'home.regulation': 'Quy định',
+        'home.minDeposit': 'Nạp tối thiểu',
+        'home.spread': 'Spread',
+        'home.noBrokersFound': 'Không tìm thấy sàn forex',
+        'home.tryDifferentKeywords': 'Thử tìm kiếm với từ khóa khác',
 
         // News page
         'news.title': 'Tin Tức Forex Mới Nhất',
@@ -120,6 +125,8 @@ const translations = {
         'crypto.newsletter.subtitle': 'Đăng ký để nhận thông tin về các sàn giao dịch cryptocurrency mới và cập nhật',
         'crypto.newsletter.placeholder': 'Nhập email của bạn',
         'crypto.newsletter.button': 'Đăng ký',
+        'crypto.newsletter.news.title': 'Đăng ký nhận tin tức Crypto',
+        'crypto.newsletter.news.subtitle': 'Nhận tin tức mới nhất về cryptocurrency và blockchain trực tiếp vào email của bạn',
         'crypto.backToList': 'Quay lại danh sách sàn',
         'crypto.notFound.broker': 'Không tìm thấy sàn giao dịch',
         'crypto.detailedInfo': 'Thông tin chi tiết',
@@ -135,7 +142,14 @@ const translations = {
         'crypto.mobileApp': 'Mobile App',
         'crypto.apiSupport': 'API Support',
         'crypto.yes': 'Có',
-        'crypto.no': 'Không'
+        'crypto.no': 'Không',
+
+        // Crypto News
+        'crypto.news.title': 'Tin Tức Cryptocurrency',
+        'crypto.news.subtitle': 'Cập nhật tin tức mới nhất về Bitcoin, Ethereum và các cryptocurrency khác. Phân tích thị trường và xu hướng công nghệ blockchain.',
+        'crypto.news.searchPlaceholder': 'Tìm kiếm tin tức cryptocurrency...',
+        'crypto.news.noNewsFound': 'Không tìm thấy tin tức',
+        'crypto.news.tryDifferentKeywords': 'Thử tìm kiếm với từ khóa khác hoặc chọn danh mục khác'
     },
     en: {
         // Navigation
@@ -161,6 +175,11 @@ const translations = {
         'home.sortByName': 'Name A-Z',
         'home.visit': 'Visit',
         'home.viewDetails': 'View Details',
+        'home.regulation': 'Regulation',
+        'home.minDeposit': 'Min Deposit',
+        'home.spread': 'Spread',
+        'home.noBrokersFound': 'No forex brokers found',
+        'home.tryDifferentKeywords': 'Try searching with different keywords',
 
         // News page
         'news.title': 'Latest Forex News',
@@ -242,6 +261,8 @@ const translations = {
         'crypto.newsletter.subtitle': 'Subscribe to receive information about new cryptocurrency exchanges and updates',
         'crypto.newsletter.placeholder': 'Enter your email',
         'crypto.newsletter.button': 'Subscribe',
+        'crypto.newsletter.news.title': 'Subscribe to Crypto News',
+        'crypto.newsletter.news.subtitle': 'Get the latest cryptocurrency and blockchain news directly to your email',
         'crypto.backToList': 'Back to Exchange List',
         'crypto.notFound.broker': 'Exchange not found',
         'crypto.detailedInfo': 'Detailed Information',
@@ -257,7 +278,14 @@ const translations = {
         'crypto.mobileApp': 'Mobile App',
         'crypto.apiSupport': 'API Support',
         'crypto.yes': 'Yes',
-        'crypto.no': 'No'
+        'crypto.no': 'No',
+
+        // Crypto News
+        'crypto.news.title': 'Cryptocurrency News',
+        'crypto.news.subtitle': 'Get the latest news about Bitcoin, Ethereum and other cryptocurrencies. Market analysis and blockchain technology trends.',
+        'crypto.news.searchPlaceholder': 'Search cryptocurrency news...',
+        'crypto.news.noNewsFound': 'No news found',
+        'crypto.news.tryDifferentKeywords': 'Try searching with different keywords or select another category'
     }
 }
 

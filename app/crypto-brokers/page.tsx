@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ExternalLink, TrendingUp, Shield, DollarSign, Bitcoin, Search, Filter } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { getCryptoBrokers, searchCryptoBrokers } from '../../lib/data'
+import ImageWithFallback from '../components/ImageWithFallback'
 
 
 
@@ -105,7 +106,7 @@ export default function CryptoBrokersPage() {
                             {/* Broker Header */}
                             <div className="p-6 border-b border-gray-100 dark:border-gray-700 flex-shrink-0">
                                 <div className="flex items-center justify-between mb-4">
-                                    <img
+                                    <ImageWithFallback
                                         src={broker.logo}
                                         alt={broker.name}
                                         className="h-12 object-contain"

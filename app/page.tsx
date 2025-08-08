@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ExternalLink, TrendingUp, Shield, DollarSign, Globe } from 'lucide-react'
 import { useLanguage } from './contexts/LanguageContext'
 import { getForexBrokers, searchForexBrokers } from '../lib/data'
+import ImageWithFallback from './components/ImageWithFallback'
 
 interface ForexBroker {
     id: number
@@ -296,7 +297,7 @@ export default function Home() {
                             {/* Broker Header */}
                             <div className="p-6 border-b border-gray-100 dark:border-gray-700 flex-shrink-0">
                                 <div className="flex items-center justify-between mb-4">
-                                    <img
+                                    <ImageWithFallback
                                         src={broker.logo}
                                         alt={broker.name}
                                         className="h-12 object-contain"
@@ -327,17 +328,17 @@ export default function Home() {
                                 <div className="space-y-3 mb-6 flex-grow">
                                     <div className="flex items-center text-sm min-w-0">
                                         <Shield className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
-                                        <span className="text-gray-600 dark:text-gray-400 flex-shrink-0">Quy định: </span>
+                                        <span className="text-gray-600 dark:text-gray-400 flex-shrink-0">{t('home.regulation')}: </span>
                                         <span className="font-medium ml-1 text-gray-800 dark:text-white truncate">{broker.regulation}</span>
                                     </div>
                                     <div className="flex items-center text-sm min-w-0">
                                         <DollarSign className="h-4 w-4 text-blue-600 mr-2 flex-shrink-0" />
-                                        <span className="text-gray-600 dark:text-gray-400 flex-shrink-0">Nạp tối thiểu: </span>
+                                        <span className="text-gray-600 dark:text-gray-400 flex-shrink-0">{t('home.minDeposit')}: </span>
                                         <span className="font-medium ml-1 text-gray-800 dark:text-white truncate">{broker.minDeposit}</span>
                                     </div>
                                     <div className="flex items-center text-sm min-w-0">
                                         <TrendingUp className="h-4 w-4 text-purple-600 mr-2 flex-shrink-0" />
-                                        <span className="text-gray-600 dark:text-gray-400 flex-shrink-0">Spread: </span>
+                                        <span className="text-gray-600 dark:text-gray-400 flex-shrink-0">{t('home.spread')}: </span>
                                         <span className="font-medium ml-1 text-gray-800 dark:text-white truncate">{broker.spreads}</span>
                                     </div>
                                 </div>
@@ -370,8 +371,8 @@ export default function Home() {
                 {sortedBrokers.length === 0 && (
                     <div className="text-center py-12">
                         <TrendingUp className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                        <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">Không tìm thấy sàn forex</h3>
-                        <p className="text-gray-600 dark:text-gray-400">Thử tìm kiếm với từ khóa khác</p>
+                        <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">{t('home.noBrokersFound')}</h3>
+                        <p className="text-gray-600 dark:text-gray-400">{t('home.tryDifferentKeywords')}</p>
                     </div>
                 )}
             </main>

@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Binance",
-        "logo": "https://cryptologos.cc/logos/binance-coin-bnb-logo.png",
+        "logo": "https://via.placeholder.com/120x60/f7931a/ffffff?text=Binance",
         "url": "https://www.binance.com",
         "description": "The largest cryptocurrency exchange in the world with over 350+ coins",
         "rating": 4.9,
@@ -58,7 +58,7 @@
     {
         "id": 2,
         "name": "Coinbase",
-        "logo": "https://cryptologos.cc/logos/coinbase-coin-logo.png",
+        "logo": "https://via.placeholder.com/120x60/0052ff/ffffff?text=Coinbase",
         "url": "https://www.coinbase.com",
         "description": "A reputable and beginner-friendly cryptocurrency exchange",
         "rating": 4.7,
@@ -117,7 +117,7 @@
     {
         "id": 3,
         "name": "Kraken",
-        "logo": "https://cryptologos.cc/logos/kraken-logo.png",
+        "logo": "https://via.placeholder.com/120x60/5841d8/ffffff?text=Kraken",
         "url": "https://www.kraken.com",
         "description": "A long-standing cryptocurrency exchange with high security",
         "rating": 4.8,
@@ -177,7 +177,7 @@
     {
         "id": 4,
         "name": "KuCoin",
-        "logo": "https://cryptologos.cc/logos/kucoin-token-kcs-logo.png",
+        "logo": "https://via.placeholder.com/120x60/26d1f5/ffffff?text=KuCoin",
         "url": "https://www.kucoin.com",
         "description": "A cryptocurrency exchange with many altcoins and new tokens",
         "rating": 4.6,
@@ -234,7 +234,7 @@
     {
         "id": 5,
         "name": "OKX",
-        "logo": "https://cryptologos.cc/logos/okb-okb-logo.png",
+        "logo": "https://via.placeholder.com/120x60/000000/ffffff?text=OKX",
         "url": "https://www.okx.com",
         "description": "A global cryptocurrency exchange with a variety of financial products",
         "rating": 4.5,
@@ -292,7 +292,7 @@
     {
         "id": 6,
         "name": "Bybit",
-        "logo": "https://cryptologos.cc/logos/bybit-logo.png",
+        "logo": "https://via.placeholder.com/120x60/ffc107/000000?text=Bybit",
         "url": "https://www.bybit.com",
         "description": "A cryptocurrency exchange specializing in futures and derivatives",
         "rating": 4.4,
@@ -349,7 +349,7 @@
     {
         "id": 7,
         "name": "Gate.io",
-        "logo": "https://cryptologos.cc/logos/gate-logo.png",
+        "logo": "https://via.placeholder.com/120x60/00d4aa/ffffff?text=Gate.io",
         "url": "https://www.gate.io",
         "description": "A cryptocurrency exchange with over 1400+ coins and tokens",
         "rating": 4.3,
@@ -406,7 +406,7 @@
     {
         "id": 8,
         "name": "Huobi",
-        "logo": "https://cryptologos.cc/logos/huobi-token-ht-logo.png",
+        "logo": "https://via.placeholder.com/120x60/ff6600/ffffff?text=Huobi",
         "url": "https://www.huobi.com",
         "description": "A major cryptocurrency exchange with a wide range of financial products",
         "rating": 4.2,
