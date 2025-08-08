@@ -116,11 +116,11 @@ export default function CryptoBrokerDetailPage() {
                             <Link href="/" className="text-gray-500 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-blue-400">
                                 {t('nav.forex')}
                             </Link>
-                            <Link href="/crypto" className="text-gray-500 hover:text-orange-600 font-medium dark:text-gray-400 dark:hover:text-orange-400">
-                                Crypto News
-                            </Link>
                             <Link href="/crypto-brokers" className="text-orange-600 font-medium">
                                 Crypto Brokers
+                            </Link>
+                            <Link href="/crypto" className="text-gray-500 hover:text-orange-600 font-medium dark:text-gray-400 dark:hover:text-orange-400">
+                                Crypto News
                             </Link>
                             <Link href="/news" className="text-gray-500 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-blue-400">
                                 {t('nav.news')}
@@ -163,8 +163,8 @@ export default function CryptoBrokerDetailPage() {
                                             <Star
                                                 key={i}
                                                 className={`h-5 w-5 ${i < Math.floor(broker.rating)
-                                                        ? 'text-yellow-400 fill-current'
-                                                        : 'text-gray-300'
+                                                    ? 'text-yellow-400 fill-current'
+                                                    : 'text-gray-300'
                                                     }`}
                                             />
                                         ))}
@@ -395,11 +395,11 @@ export default function CryptoBrokerDetailPage() {
                             <Link href="/" className="text-gray-400 hover:text-white">
                                 {t('nav.forex')}
                             </Link>
-                            <Link href="/crypto" className="text-gray-400 hover:text-white">
-                                Crypto News
-                            </Link>
                             <Link href="/crypto-brokers" className="text-gray-400 hover:text-white">
                                 Crypto Brokers
+                            </Link>
+                            <Link href="/crypto" className="text-gray-400 hover:text-white">
+                                Crypto News
                             </Link>
                             <Link href="/news" className="text-gray-400 hover:text-white">
                                 {t('nav.news')}
