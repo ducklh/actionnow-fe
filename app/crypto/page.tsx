@@ -1,23 +1,47 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { TrendingUp, Calendar, User, ArrowRight, Search, Filter, Bitcoin } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { getCryptoNews, searchCryptoNews, NewsArticle } from '../../lib/data'
 
-const categories = [
-    "Tất cả",
-    "Tin tức thị trường",
-    "Công nghệ",
-    "DeFi",
-    "NFT"
-]
-
 export default function CryptoPage() {
     const { t, language } = useLanguage()
     const [searchTerm, setSearchTerm] = useState('')
-    const [selectedCategory, setSelectedCategory] = useState('Tất cả')
+    const [selectedCategory, setSelectedCategory] = useState(t('crypto.categories.all'))
+
+    const categories = [
+        t('crypto.categories.all'),
+        t('crypto.categories.market'),
+        t('crypto.categories.technology'),
+        t('crypto.categories.defi'),
+        t('crypto.categories.nft'),
+        t('crypto.categories.regulation'),
+        t('crypto.categories.layer2'),
+        t('crypto.categories.memecoin')
+    ]
+
+    // Reset selectedCategory when language changes
+    useEffect(() => {
+        setSelectedCategory(t('crypto.categories.all'))
+    }, [language, t])
+
+    // Function to map category names to translation keys
+    const getCategoryTranslation = (categoryName: string) => {
+        const categoryMap: { [key: string]: string } = {
+            'Tin tức thị trường': t('crypto.categories.market'),
+            'Market News': t('crypto.categories.market'),
+            'Phân tích kỹ thuật': t('crypto.categories.technology'),
+            'Technical Analysis': t('crypto.categories.technology'),
+            'DeFi': t('crypto.categories.defi'),
+            'NFT': t('crypto.categories.nft'),
+            'Regulation': t('crypto.categories.regulation'),
+            'Layer 2': t('crypto.categories.layer2'),
+            'Meme Coin': t('crypto.categories.memecoin')
+        }
+        return categoryMap[categoryName] || categoryName
+    }
 
     const cryptoArticles = getCryptoNews(language)
 
@@ -26,7 +50,7 @@ export default function CryptoPage() {
             article.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
             article.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
 
-        const matchesCategory = selectedCategory === 'Tất cả' || article.category === selectedCategory
+        const matchesCategory = selectedCategory === t('crypto.categories.all') || getCategoryTranslation(article.category) === selectedCategory
 
         return matchesSearch && matchesCategory
     })
@@ -134,7 +158,7 @@ export default function CryptoPage() {
 
                                 {/* Category */}
                                 <span className="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm font-medium mb-3">
-                                    {article.category}
+                                    {getCategoryTranslation(article.category)}
                                 </span>
 
                                 {/* Title */}

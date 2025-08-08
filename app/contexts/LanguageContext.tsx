@@ -149,7 +149,17 @@ const translations = {
         'crypto.news.subtitle': 'Cập nhật tin tức mới nhất về Bitcoin, Ethereum và các cryptocurrency khác. Phân tích thị trường và xu hướng công nghệ blockchain.',
         'crypto.news.searchPlaceholder': 'Tìm kiếm tin tức cryptocurrency...',
         'crypto.news.noNewsFound': 'Không tìm thấy tin tức',
-        'crypto.news.tryDifferentKeywords': 'Thử tìm kiếm với từ khóa khác hoặc chọn danh mục khác'
+        'crypto.news.tryDifferentKeywords': 'Thử tìm kiếm với từ khóa khác hoặc chọn danh mục khác',
+        
+        // Crypto Categories
+        'crypto.categories.all': 'Tất cả',
+        'crypto.categories.market': 'Tin tức thị trường',
+        'crypto.categories.technology': 'Phân tích kỹ thuật',
+        'crypto.categories.defi': 'DeFi',
+        'crypto.categories.nft': 'NFT',
+        'crypto.categories.regulation': 'Regulation',
+        'crypto.categories.layer2': 'Layer 2',
+        'crypto.categories.memecoin': 'Meme Coin'
     },
     en: {
         // Navigation
@@ -285,7 +295,17 @@ const translations = {
         'crypto.news.subtitle': 'Get the latest news about Bitcoin, Ethereum and other cryptocurrencies. Market analysis and blockchain technology trends.',
         'crypto.news.searchPlaceholder': 'Search cryptocurrency news...',
         'crypto.news.noNewsFound': 'No news found',
-        'crypto.news.tryDifferentKeywords': 'Try searching with different keywords or select another category'
+        'crypto.news.tryDifferentKeywords': 'Try searching with different keywords or select another category',
+        
+        // Crypto Categories
+        'crypto.categories.all': 'All',
+        'crypto.categories.market': 'Market News',
+        'crypto.categories.technology': 'Technical Analysis',
+        'crypto.categories.defi': 'DeFi',
+        'crypto.categories.nft': 'NFT',
+        'crypto.categories.regulation': 'Regulation',
+        'crypto.categories.layer2': 'Layer 2',
+        'crypto.categories.memecoin': 'Meme Coin'
     }
 }
 
