@@ -1,0 +1,206 @@
+[
+  {
+    "id": 1,
+    "title": "What is Forex? A Beginner's Guide",
+    "category": "Basic Knowledge",
+    "level": "Beginner",
+    "readTime": "10 minutes",
+    "description": "Learn about the forex market, how it works, and basic concepts",
+    "icon": "Info",
+    "tags": [
+      "Forex",
+      "Beginner",
+      "Market",
+      "Currency"
+    ],
+    "content": "Forex (Foreign Exchange) is the global currency exchange market. It is the largest financial market in the world with a daily trading volume of up to 6.6 trillion USD...",
+    "fullContent": "<h2>What is the Forex Market?</h2>\n<p>Forex (Foreign Exchange) is the global currency exchange market. It is the largest financial market in the world with a daily trading volume of up to 6.6 trillion USD.</p>\n\n<h3>Features of the Forex Market</h3>\n<ul>\n<li><strong>24/5 Trading:</strong> The market is open from Sunday to Friday</li>\n<li><strong>High Liquidity:</strong> Easy to buy and sell in large volumes</li>\n<li><strong>Leverage:</strong> Trade with a small amount of capital</li>\n<li><strong>Two-way Trading:</strong> Profit whether prices rise or fall</li>\n</ul>\n\n<h3>Main Currency Pairs</h3>\n<p>Main currency pairs (Major pairs) include:</p>\n<ul>\n<li>EUR/USD (Euro/US Dollar)</li>\n<li>GBP/USD (British Pound/US Dollar)</li>\n<li>USD/JPY (US Dollar/Japanese Yen)</li>\n<li>USD/CHF (US Dollar/Swiss Franc)</li>\n<li>AUD/USD (Australian Dollar/US Dollar)</li>\n<li>USD/CAD (US Dollar/Canadian Dollar)</li>\n<li>NZD/USD (New Zealand Dollar/US Dollar)</li>\n</ul>\n\n<h3>How to Read Exchange Rates</h3>\n<p>Example with EUR/USD = 1.0850:</p>\n<ul>\n<li>EUR is the base currency</li>\n<li>USD is the quote currency</li>\n<li>1.0850 means 1 EUR = 1.0850 USD</li>\n</ul>\n\n<h3>Benefits of Forex Trading</h3>\n<ul>\n<li>No large capital required to start</li>\n<li>Trade from anywhere</li>\n<li>Transparent and regulated market</li>\n<li>Many profit opportunities</li>\n</ul>\n\n<h3>Risks to Note</h3>\n<ul>\n<li>Leverage can cause large losses</li>\n<li>Highly volatile market</li>\n<li>Requires knowledge and experience</li>\n<li>No guaranteed profits</li>\n</ul>\n\n<h3>Conclusion</h3>\n<p>Forex is an attractive but challenging financial market. To succeed, you need to:</p>\n<ul>\n<li>Learn basic knowledge</li>\n<li>Practice with a demo account</li>\n<li>Manage risk well</li>\n<li>Be patient and disciplined</li>\n</ul>"
+  },
+  {
+    "id": 2,
+    "title": "Major Currency Pairs and How to Read Exchange Rates",
+    "category": "Basic Knowledge",
+    "level": "Beginner",
+    "readTime": "8 minutes",
+    "description": "Understand major and minor currency pairs and how to read forex rates",
+    "icon": "DollarSign",
+    "tags": [
+      "Currency Pair",
+      "Exchange Rate",
+      "Major",
+      "Minor"
+    ],
+    "content": "Major currency pairs (Major pairs) include EUR/USD, GBP/USD, USD/JPY, USD/CHF, AUD/USD, USD/CAD, NZD/USD...",
+    "fullContent": "<h2>Currency Pair Classification</h2>\n<p>In the forex market, currency pairs are classified into 3 main groups:</p>\n\n<h3>1. Major Pairs</h3>\n<p>These are the most traded pairs with the highest liquidity:</p>\n<ul>\n<li><strong>EUR/USD:</strong> Euro/US Dollar - The most traded pair</li>\n<li><strong>GBP/USD:</strong> British Pound/US Dollar - Highly volatile pair</li>\n<li><strong>USD/JPY:</strong> US Dollar/Japanese Yen - Stable pair</li>\n<li><strong>USD/CHF:</strong> US Dollar/Swiss Franc - Safe-haven pair</li>\n<li><strong>AUD/USD:</strong> Australian Dollar/US Dollar - Commodity pair</li>\n<li><strong>USD/CAD:</strong> US Dollar/Canadian Dollar - Oil-related pair</li>\n<li><strong>NZD/USD:</strong> New Zealand Dollar/US Dollar - Agricultural pair</li>\n</ul>\n\n<h3>2. Minor Pairs</h3>\n<p>Pairs without USD but still with significant trading volume:</p>\n<ul>\n<li>EUR/GBP (Euro/British Pound)</li>\n<li>EUR/JPY (Euro/Japanese Yen)</li>\n<li>GBP/JPY (British Pound/Japanese Yen)</li>\n<li>AUD/JPY (Australian Dollar/Japanese Yen)</li>\n<li>EUR/AUD (Euro/Australian Dollar)</li>\n</ul>\n\n<h3>3. Exotic Pairs</h3>\n<p>Pairs with low liquidity and high spreads:</p>\n<ul>\n<li>USD/TRY (US Dollar/Turkish Lira)</li>\n<li>USD/ZAR (US Dollar/South African Rand)</li>\n<li>USD/MXN (US Dollar/Mexican Peso)</li>\n<li>EUR/TRY (Euro/Turkish Lira)</li>\n</ul>\n\n<h2>How to Read Exchange Rates</h2>\n<h3>Rate Structure</h3>\n<p>Example: EUR/USD = 1.0850</p>\n<ul>\n<li><strong>EUR:</strong> Base Currency</li>\n<li><strong>USD:</strong> Quote Currency</li>\n<li><strong>1.0850:</strong> Current rate</li>\n</ul>\n\n<h3>Meaning of the Rate</h3>\n<p>EUR/USD = 1.0850 means:</p>\n<ul>\n<li>1 EUR = 1.0850 USD</li>\n<li>To buy 1 EUR, you need 1.0850 USD</li>\n<li>To sell 1 EUR, you will receive 1.0850 USD</li>\n</ul>\n\n<h3>Bid and Ask</h3>\n<p>Each pair has two prices:</p>\n<ul>\n<li><strong>Bid:</strong> Selling price (price you sell the base currency)</li>\n<li><strong>Ask:</strong> Buying price (price you buy the base currency)</li>\n<li><strong>Spread:</strong> Difference between Bid and Ask</li>\n</ul>\n\n<h2>Factors Affecting Exchange Rates</h2>\n<h3>1. Economic Factors</h3>\n<ul>\n<li>Central bank interest rates</li>\n<li>Unemployment rate</li>\n<li>Inflation rate (CPI)</li>\n<li>Gross Domestic Product (GDP)</li>\n</ul>\n\n<h3>2. Political Factors</h3>\n<ul>\n<li>Elections</li>\n<li>Government policies</li>\n<li>International relations</li>\n<li>Geopolitical conflicts</li>\n</ul>\n\n<h3>3. Market Factors</h3>\n<ul>\n<li>Investor sentiment</li>\n<li>Capital flows</li>\n<li>Market volatility</li>\n<li>Unexpected news</li>\n</ul>\n\n<h2>Tips for Beginners</h2>\n<ul>\n<li>Start with major currency pairs</li>\n<li>Avoid exotic currency pairs</li>\n<li>Pay attention to spreads when choosing pairs</li>\n<li>Learn to read economic news</li>\n<li>Practice on a demo account first</li>\n</ul>"
+  },
+  {
+    "id": 3,
+    "title": "Pip, Lot, and Leverage - Key Concepts",
+    "category": "Basic Knowledge",
+    "level": "Beginner",
+    "readTime": "12 minutes",
+    "description": "Learn about pip, lot size, and leverage in forex trading",
+    "icon": "Zap",
+    "tags": [
+      "Pip",
+      "Lot",
+      "Leverage",
+      "Margin"
+    ],
+    "content": "A pip (Percentage in Point) is the smallest unit to measure exchange rate changes. One pip is usually equal to 0.0001 for most currency pairs...",
+    "fullContent": "<h2>Pip - Basic Measurement Unit</h2>\n<p>A pip (Percentage in Point) is the smallest unit to measure exchange rate changes in forex.</p>\n\n<h3>Pip Value</h3>\n<p>For most currency pairs:</p>\n<ul>\n<li>1 pip = 0.0001 (for pairs with 4 decimal places)</li>\n<li>1 pip = 0.01 (for pairs with 2 decimal places like USD/JPY)</li>\n</ul>\n\n<h3>Example</h3>\n<p>With EUR/USD:</p>\n<ul>\n<li>From 1.0850 → 1.0851 = +1 pip</li>\n<li>From 1.0850 → 1.0860 = +10 pips</li>\n<li>From 1.0850 → 1.0840 = -10 pips</li>\n</ul>\n\n<h2>Lot - Trading Volume Unit</h2>\n<h3>Types of Lot</h3>\n<ul>\n<li><strong>Standard Lot:</strong> 100,000 units of currency</li>\n<li><strong>Mini Lot:</strong> 10,000 units</li>\n<li><strong>Micro Lot:</strong> 1,000 units</li>\n<li><strong>Nano Lot:</strong> 100 units</li>\n</ul>\n\n<h3>Pip Value per Lot</h3>\n<p>For EUR/USD:</p>\n<ul>\n<li>1 Standard Lot = $10/pip</li>\n<li>1 Mini Lot = $1/pip</li>\n<li>1 Micro Lot = $0.1/pip</li>\n<li>1 Nano Lot = $0.01/pip</li>\n</ul>\n\n<h3>Example Calculation</h3>\n<p>If you trade 1 Mini Lot EUR/USD:</p>\n<ul>\n<li>+10 pips = +$10 profit</li>\n<li>-10 pips = -$10 loss</li>\n</ul>\n\n<h2>Leverage</h2>\n<h3>Definition</h3>\n<p>Leverage allows you to trade with a larger position than your actual account balance.</p>\n\n<h3>Formula</h3>\n<p>Leverage = Trade Volume / Margin Required</p>\n\n<h3>Example</h3>\n<p>With leverage 1:100:</p>\n<ul>\n<li>You have $1,000 in your account</li>\n<li>You can trade up to $100,000</li>\n<li>This equals 1 Standard Lot</li>\n</ul>\n\n<h3>Common Leverage Levels</h3>\n<ul>\n<li><strong>1:50:</strong> Conservative, good for beginners</li>\n<li><strong>1:100:</strong> Balanced, most common</li>\n<li><strong>1:200:</strong> Risky, requires experience</li>\n<li><strong>1:500:</strong> Very risky, for experts only</li>\n</ul>\n\n<h2>Margin</h2>\n<h3>Definition</h3>\n<p>Margin is the required amount to open and maintain a trading position.</p>\n\n<h3>Types of Margin</h3>\n<ul>\n<li><strong>Required Margin:</strong> Minimum to open a trade</li>\n<li><strong>Used Margin:</strong> Margin currently in use</li>\n<li><strong>Free Margin:</strong> Margin available for new trades</li>\n</ul>\n\n<h3>Example</h3>\n<p>With leverage 1:100 and trading 1 Mini Lot EUR/USD:</p>\n<ul>\n<li>Trade Volume: $10,000</li>\n<li>Required Margin: $10,000 ÷ 100 = $100</li>\n</ul>\n\n<h2>Margin Call and Stop Out</h2>\n<h3>Margin Call</h3>\n<p>When your account is close to running out of margin, the broker warns you to add funds or close trades.</p>\n\n<h3>Stop Out</h3>\n<p>When margin is insufficient, the broker automatically closes trades to protect your account.</p>\n\n<h2>Risk Management with Leverage</h2>\n<ul>\n<li>Never use all available leverage</li>\n<li>Always leave Free Margin to avoid Margin Call</li>\n<li>Use Stop Loss to limit losses</li>\n<li>Do not risk more than 2% of account per trade</li>\n</ul>\n\n<h3>Safe Position Size Formula</h3>\n<p>Position Size = (Account × 2%) ÷ (Stop Loss pips × Pip Value)</p>\n\n<h2>Tips for Beginners</h2>\n<ul>\n<li>Start with low leverage (1:50 or 1:100)</li>\n<li>Use Micro Lots to practice</li>\n<li>Always set Stop Loss</li>\n<li>Never trade beyond your financial ability</li>\n<li>Practice on a demo account first</li>\n</ul>"
+  },
+  {
+    "id": 4,
+    "title": "Technical Analysis - Chart Patterns",
+    "category": "Technical Analysis",
+    "level": "Intermediate",
+    "readTime": "15 minutes",
+    "description": "Learn about important chart patterns in technical analysis",
+    "icon": "BarChart3",
+    "tags": [
+      "Pattern",
+      "Chart",
+      "Technical",
+      "Analysis"
+    ],
+    "content": "Chart patterns such as Head and Shoulders, Double Top/Bottom, Triangle, Flag, and Pennant are important tools...",
+    "fullContent": "<h2>Popular Chart Patterns</h2>\n<p>In technical analysis, chart patterns help traders identify trends and potential entry/exit points.</p>\n\n<h3>1. Head and Shoulders</h3>\n<p>A common reversal pattern with three peaks: left shoulder, head, and right shoulder.</p>\n\n<h3>2. Double Top and Double Bottom</h3>\n<p>A major reversal pattern with two consecutive highs or lows.</p>\n\n<h3>3. Triangle Patterns</h3>\n<ul>\n<li>Ascending Triangle: bullish continuation</li>\n<li>Descending Triangle: bearish continuation</li>\n<li>Symmetrical Triangle: breakout awaited</li>\n</ul>\n\n<h3>4. Flag and Pennant</h3>\n<p>Continuation patterns after a strong upward or downward move.</p>\n\n<h3>Notes When Using</h3>\n<ul>\n<li>Combine with technical indicators</li>\n<li>Wait for confirmation signals</li>\n<li>Strict risk management</li>\n</ul>"
+  },
+  {
+    "id": 5,
+    "title": "Popular Technical Indicators and How to Use Them",
+    "category": "Technical Analysis",
+    "level": "Intermediate",
+    "readTime": "20 minutes",
+    "description": "Learn about RSI, MACD, Moving Averages, and other indicators",
+    "icon": "TrendingUp",
+    "tags": [
+      "RSI",
+      "MACD",
+      "Moving Average",
+      "Indicator"
+    ],
+    "content": "RSI (Relative Strength Index) measures the speed and magnitude of price changes. Values range from 0-100...",
+    "fullContent": "<h2>Popular Technical Indicators</h2>\n\n<h3>1. RSI - Relative Strength Index</h3>\n<ul>\n<li>Measures overbought/oversold levels</li>\n<li>Above 70: overbought, Below 30: oversold</li>\n</ul>\n\n<h3>2. MACD - Moving Average Convergence Divergence</h3>\n<ul>\n<li>Identifies trends and crossover signals</li>\n<li>MACD line crossing Signal line = buy/sell signal</li>\n</ul>\n\n<h3>3. Moving Average</h3>\n<ul>\n<li>Simple MA (SMA) and Exponential MA (EMA)</li>\n<li>Identifies short-term and long-term trends</li>\n</ul>\n\n<h3>4. Bollinger Bands</h3>\n<ul>\n<li>Measures market volatility</li>\n<li>Price near upper band: overbought, near lower band: oversold</li>\n</ul>\n\n<h3>Notes When Using Indicators</h3>\n<ul>\n<li>Do not use in isolation</li>\n<li>Combine multiple indicators for better accuracy</li>\n<li>Check across multiple timeframes</li>\n</ul>"
+  },
+  {
+    "id": 6,
+    "title": "Fundamental Analysis - Influencing Factors",
+    "category": "Fundamental Analysis",
+    "level": "Intermediate",
+    "readTime": "18 minutes",
+    "description": "Understanding economic factors affecting currency exchange rates",
+    "icon": "Users",
+    "tags": [
+      "Economy",
+      "Interest Rate",
+      "GDP",
+      "CPI"
+    ],
+    "content": "Key fundamental factors affecting exchange rates include interest rates, GDP, unemployment rate, inflation...",
+    "fullContent": "<h2>Key Fundamental Factors Affecting Exchange Rates</h2>\n\n<h3>1. Interest Rates</h3>\n<p>High interest rates → capital inflows → currency strengthens.</p>\n\n<h3>2. GDP Growth</h3>\n<p>Rising GDP → positive growth expectations → currency appreciates.</p>\n\n<h3>3. Unemployment Rate</h3>\n<p>High unemployment → weak economy → currency weakens.</p>\n\n<h3>4. Inflation (CPI)</h3>\n<p>High inflation → affects purchasing power → impacts exchange rates.</p>\n\n<h3>5. Trade Balance</h3>\n<p>Trade surplus → capital inflows → currency appreciates.</p>\n\n<h3>Combining with Technical Analysis</h3>\n<p>Fundamental analysis helps determine long-term trends, while technical analysis assists in finding entry/exit points.</p>"
+  },
+  {
+    "id": 7,
+    "title": "Capital and Risk Management",
+    "category": "Risk Management",
+    "level": "Advanced",
+    "readTime": "25 minutes",
+    "description": "Effective capital management strategies and risk mitigation",
+    "icon": "Shield",
+    "tags": [
+      "Capital Management",
+      "Risk",
+      "Stop Loss",
+      "Risk/Reward"
+    ],
+    "content": "2% Rule: Never risk more than 2% of your account on a single trade. This helps protect capital...",
+    "fullContent": "<h2>Principles of Effective Capital Management</h2>\n\n<h3>1. The 2% Rule</h3>\n<p>Risk a maximum of 2% of your account per trade.</p>\n\n<h3>2. Risk/Reward Ratio</h3>\n<p>Profit-to-risk ratio should be 2:1 or higher.</p>\n\n<h3>3. Setting Stop Loss</h3>\n<p>Always set stop-loss orders to limit losses.</p>\n\n<h3>4. Diversification</h3>\n<p>Do not put all your capital into one trade or one type of asset.</p>\n\n<h3>5. Risk Management Psychology</h3>\n<p>Be consistent, disciplined, and avoid increasing position size after consecutive losses.</p>"
+  },
+  {
+    "id": 8,
+    "title": "Trading Psychology - Discipline and Patience",
+    "category": "Trading Psychology",
+    "level": "Advanced",
+    "readTime": "22 minutes",
+    "description": "Developing strong trading psychology and discipline",
+    "icon": "CheckCircle",
+    "tags": [
+      "Psychology",
+      "Discipline",
+      "Patience",
+      "Emotion"
+    ],
+    "content": "Trading psychology accounts for 80% of success in forex. Fear and greed are the two most dangerous emotions...",
+    "fullContent": "<h2>The Importance of Trading Psychology</h2>\n\n<h3>1. Emotion Control</h3>\n<p>Fear and greed can easily lead to poor decisions.</p>\n\n<h3>2. Discipline</h3>\n<p>Follow your trading plan and avoid trading based on emotions.</p>\n\n<h3>3. Patience</h3>\n<p>Wait for good opportunities instead of trading all the time.</p>\n\n<h3>4. Confidence without Arrogance</h3>\n<p>Learn from each trade.</p>\n\n<h3>Practical Lesson</h3>\n<p>Successful trading = 20% technique + 80% psychology.</p>"
+  },
+  {
+    "id": 9,
+    "title": "Scalping Strategy for Beginners",
+    "category": "Trading Strategies",
+    "level": "Intermediate",
+    "readTime": "16 minutes",
+    "description": "Guide to effective short-term trading strategies",
+    "icon": "Settings",
+    "tags": [
+      "Scalping",
+      "Short-term",
+      "Strategy",
+      "Quick Trade"
+    ],
+    "content": "Scalping is a trading strategy executed within a very short time, usually from a few seconds to a few minutes...",
+    "fullContent": "<h2>What is Scalping?</h2>\n\n<h3>1. Definition</h3>\n<p>Scalping focuses on short-term trades, aiming for small but frequent profits.</p>\n\n<h3>2. Supporting Tools</h3>\n<ul>\n<li>Low timeframes (M1, M5)</li>\n<li>EMA, Bollinger Bands, RSI</li>\n</ul>\n\n<h3>3. Advantages</h3>\n<ul>\n<li>Quick reaction to market movements</li>\n<li>No overnight positions</li>\n</ul>\n\n<h3>4. Disadvantages</h3>\n<ul>\n<li>High pressure, requires focus</li>\n<li>Spreads may eat into profits</li>\n</ul>"
+  },
+  {
+    "id": 10,
+    "title": "Swing Trading Strategy",
+    "category": "Trading Strategies",
+    "level": "Intermediate",
+    "readTime": "19 minutes",
+    "description": "Medium-term trading strategy from a few days to a few weeks",
+    "icon": "TrendingUp",
+    "tags": [
+      "Swing",
+      "Medium-term",
+      "Trend",
+      "Momentum"
+    ],
+    "content": "Swing Trading is a strategy that holds positions from a few days to a few weeks, capitalizing on market trends...",
+    "fullContent": "<h2>Swing Trading Strategy</h2>\n\n<h3>1. Definition</h3>\n<p>Holding trades from several days to several weeks, capturing medium-term price waves.</p>\n\n<h3>2. Supporting Tools</h3>\n<ul>\n<li>Moving Average, RSI, MACD</li>\n<li>Fibonacci retracement</li>\n</ul>\n\n<h3>3. Advantages</h3>\n<ul>\n<li>Less stressful than scalping</li>\n<li>Potential for higher profits</li>\n</ul>\n\n<h3>4. Disadvantages</h3>\n<ul>\n<li>Overnight/weekend risks</li>\n<li>Requires patience and psychological control</li>\n</ul>"
+  },
+  {
+    "id": 11,
+    "title": "MT4 and MT5 - Basic User Guide",
+    "category": "Trading Tools",
+    "level": "Beginner",
+    "readTime": "14 minutes",
+    "description": "Guide to using MetaTrader 4 and MetaTrader 5",
+    "icon": "BarChart3",
+    "tags": [
+      "MT4",
+      "MT5",
+      "Platform",
+      "Trading"
+    ],
+    "content": "MetaTrader is the most popular trading platform in the world. MT4 and MT5 have user-friendly interfaces...",
+    "fullContent": "<h2>Introduction to the MetaTrader Platform</h2>\n\n<h3>1. MT4 vs MT5</h3>\n<p>MT4: simple, popular for forex. MT5: supports stocks and has more tools.</p>\n\n<h3>2. Main Functions</h3>\n<ul>\n<li>Open and close orders</li>\n<li>Set up technical indicators</li>\n<li>Manage charts and timeframes</li>\n</ul>\n\n<h3>3. How to Download and Install</h3>\n<p>Go to the broker's website, choose MT4/MT5 version suitable for your OS, and follow the instructions.</p>"
+  },
+  {
+    "id": 12,
+    "title": "Common Mistakes and How to Avoid Them",
+    "category": "Basic Knowledge",
+    "level": "Beginner",
+    "readTime": "12 minutes",
+    "description": "Summary of common mistakes and how to prevent them",
+    "icon": "AlertTriangle",
+    "tags": [
+      "Mistakes",
+      "Prevention",
+      "Experience",
+      "Tips"
+    ],
+    "content": "Overtrading, having no plan, ignoring risk management are the most common mistakes...",
+    "fullContent": "<h2>Common Mistakes in Forex Trading</h2>\n\n<h3>1. Overtrading</h3>\n<p>Trading too much leads to exhaustion and losses.</p>\n\n<h3>2. No Trading Plan</h3>\n<p>Easily swayed by the market, lack of discipline.</p>\n\n<h3>3. Ignoring Risk Management</h3>\n<p>No stop-loss, excessive leverage usage.</p>\n\n<h3>4. Lack of Basic Knowledge</h3>\n<p>Easily scammed or make wrong decisions.</p>\n\n<h3>5. Trading Based on Emotions</h3>\n<p>Failure to control fear and greed.</p>"
+  }
+]

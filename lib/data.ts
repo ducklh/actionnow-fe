@@ -6,8 +6,10 @@ import forexNewsDataVi from '../data/forex-news.json'
 import forexNewsDataEn from '../data/forex-news-en.json'
 import cryptoNewsDataVi from '../data/crypto-news.json'
 import cryptoNewsDataEn from '../data/crypto-news-en.json'
-import knowledgeDataVi from '../data/knowledge.json'
-import knowledgeDataEn from '../data/knowledge-en.json'
+import knowledgeDetailVi from '../data/knowledge-detail.json'
+import knowledgeDetailEn from '../data/knowledge-detail-en.json'
+import siteNewsVi from '../data/news.json'
+import siteNewsEn from '../data/news-en.json'
 
 // Types
 export interface ForexBroker {
@@ -85,6 +87,27 @@ export interface KnowledgeItem {
     tags: string[]
 }
 
+// Detail version including fullContent
+export interface KnowledgeDetailItem extends KnowledgeItem {
+    fullContent: string
+}
+
+// Site News (general news) - unified shape
+export interface SiteNewsArticle {
+    id: number
+    title: string
+    excerpt: string
+    content: string
+    category: string
+    author: string
+    publishedAt: string
+    readTime: string
+    image: string
+    tags: string[]
+    fullContent?: string
+    relatedArticles?: number[]
+}
+
 // Language-aware data functions
 export function getForexBrokers(language: 'vi' | 'en' = 'vi'): ForexBroker[] {
     return language === 'en' ? forexBrokersDataEn as ForexBroker[] : forexBrokersDataVi as ForexBroker[]
@@ -102,8 +125,100 @@ export function getCryptoNews(language: 'vi' | 'en' = 'vi'): NewsArticle[] {
     return language === 'en' ? cryptoNewsDataEn as NewsArticle[] : cryptoNewsDataVi as NewsArticle[]
 }
 
+function mapKnowledgeDetailItems(rawItems: any[]): KnowledgeItem[] {
+    return rawItems.map((item: any) => {
+        const numericReadTime = typeof item.readTime === 'number'
+            ? item.readTime
+            : (parseInt(String(item.readTime || '').replace(/[^0-9]/g, ''), 10) || 0)
+
+        return {
+            id: item.id,
+            title: item.title,
+            excerpt: item.description || item.excerpt || '',
+            content: item.content || '',
+            category: item.category,
+            level: item.level,
+            author: item.author || '',
+            publishedAt: item.publishedAt || '',
+            readTime: numericReadTime,
+            image: item.image || '',
+            tags: item.tags || [],
+        } as KnowledgeItem
+    })
+}
+
+function mapKnowledgeDetailItemsWithFull(rawItems: any[]): KnowledgeDetailItem[] {
+    return rawItems.map((item: any) => {
+        const numericReadTime = typeof item.readTime === 'number'
+            ? item.readTime
+            : (parseInt(String(item.readTime || '').replace(/[^0-9]/g, ''), 10) || 0)
+
+        return {
+            id: item.id,
+            title: item.title,
+            excerpt: item.description || item.excerpt || '',
+            content: item.content || '',
+            category: item.category,
+            level: item.level,
+            author: item.author || '',
+            publishedAt: item.publishedAt || '',
+            readTime: numericReadTime,
+            image: item.image || '',
+            tags: item.tags || [],
+            fullContent: item.fullContent || item.fullcontent || '',
+        } as KnowledgeDetailItem
+    })
+}
+
 export function getKnowledge(language: 'vi' | 'en' = 'vi'): KnowledgeItem[] {
-    return language === 'en' ? knowledgeDataEn as KnowledgeItem[] : knowledgeDataVi as KnowledgeItem[]
+    const raw = (language === 'en' ? (knowledgeDetailEn as any[]) : (knowledgeDetailVi as any[]))
+    return mapKnowledgeDetailItems(raw)
+}
+
+export function getKnowledgeDetail(language: 'vi' | 'en' = 'vi'): KnowledgeDetailItem[] {
+    const raw = (language === 'en' ? (knowledgeDetailEn as any[]) : (knowledgeDetailVi as any[]))
+    return mapKnowledgeDetailItemsWithFull(raw)
+}
+
+export function getKnowledgeDetailById(id: number, language: 'vi' | 'en' = 'vi'): KnowledgeDetailItem | undefined {
+    const items = getKnowledgeDetail(language)
+    return items.find(i => i.id === id)
+}
+
+// General News (from data/news*.json)
+export function getNews(language: 'vi' | 'en' = 'vi'): SiteNewsArticle[] {
+    const raw = (language === 'en' ? siteNewsEn : siteNewsVi) as any[]
+
+    return raw.map((item: any) => ({
+        id: item.id,
+        title: item.title,
+        excerpt: item.excerpt,
+        content: item.content,
+        category: item.category,
+        author: item.author,
+        publishedAt: item.publishedAt || item.date || '',
+        readTime: typeof item.readTime === 'number' ? String(item.readTime) : (item.readTime || ''),
+        image: item.image,
+        tags: item.tags || [],
+        fullContent: item.fullContent || item.fullcontent || undefined,
+        relatedArticles: item.relatedArticles || undefined,
+    })) as SiteNewsArticle[]
+}
+
+export function getNewsById(id: number, language: 'vi' | 'en' = 'vi'): SiteNewsArticle | undefined {
+    const articles = getNews(language)
+    return articles.find(a => a.id === id)
+}
+
+export function searchNews(query: string, language: 'vi' | 'en' = 'vi'): SiteNewsArticle[] {
+    const articles = getNews(language)
+    const q = query.toLowerCase()
+    return articles.filter(a =>
+        a.title.toLowerCase().includes(q) ||
+        a.excerpt.toLowerCase().includes(q) ||
+        a.content.toLowerCase().includes(q) ||
+        a.tags.some((t: string) => t.toLowerCase().includes(q))
+    )
 }
 
 // Backward compatibility - default to Vietnamese
@@ -111,7 +226,7 @@ export const forexBrokers: ForexBroker[] = forexBrokersDataVi as ForexBroker[]
 export const cryptoBrokers: CryptoBroker[] = cryptoBrokersDataVi as CryptoBroker[]
 export const forexNews: NewsArticle[] = forexNewsDataVi as NewsArticle[]
 export const cryptoNews: NewsArticle[] = cryptoNewsDataVi as NewsArticle[]
-export const knowledge: KnowledgeItem[] = knowledgeDataVi as KnowledgeItem[]
+export const knowledge: KnowledgeItem[] = mapKnowledgeDetailItems(knowledgeDetailVi as any[])
 
 // Utility functions with language support
 export function getForexBrokerById(id: number, language: 'vi' | 'en' = 'vi'): ForexBroker | undefined {

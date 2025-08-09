@@ -4,171 +4,69 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { BookOpen, Search, Filter, TrendingUp, DollarSign, Shield, BarChart3, Users, Clock, AlertTriangle, CheckCircle, Info, Zap, Settings, Brain, Target } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { getKnowledge, KnowledgeItem as DataKnowledgeItem } from '../../lib/data'
 
 export default function KnowledgePage() {
-    const { t } = useLanguage()
+    const { t, language } = useLanguage()
     const [searchTerm, setSearchTerm] = useState('')
-    const [selectedCategory, setSelectedCategory] = useState('Tất cả')
+    const [selectedCategory, setSelectedCategory] = useState(language === 'en' ? 'All' : 'Tất cả')
 
     const categories = [
-        'Tất cả',
-        'Kiến thức cơ bản',
-        'Phân tích kỹ thuật',
-        'Phân tích cơ bản',
-        'Quản lý rủi ro',
-        'Tâm lý giao dịch',
-        'Chiến lược giao dịch',
-        'Công cụ giao dịch'
+        language === 'en' ? 'All' : 'Tất cả',
+        t('knowledge.basic'),
+        t('knowledge.technical'),
+        t('knowledge.fundamental'),
+        t('knowledge.risk'),
+        t('knowledge.psychology'),
+        t('knowledge.strategy'),
+        t('knowledge.tools')
     ]
 
-    const knowledgeItems = [
-        {
-            id: 1,
-            title: "Forex là gì? Hướng dẫn cơ bản cho người mới",
-            category: "Kiến thức cơ bản",
-            level: "Cơ bản",
-            readTime: "10 phút",
-            description: "Tìm hiểu về thị trường forex, cách hoạt động và các khái niệm cơ bản",
-            icon: Info,
-            tags: ["Forex", "Cơ bản", "Thị trường", "Tiền tệ"],
-            content: "Forex (Foreign Exchange) là thị trường trao đổi tiền tệ quốc tế. Đây là thị trường tài chính lớn nhất thế giới với khối lượng giao dịch hàng ngày lên tới 6.6 nghìn tỷ USD..."
-        },
-        {
-            id: 2,
-            title: "Các cặp tiền tệ chính và cách đọc tỷ giá",
-            category: "Kiến thức cơ bản",
-            level: "Cơ bản",
-            readTime: "8 phút",
-            description: "Hiểu về các cặp tiền tệ chính, phụ và cách đọc tỷ giá forex",
-            icon: DollarSign,
-            tags: ["Cặp tiền", "Tỷ giá", "Major", "Minor"],
-            content: "Các cặp tiền tệ chính (Major pairs) bao gồm EUR/USD, GBP/USD, USD/JPY, USD/CHF, AUD/USD, USD/CAD, NZD/USD..."
-        },
-        {
-            id: 3,
-            title: "Pip, Lot và Leverage - Khái niệm quan trọng",
-            category: "Kiến thức cơ bản",
-            level: "Cơ bản",
-            readTime: "12 phút",
-            description: "Tìm hiểu về pip, lot size và đòn bẩy trong giao dịch forex",
-            icon: Zap,
-            tags: ["Pip", "Lot", "Leverage", "Đòn bẩy"],
-            content: "Pip (Percentage in Point) là đơn vị nhỏ nhất để đo lường sự thay đổi tỷ giá. Một pip thường bằng 0.0001 cho hầu hết các cặp tiền..."
-        },
-        {
-            id: 4,
-            title: "Phân tích kỹ thuật - Các mô hình biểu đồ",
-            category: "Phân tích kỹ thuật",
-            level: "Trung cấp",
-            readTime: "15 phút",
-            description: "Học về các mô hình biểu đồ quan trọng trong phân tích kỹ thuật",
-            icon: BarChart3,
-            tags: ["Mô hình", "Biểu đồ", "Kỹ thuật", "Pattern"],
-            content: "Các mô hình biểu đồ như Head and Shoulders, Double Top/Bottom, Triangle, Flag và Pennant là công cụ quan trọng..."
-        },
-        {
-            id: 5,
-            title: "Chỉ báo kỹ thuật phổ biến và cách sử dụng",
-            category: "Phân tích kỹ thuật",
-            level: "Trung cấp",
-            readTime: "20 phút",
-            description: "Tìm hiểu về RSI, MACD, Moving Average và các chỉ báo khác",
-            icon: TrendingUp,
-            tags: ["RSI", "MACD", "Moving Average", "Chỉ báo"],
-            content: "RSI (Relative Strength Index) là chỉ báo đo lường tốc độ và mức độ thay đổi giá. Giá trị từ 0-100..."
-        },
-        {
-            id: 6,
-            title: "Phân tích cơ bản - Các yếu tố ảnh hưởng",
-            category: "Phân tích cơ bản",
-            level: "Trung cấp",
-            readTime: "18 phút",
-            description: "Hiểu về các yếu tố kinh tế ảnh hưởng đến tỷ giá tiền tệ",
-            icon: Users,
-            tags: ["Kinh tế", "Lãi suất", "GDP", "CPI"],
-            content: "Các yếu tố cơ bản ảnh hưởng đến tỷ giá bao gồm lãi suất, GDP, tỷ lệ thất nghiệp, lạm phát..."
-        },
-        {
-            id: 7,
-            title: "Quản lý vốn và quản lý rủi ro",
-            category: "Quản lý rủi ro",
-            level: "Nâng cao",
-            readTime: "25 phút",
-            description: "Chiến lược quản lý vốn hiệu quả và giảm thiểu rủi ro",
-            icon: Shield,
-            tags: ["Quản lý vốn", "Rủi ro", "Stop Loss", "Risk/Reward"],
-            content: "Quy tắc 2%: Không bao giờ rủi ro quá 2% tài khoản cho một giao dịch. Điều này giúp bảo vệ vốn..."
-        },
-        {
-            id: 8,
-            title: "Tâm lý giao dịch - Kỷ luật và kiên nhẫn",
-            category: "Tâm lý giao dịch",
-            level: "Nâng cao",
-            readTime: "22 phút",
-            description: "Phát triển tâm lý giao dịch vững vàng và kỷ luật",
-            icon: CheckCircle,
-            tags: ["Tâm lý", "Kỷ luật", "Kiên nhẫn", "Emotion"],
-            content: "Tâm lý giao dịch chiếm 80% thành công trong forex. Fear và Greed là hai cảm xúc nguy hiểm nhất..."
-        },
-        {
-            id: 9,
-            title: "Chiến lược Scalping cho người mới",
-            category: "Chiến lược giao dịch",
-            level: "Trung cấp",
-            readTime: "16 phút",
-            description: "Hướng dẫn chiến lược giao dịch ngắn hạn hiệu quả",
-            icon: Settings,
-            tags: ["Scalping", "Ngắn hạn", "Chiến lược", "Quick trade"],
-            content: "Scalping là chiến lược giao dịch trong thời gian rất ngắn, thường từ vài giây đến vài phút..."
-        },
-        {
-            id: 10,
-            title: "Chiến lược Swing Trading",
-            category: "Chiến lược giao dịch",
-            level: "Trung cấp",
-            readTime: "19 phút",
-            description: "Chiến lược giao dịch trung hạn từ vài ngày đến vài tuần",
-            icon: TrendingUp,
-            tags: ["Swing", "Trung hạn", "Trend", "Momentum"],
-            content: "Swing Trading là chiến lược nắm giữ vị thế từ vài ngày đến vài tuần, tận dụng các xu hướng..."
-        },
-        {
-            id: 11,
-            title: "MT4 và MT5 - Hướng dẫn sử dụng cơ bản",
-            category: "Công cụ giao dịch",
-            level: "Cơ bản",
-            readTime: "14 phút",
-            description: "Hướng dẫn sử dụng MetaTrader 4 và MetaTrader 5",
-            icon: BarChart3,
-            tags: ["MT4", "MT5", "Platform", "Giao dịch"],
-            content: "MetaTrader là nền tảng giao dịch phổ biến nhất thế giới. MT4 và MT5 có giao diện thân thiện..."
-        },
-        {
-            id: 12,
-            title: "Các lỗi thường gặp và cách tránh",
-            category: "Kiến thức cơ bản",
-            level: "Cơ bản",
-            readTime: "12 phút",
-            description: "Tổng hợp các lỗi phổ biến và cách phòng tránh",
-            icon: AlertTriangle,
-            tags: ["Lỗi", "Phòng tránh", "Kinh nghiệm", "Tips"],
-            content: "Giao dịch quá nhiều, không có kế hoạch, bỏ qua quản lý rủi ro là những lỗi phổ biến nhất..."
-        }
-    ]
+    const rawItems = getKnowledge(language)
+
+    const getIconByCategory = (category: string) => {
+        const cat = category.toLowerCase()
+        if (cat.includes('basic') || cat.includes('cơ bản')) return Info
+        if (cat.includes('technical') || cat.includes('kỹ thuật')) return BarChart3
+        if (cat.includes('fundamental') || cat.includes('cơ bản') || cat.includes('phân tích cơ bản')) return Users
+        if (cat.includes('risk') || cat.includes('rủi ro')) return Shield
+        if (cat.includes('psychology') || cat.includes('tâm lý')) return CheckCircle
+        if (cat.includes('strategy') || cat.includes('chiến lược')) return TrendingUp
+        if (cat.includes('tool') || cat.includes('công cụ')) return Settings
+        return BookOpen
+    }
+
+    const knowledgeItems = rawItems.map(item => ({
+        id: item.id,
+        title: item.title,
+        category: item.category,
+        level: item.level,
+        readTime: `${typeof (item as any).readTime === 'number' ? (item as any).readTime : String((item as any).readTime)} ${t('common.readTime')}`,
+        description: (item as any).excerpt || '',
+        icon: getIconByCategory(item.category),
+        tags: item.tags,
+        content: item.content,
+    }))
 
     const filteredItems = knowledgeItems.filter(item => {
         const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
             item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
             item.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-        const matchesCategory = selectedCategory === 'Tất cả' || item.category === selectedCategory
+        const matchesCategory = (selectedCategory === 'Tất cả' || selectedCategory === 'All') || item.category === selectedCategory
         return matchesSearch && matchesCategory
     })
 
     const getLevelColor = (level: string) => {
         switch (level) {
-            case 'Cơ bản': return 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
-            case 'Trung cấp': return 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200'
-            case 'Nâng cao': return 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200'
+            case 'Cơ bản':
+            case 'Beginner':
+                return 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
+            case 'Trung cấp':
+            case 'Intermediate':
+                return 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200'
+            case 'Nâng cao':
+            case 'Advanced':
+                return 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200'
             default: return 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300'
         }
     }

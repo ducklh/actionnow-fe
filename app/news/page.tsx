@@ -4,30 +4,26 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { TrendingUp, Calendar, User, ArrowRight, Search, Filter } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
-import { getForexNews, searchForexNews, NewsArticle } from '../../lib/data'
+import { getNews, searchNews, SiteNewsArticle } from '../../lib/data'
 
 
 
-const categories = [
-    "Tất cả",
-    "Phân tích kỹ thuật",
-    "Phân tích cơ bản",
-    "Tin tức thị trường"
-]
+const categoriesVi = ["Tất cả", "Phân tích kỹ thuật", "Phân tích cơ bản", "Tin tức thị trường"]
+const categoriesEn = ["All", "Technical Analysis", "Fundamental Analysis", "Market News"]
 
 export default function NewsPage() {
     const { t, language } = useLanguage()
     const [searchTerm, setSearchTerm] = useState('')
-    const [selectedCategory, setSelectedCategory] = useState('Tất cả')
+    const [selectedCategory, setSelectedCategory] = useState(language === 'en' ? 'All' : 'Tất cả')
 
-    const newsArticles = getForexNews(language)
+    const newsArticles = getNews(language)
 
     const filteredArticles = newsArticles.filter(article => {
         const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
             article.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
             article.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
 
-        const matchesCategory = selectedCategory === 'Tất cả' || article.category === selectedCategory
+        const matchesCategory = (selectedCategory === 'Tất cả' || selectedCategory === 'All') || article.category === selectedCategory
 
         return matchesSearch && matchesCategory
     })
@@ -98,7 +94,7 @@ export default function NewsPage() {
                                 onChange={(e) => setSelectedCategory(e.target.value)}
                                 className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                             >
-                                {categories.map(category => (
+                                {(language === 'en' ? categoriesEn : categoriesVi).map(category => (
                                     <option key={category} value={category}>{category}</option>
                                 ))}
                             </select>
@@ -125,11 +121,11 @@ export default function NewsPage() {
                                         </div>
                                         <div className="flex items-center">
                                             <Calendar className="h-4 w-4 mr-1" />
-                                            {new Date(article.publishedAt).toLocaleDateString('vi-VN')}
+                                            {new Date(article.publishedAt).toLocaleDateString(language === 'en' ? 'en-US' : 'vi-VN')}
                                         </div>
                                     </div>
                                     <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">
-                                        {article.readTime} phút
+                                        {article.readTime} {t('common.readTime')}
                                     </span>
                                 </div>
 

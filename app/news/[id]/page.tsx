@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark, TrendingUp, Tag } from 'lucide-react'
 import { useLanguage } from '../../contexts/LanguageContext'
+import { getNewsById, getNews } from '../../../lib/data'
 
 interface NewsArticle {
   id: number
@@ -401,8 +402,9 @@ const newsArticles: NewsArticle[] = [
 ]
 
 export default function NewsDetailPage({ params }: { params: { id: string } }) {
-  const { t } = useLanguage()
-  const article = newsArticles.find(a => a.id === parseInt(params.id))
+  const { t, language } = useLanguage()
+  const all = getNews(language)
+  const article = all.find(a => a.id === parseInt(params.id)) as any
 
   if (!article) {
     return (
@@ -417,7 +419,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
     )
   }
 
-  const relatedArticles = newsArticles.filter(a => article.relatedArticles.includes(a.id))
+  const relatedArticles = all.filter(a => (article?.relatedArticles || []).includes(a.id)) as any[]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
@@ -465,18 +467,18 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
                 </div>
                 <div className="flex items-center">
                   <Calendar className="h-4 w-4 mr-2" />
-                  {new Date(article.date).toLocaleDateString('vi-VN')}
+                  {new Date(article.publishedAt || article.date).toLocaleDateString(language === 'en' ? 'en-US' : 'vi-VN')}
                 </div>
                 <div className="flex items-center">
                   <Clock className="h-4 w-4 mr-2" />
-                  {article.readTime}
+                  {article.readTime} {t('common.readTime')}
                 </div>
               </div>
             </div>
 
             {/* Tags */}
             <div className="flex flex-wrap gap-2">
-              {article.tags.map((tag, index) => (
+              {article.tags.map((tag: string, index: number) => (
                 <span
                   key={index}
                   className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full flex items-center"

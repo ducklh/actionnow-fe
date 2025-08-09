@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Clock, Tag, Share2, Bookmark, TrendingUp, DollarSign, Shield, BarChart3, Users, AlertTriangle, CheckCircle, Info, Zap, Settings, Brain, Target } from 'lucide-react'
 import { useLanguage } from '../../contexts/LanguageContext'
+import { getKnowledgeDetail, getKnowledgeDetailById } from '../../../lib/data'
 
 interface KnowledgeItem {
     id: number
@@ -618,8 +619,34 @@ const knowledgeItems: KnowledgeItem[] = [
 ]
 
 export default function KnowledgeDetailPage({ params }: { params: { id: string } }) {
-    const { t } = useLanguage()
-    const article = knowledgeItems.find(item => item.id === parseInt(params.id))
+    const { t, language } = useLanguage()
+
+    const getIconByCategory = (category: string) => {
+        const cat = category.toLowerCase()
+        if (cat.includes('basic') || cat.includes('cơ bản')) return Info
+        if (cat.includes('technical') || cat.includes('kỹ thuật')) return BarChart3
+        if (cat.includes('fundamental') || cat.includes('cơ bản') || cat.includes('phân tích cơ bản')) return Users
+        if (cat.includes('risk') || cat.includes('rủi ro')) return Shield
+        if (cat.includes('psychology') || cat.includes('tâm lý')) return CheckCircle
+        if (cat.includes('strategy') || cat.includes('chiến lược')) return TrendingUp
+        if (cat.includes('tool') || cat.includes('công cụ')) return Settings
+        return BookOpen
+    }
+
+    const items = getKnowledgeDetail(language).map(item => ({
+        id: item.id,
+        title: item.title,
+        category: item.category,
+        level: item.level,
+        readTime: `${item.readTime} ${t('common.readTime')}`,
+        description: (item as any).excerpt || '',
+        icon: getIconByCategory(item.category),
+        tags: item.tags || [],
+        content: item.content || '',
+        fullContent: (item as any).fullContent || ''
+    }))
+
+    const article = items.find(item => item.id === parseInt(params.id))
 
     if (!article) {
         return (
@@ -741,9 +768,9 @@ export default function KnowledgeDetailPage({ params }: { params: { id: string }
 
                 {/* Related Articles */}
                 <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Bài viết liên quan</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('knowledge.related')}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {knowledgeItems
+                        {items
                             .filter(item => item.id !== article.id)
                             .slice(0, 4)
                             .map((relatedArticle) => {
