@@ -106,19 +106,19 @@ export default function CryptoBrokersPage() {
                             {/* Broker Header */}
                             <div className="p-6 border-b border-gray-100 dark:border-gray-700 flex-shrink-0">
                                 <div className="flex items-center justify-between mb-4">
-                                    <ImageWithFallback
-                                        src={broker.logo}
-                                        alt={broker.name}
-                                        className="h-12 object-contain"
-                                    />
+                                    <div className="flex items-center min-w-0">
+                                        <ImageWithFallback
+                                            src={broker.logo}
+                                            alt={broker.name}
+                                            className="h-8 w-auto object-contain mr-3"
+                                        />
+                                        <h3 className="text-xl font-bold text-gray-900 dark:text-white truncate">{broker.name}</h3>
+                                    </div>
                                     <div className="flex items-center">
                                         <span className="text-yellow-500 mr-1">★</span>
                                         <span className="font-semibold text-gray-800 dark:text-white">{broker.rating}</span>
                                     </div>
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                                    {broker.name}
-                                </h3>
                                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                                     {broker.description}
                                 </p>
