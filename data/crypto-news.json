@@ -8,8 +8,14 @@
         "author": "Nguyễn Văn A",
         "publishedAt": "2024-03-20T10:00:00Z",
         "readTime": 4,
-        "image": "https://via.placeholder.com/800x400/f7931a/ffffff?text=Bitcoin+70k",
-        "tags": ["Bitcoin", "ETF", "70,000", "Crypto", "Bull run"]
+        "image": "/news/news1.png",
+        "tags": [
+            "Bitcoin",
+            "ETF",
+            "70,000",
+            "Crypto",
+            "Bull run"
+        ]
     },
     {
         "id": 2,
@@ -20,8 +26,14 @@
         "author": "Trần Thị B",
         "publishedAt": "2024-03-19T14:30:00Z",
         "readTime": 5,
-        "image": "https://via.placeholder.com/800x400/627eea/ffffff?text=Ethereum+2.0",
-        "tags": ["Ethereum", "The Merge", "Proof of Stake", "ETH 2.0", "DeFi"]
+        "image": "/news/news2.png",
+        "tags": [
+            "Ethereum",
+            "The Merge",
+            "Proof of Stake",
+            "ETH 2.0",
+            "DeFi"
+        ]
     },
     {
         "id": 3,
@@ -32,8 +44,14 @@
         "author": "Lê Văn C",
         "publishedAt": "2024-03-18T09:15:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/00d4aa/ffffff?text=DeFi+Protocol",
-        "tags": ["DeFi", "TVL", "Yield farming", "Rug pull", "Smart contract"]
+        "image": "/news/news3.png",
+        "tags": [
+            "DeFi",
+            "TVL",
+            "Yield farming",
+            "Rug pull",
+            "Smart contract"
+        ]
     },
     {
         "id": 4,
@@ -44,8 +62,14 @@
         "author": "Phạm Thị D",
         "publishedAt": "2024-03-17T16:45:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/ff6b35/ffffff?text=BAYC+NFT",
-        "tags": ["NFT", "BAYC", "ApeCoin", "Yuga Labs", "Floor price"]
+        "image": "/news/news4.png",
+        "tags": [
+            "NFT",
+            "BAYC",
+            "ApeCoin",
+            "Yuga Labs",
+            "Floor price"
+        ]
     },
     {
         "id": 5,
@@ -56,8 +80,14 @@
         "author": "Hoàng Văn E",
         "publishedAt": "2024-03-16T11:20:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/f0b90b/ffffff?text=Binance+Listing",
-        "tags": ["Binance", "Listing", "GameFi", "DeFi", "FOMO"]
+        "image": "/news/news5.jpg",
+        "tags": [
+            "Binance",
+            "Listing",
+            "GameFi",
+            "DeFi",
+            "FOMO"
+        ]
     },
     {
         "id": 6,
@@ -68,8 +98,14 @@
         "author": "Vũ Thị F",
         "publishedAt": "2024-03-15T13:10:00Z",
         "readTime": 4,
-        "image": "https://via.placeholder.com/800x400/1e3a8a/ffffff?text=SEC+Regulation",
-        "tags": ["SEC", "Regulation", "Compliance", "Crypto law", "Investor protection"]
+        "image": "/news/news6.jpg",
+        "tags": [
+            "SEC",
+            "Regulation",
+            "Compliance",
+            "Crypto law",
+            "Investor protection"
+        ]
     },
     {
         "id": 7,
@@ -80,8 +116,14 @@
         "author": "Đặng Văn G",
         "publishedAt": "2024-03-14T15:30:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/8247e5/ffffff?text=Polygon+MATIC",
-        "tags": ["Polygon", "MATIC", "Layer 2", "DeFi", "Ethereum scaling"]
+        "image": "/news/news7.jpeg",
+        "tags": [
+            "Polygon",
+            "MATIC",
+            "Layer 2",
+            "DeFi",
+            "Ethereum scaling"
+        ]
     },
     {
         "id": 8,
@@ -92,7 +134,13 @@
         "author": "Ngô Thị H",
         "publishedAt": "2024-03-13T10:45:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/c2a633/ffffff?text=Dogecoin+DOGE",
-        "tags": ["Dogecoin", "DOGE", "Elon Musk", "Meme coin", "Hype"]
+        "image": "/news/news8.jpeg",
+        "tags": [
+            "Dogecoin",
+            "DOGE",
+            "Elon Musk",
+            "Meme coin",
+            "Hype"
+        ]
     }
-] 
+]

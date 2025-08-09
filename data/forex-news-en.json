@@ -8,7 +8,7 @@
         "author": "Nguyen Huu Nghia",
         "publishedAt": "2024-03-20T10:00:00Z",
         "readTime": 5,
-        "image": "https://via.placeholder.com/800x400/2563eb/ffffff?text=Fed+Rate+Hike",
+        "image": "/news/news1.png",
         "tags": [
             "Fed",
             "USD",
@@ -26,7 +26,7 @@
         "author": "Tran Van Hieu",
         "publishedAt": "2024-03-19T14:30:00Z",
         "readTime": 4,
-        "image": "https://via.placeholder.com/800x400/10b981/ffffff?text=EUR+USD+Chart",
+        "image": "/news/news2.png",
         "tags": [
             "EUR/USD",
             "Technical Analysis",
@@ -44,7 +44,7 @@
         "author": "James",
         "publishedAt": "2024-03-18T09:15:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/f59e0b/ffffff?text=GBP+USD+Rally",
+        "image": "/news/news3.png",
         "tags": [
             "GBP/USD",
             "BoE",
@@ -62,7 +62,7 @@
         "author": "Pham Thi D",
         "publishedAt": "2024-03-17T16:45:00Z",
         "readTime": 4,
-        "image": "https://via.placeholder.com/800x400/ef4444/ffffff?text=USD+JPY+Chart",
+        "image": "/news/news4.png",
         "tags": [
             "USD/JPY",
             "BoJ",
@@ -80,7 +80,7 @@
         "author": "Hoang Van E",
         "publishedAt": "2024-03-16T11:20:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/8b5cf6/ffffff?text=AUD+USD+Drop",
+        "image": "/news/news5.jpg",
         "tags": [
             "AUD/USD",
             "RBA",
@@ -98,7 +98,7 @@
         "author": "Vu Thi F",
         "publishedAt": "2024-03-15T13:10:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/06b6d4/ffffff?text=USD+CAD+Rise",
+        "image": "/news/news6.jpg",
         "tags": [
             "USD/CAD",
             "BoC",
@@ -116,7 +116,7 @@
         "author": "Dang Van G",
         "publishedAt": "2024-03-14T15:30:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/16a34a/ffffff?text=NZD+USD+Rise",
+        "image": "/news/news7.jpeg",
         "tags": [
             "NZD/USD",
             "RBNZ",
@@ -134,7 +134,7 @@
         "author": "Ngo Thi H",
         "publishedAt": "2024-03-13T10:45:00Z",
         "readTime": 4,
-        "image": "https://via.placeholder.com/800x400/d946ef/ffffff?text=EUR+GBP+Chart",
+        "image": "/news/news8.jpeg",
         "tags": [
             "EUR/GBP",
             "Technical Analysis",

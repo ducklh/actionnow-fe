@@ -8,7 +8,7 @@
         "author": "Nguyen Huu Nghia",
         "publishedAt": "2024-03-20T10:00:00Z",
         "readTime": 4,
-        "image": "https://via.placeholder.com/800x400/f7931a/ffffff?text=Bitcoin+70k",
+        "image": "/news/news1.png",
         "tags": [
             "Bitcoin",
             "ETF",
@@ -26,7 +26,7 @@
         "author": "Tran Van Hieu",
         "publishedAt": "2024-03-19T14:30:00Z",
         "readTime": 5,
-        "image": "https://via.placeholder.com/800x400/627eea/ffffff?text=Ethereum+2.0",
+        "image": "/news/news2.png",
         "tags": [
             "Ethereum",
             "The Merge",
@@ -44,7 +44,7 @@
         "author": "James",
         "publishedAt": "2024-03-18T09:15:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/00d4aa/ffffff?text=DeFi+Protocol",
+        "image": "/news/news3.png",
         "tags": [
             "DeFi",
             "TVL",
@@ -62,7 +62,7 @@
         "author": "Pham Thi D",
         "publishedAt": "2024-03-17T16:45:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/ff6b35/ffffff?text=BAYC+NFT",
+        "image": "/news/news4.png",
         "tags": [
             "NFT",
             "BAYC",
@@ -80,7 +80,7 @@
         "author": "Hoang Van E",
         "publishedAt": "2024-03-16T11:20:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/f0b90b/ffffff?text=Binance+Listing",
+        "image": "/news/news5.jpg",
         "tags": [
             "Binance",
             "Listing",
@@ -98,7 +98,7 @@
         "author": "Vu Thi F",
         "publishedAt": "2024-03-15T13:10:00Z",
         "readTime": 4,
-        "image": "https://via.placeholder.com/800x400/1e3a8a/ffffff?text=SEC+Regulation",
+        "image": "/news/news6.jpg",
         "tags": [
             "SEC",
             "Regulation",
@@ -116,7 +116,7 @@
         "author": "Dang Van G",
         "publishedAt": "2024-03-14T15:30:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/8247e5/ffffff?text=Polygon+MATIC",
+        "image": "/news/news7.jpeg",
         "tags": [
             "Polygon",
             "MATIC",
@@ -134,7 +134,7 @@
         "author": "Ngo Thi H",
         "publishedAt": "2024-03-13T10:45:00Z",
         "readTime": 3,
-        "image": "https://via.placeholder.com/800x400/c2a633/ffffff?text=Dogecoin+DOGE",
+        "image": "/news/news8.jpeg",
         "tags": [
             "Dogecoin",
             "DOGE",
