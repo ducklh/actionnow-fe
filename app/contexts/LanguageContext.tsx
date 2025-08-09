@@ -20,6 +20,8 @@ const translations = {
         'nav.forex': 'Sàn Forex',
         'nav.news': 'Tin Tức',
         'nav.knowledge': 'Kiến Thức',
+        'nav.cryptoBrokers': 'Sàn Crypto',
+        'nav.cryptoNews': 'Tin Crypto',
 
         // Common
         'common.back': 'Quay lại',
@@ -97,6 +99,8 @@ const translations = {
         'broker.languages': 'Ngôn ngữ hỗ trợ',
         'broker.support': 'Hỗ trợ khách hàng',
         'broker.paymentMethods': 'Phương thức thanh toán',
+        'broker.quickInfo': 'Thông tin nhanh',
+        'broker.leverage': 'Đòn bẩy',
 
         // Settings
         'settings.language': 'Ngôn ngữ',
@@ -166,6 +170,8 @@ const translations = {
         'nav.forex': 'Forex Brokers',
         'nav.news': 'News',
         'nav.knowledge': 'Knowledge',
+        'nav.cryptoBrokers': 'Crypto Brokers',
+        'nav.cryptoNews': 'Crypto News',
 
         // Common
         'common.back': 'Back',
@@ -243,6 +249,8 @@ const translations = {
         'broker.languages': 'Supported Languages',
         'broker.support': 'Customer Support',
         'broker.paymentMethods': 'Payment Methods',
+        'broker.quickInfo': 'Quick Info',
+        'broker.leverage': 'Leverage',
 
         // Settings
         'settings.language': 'Language',

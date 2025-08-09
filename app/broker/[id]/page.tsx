@@ -12,7 +12,7 @@ export default function BrokerDetailPage({ params }: { params: { id: string } })
         return (
             <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
                 <div className="text-center">
-                    <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Không tìm thấy sàn forex</h1>
+                    <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('home.noBrokersFound')}</h1>
                     <Link href="/" className="text-blue-600 hover:text-blue-700">
                         {t('common.back')}
                     </Link>
@@ -113,28 +113,28 @@ export default function BrokerDetailPage({ params }: { params: { id: string } })
                         </div>
 
                         {/* Trading Information */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                            <h2 className="text-xl font-bold text-gray-800 mb-4">Thông tin giao dịch</h2>
+                        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-100 dark:border-gray-700">
+                            <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">{t('broker.tradingInfo')}</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-semibold text-gray-800 mb-3">Nền tảng giao dịch</h3>
+                                    <h3 className="font-semibold text-gray-800 dark:text-white mb-3">{t('broker.platforms')}</h3>
                                     <div className="space-y-2">
                                         {broker.platforms.map((platform, index) => (
                                             <div key={index} className="flex items-center">
                                                 <CheckCircle className="h-4 w-4 text-blue-500 mr-2" />
-                                                <span className="text-gray-800">{platform}</span>
+                                                <span className="text-gray-800 dark:text-gray-200">{platform}</span>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
 
                                 <div>
-                                    <h3 className="font-semibold text-gray-800 mb-3">Sản phẩm giao dịch</h3>
+                                    <h3 className="font-semibold text-gray-800 dark:text-white mb-3">{t('broker.instruments')}</h3>
                                     <div className="space-y-2">
                                         {broker.instruments.map((instrument, index) => (
                                             <div key={index} className="flex items-center">
                                                 <CheckCircle className="h-4 w-4 text-blue-500 mr-2" />
-                                                <span className="text-gray-800">{instrument}</span>
+                                                <span className="text-gray-800 dark:text-gray-200">{instrument}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -146,81 +146,81 @@ export default function BrokerDetailPage({ params }: { params: { id: string } })
                     {/* Sidebar */}
                     <div className="space-y-6">
                         {/* Quick Info */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                            <h3 className="text-lg font-bold text-gray-800 mb-4">Thông tin nhanh</h3>
+                        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-100 dark:border-gray-700">
+                            <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-4">{t('broker.quickInfo')}</h3>
                             <div className="space-y-4">
                                 <div className="flex items-center min-w-0">
                                     <Shield className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
                                     <div className="min-w-0 flex-1">
-                                        <p className="text-sm text-gray-600">Quy định</p>
-                                        <p className="font-medium text-gray-800 truncate">{broker.regulation}</p>
+                                        <p className="text-sm text-gray-600 dark:text-gray-300">{t('home.regulation')}</p>
+                                        <p className="font-medium text-gray-800 dark:text-gray-200 truncate">{broker.regulation}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center min-w-0">
                                     <DollarSign className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
                                     <div className="min-w-0 flex-1">
-                                        <p className="text-sm text-gray-600">Nạp tối thiểu</p>
-                                        <p className="font-medium text-gray-800 truncate">{broker.minDeposit}</p>
+                                        <p className="text-sm text-gray-600 dark:text-gray-300">{t('home.minDeposit')}</p>
+                                        <p className="font-medium text-gray-800 dark:text-gray-200 truncate">{broker.minDeposit}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center min-w-0">
                                     <TrendingUp className="h-5 w-5 text-purple-600 mr-3 flex-shrink-0" />
                                     <div className="min-w-0 flex-1">
-                                        <p className="text-sm text-gray-600">Spread</p>
-                                        <p className="font-medium text-gray-800 truncate">{broker.spreads}</p>
+                                        <p className="text-sm text-gray-600 dark:text-gray-300">{t('home.spread')}</p>
+                                        <p className="font-medium text-gray-800 dark:text-gray-200 truncate">{broker.spreads}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center min-w-0">
                                     <Info className="h-5 w-5 text-orange-600 mr-3 flex-shrink-0" />
                                     <div className="min-w-0 flex-1">
-                                        <p className="text-sm text-gray-600">Leverage</p>
-                                        <p className="font-medium text-gray-800 truncate">{broker.leverage}</p>
+                                        <p className="text-sm text-gray-600 dark:text-gray-300">{t('broker.leverage')}</p>
+                                        <p className="font-medium text-gray-800 dark:text-gray-200 truncate">{broker.leverage}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* Company Info */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                            <h3 className="text-lg font-bold text-gray-800 mb-4">Thông tin công ty</h3>
+                        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-100 dark:border-gray-700">
+                            <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-4">{t('broker.companyInfo')}</h3>
                             <div className="space-y-3">
                                 <div className="min-w-0">
-                                    <p className="text-sm text-gray-600">Thành lập</p>
-                                    <p className="font-medium text-gray-800 truncate">{broker.founded}</p>
+                                    <p className="text-sm text-gray-600 dark:text-gray-300">{t('broker.founded')}</p>
+                                    <p className="font-medium text-gray-800 dark:text-gray-200 truncate">{broker.founded}</p>
                                 </div>
                                 <div className="min-w-0">
-                                    <p className="text-sm text-gray-600">Trụ sở</p>
-                                    <p className="font-medium text-gray-800 truncate">{broker.headquarters}</p>
+                                    <p className="text-sm text-gray-600 dark:text-gray-300">{t('broker.headquarters')}</p>
+                                    <p className="font-medium text-gray-800 dark:text-gray-200 truncate">{broker.headquarters}</p>
                                 </div>
                                 <div className="min-w-0">
-                                    <p className="text-sm text-gray-600">Ngôn ngữ hỗ trợ</p>
-                                    <p className="font-medium text-gray-800 truncate">{broker.languages.join(', ')}</p>
+                                    <p className="text-sm text-gray-600 dark:text-gray-300">{t('broker.languages')}</p>
+                                    <p className="font-medium text-gray-800 dark:text-gray-200 truncate">{broker.languages.join(', ')}</p>
                                 </div>
                             </div>
                         </div>
 
                         {/* Support & Payment */}
-                        <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                            <h3 className="text-lg font-bold text-gray-800 mb-4">Hỗ trợ & Thanh toán</h3>
+                        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-100 dark:border-gray-700">
+                            <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-4">{t('broker.support')} & {t('broker.paymentMethods')}</h3>
                             <div className="space-y-4">
                                 <div>
-                                    <p className="text-sm text-gray-600 mb-2">Hỗ trợ khách hàng</p>
+                                    <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{t('broker.support')}</p>
                                     <div className="space-y-1">
                                         {broker.support.map((method, index) => (
                                             <div key={index} className="flex items-center min-w-0">
                                                 <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                                                <span className="text-sm text-gray-800 truncate">{method}</span>
+                                                <span className="text-sm text-gray-800 dark:text-gray-200 truncate">{method}</span>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-600 mb-2">Phương thức thanh toán</p>
+                                    <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{t('broker.paymentMethods')}</p>
                                     <div className="space-y-1">
                                         {broker.paymentMethods.map((method, index) => (
                                             <div key={index} className="flex items-center min-w-0">
                                                 <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                                                <span className="text-sm text-gray-800 truncate">{method}</span>
+                                                <span className="text-sm text-gray-800 dark:text-gray-200 truncate">{method}</span>
                                             </div>
                                         ))}
                                     </div>

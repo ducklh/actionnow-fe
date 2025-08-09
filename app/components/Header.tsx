@@ -91,13 +91,13 @@ export default function Header({ activePage, theme = 'blue' }: HeaderProps) {
                             href="/crypto-brokers"
                             className={`font-medium ${activePage === 'crypto-brokers' ? getActiveColor() : `text-gray-500 dark:text-gray-400 ${getCryptoHoverColor()}`}`}
                         >
-                            Crypto Brokers
+                            {t('nav.cryptoBrokers')}
                         </Link>
                         <Link
                             href="/crypto"
                             className={`font-medium ${activePage === 'crypto' ? getActiveColor() : `text-gray-500 dark:text-gray-400 ${getCryptoHoverColor()}`}`}
                         >
-                            Crypto News
+                            {t('nav.cryptoNews')}
                         </Link>
                         <Link
                             href="/news"
@@ -142,14 +142,14 @@ export default function Header({ activePage, theme = 'blue' }: HeaderProps) {
                                 className={`block px-3 py-2 rounded-md text-base font-medium ${activePage === 'crypto-brokers' ? getActiveColor() : 'text-gray-500 dark:text-gray-400'} ${getCryptoHoverBg()}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
-                                Crypto Brokers
+                                {t('nav.cryptoBrokers')}
                             </Link>
                             <Link
                                 href="/crypto"
                                 className={`block px-3 py-2 rounded-md text-base font-medium ${activePage === 'crypto' ? getActiveColor() : 'text-gray-500 dark:text-gray-400'} ${getCryptoHoverBg()}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
-                                Crypto News
+                                {t('nav.cryptoNews')}
                             </Link>
                             <Link
                                 href="/news"
