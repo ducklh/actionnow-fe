@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "XM",
-        "logo": "https://via.placeholder.com/120x60/2563eb/ffffff?text=XM",
+        "logo": "/forex-brokers/XM.jpg",
         "url": "https://www.xm.com",
         "description": "Sàn forex hàng đầu với hơn 10 triệu khách hàng toàn cầu, cung cấp dịch vụ giao dịch forex, CFD và kim loại quý với công nghệ tiên tiến và hỗ trợ khách hàng 24/7.",
         "rating": 4.8,
@@ -67,7 +67,7 @@
     {
         "id": 2,
         "name": "FXTM",
-        "logo": "https://via.placeholder.com/120x60/10b981/ffffff?text=FXTM",
+        "logo": "/forex-brokers/fxtm_logo_22df8de2c8.png",
         "url": "https://www.forextime.com",
         "description": "Sàn forex uy tín với công nghệ tiên tiến, cung cấp dịch vụ giao dịch forex và CFD với nền tảng MT4/MT5 và các công cụ phân tích chuyên nghiệp.",
         "rating": 4.7,
@@ -132,7 +132,7 @@
     {
         "id": 3,
         "name": "IC Markets",
-        "logo": "https://via.placeholder.com/120x60/f59e0b/ffffff?text=IC+Markets",
+        "logo": "/forex-brokers/IC.png",
         "url": "https://www.icmarkets.com",
         "description": "Sàn ECN với spread cực thấp và khối lượng giao dịch lớn, phù hợp cho các trader chuyên nghiệp và scalping.",
         "rating": 4.9,
@@ -195,7 +195,7 @@
     {
         "id": 4,
         "name": "Pepperstone",
-        "logo": "https://via.placeholder.com/120x60/ef4444/ffffff?text=Pepperstone",
+        "logo": "/forex-brokers/pepperstone.png",
         "url": "https://www.pepperstone.com",
         "description": "Sàn forex chuyên nghiệp với công nghệ Razor, cung cấp dịch vụ giao dịch ECN với spread thấp và tốc độ thực thi nhanh.",
         "rating": 4.6,
@@ -258,7 +258,7 @@
     {
         "id": 5,
         "name": "OANDA",
-        "logo": "https://via.placeholder.com/120x60/8b5cf6/ffffff?text=OANDA",
+        "logo": "/forex-brokers/oanda.png",
         "url": "https://www.oanda.com",
         "description": "Sàn forex lâu đời với uy tín cao, cung cấp dịch vụ giao dịch forex với nền tảng ổn định và công cụ phân tích kỹ thuật chuyên nghiệp.",
         "rating": 4.5,
@@ -317,7 +317,7 @@
     {
         "id": 6,
         "name": "AvaTrade",
-        "logo": "https://via.placeholder.com/120x60/06b6d4/ffffff?text=AvaTrade",
+        "logo": "/forex-brokers/ava.png",
         "url": "https://www.avatrade.com",
         "description": "Sàn forex đa dạng sản phẩm và nền tảng, cung cấp dịch vụ giao dịch forex, CFD và options với các công cụ giao dịch xã hội.",
         "rating": 4.4,
@@ -381,7 +381,7 @@
     {
         "id": 7,
         "name": "Exness",
-        "logo": "https://via.placeholder.com/120x60/facc15/000000?text=Exness",
+        "logo": "/forex-brokers/exness.jpg",
         "url": "https://www.exness.com",
         "description": "Sàn forex phổ biến với spread thấp, rút tiền siêu nhanh và đòn bẩy không giới hạn.",
         "rating": 4.7,
@@ -444,7 +444,7 @@
     {
         "id": 8,
         "name": "HotForex",
-        "logo": "https://via.placeholder.com/120x60/16a34a/ffffff?text=HotForex",
+        "logo": "/forex-brokers/hfm.png",
         "url": "https://www.hotforex.com",
         "description": "Sàn forex cung cấp nhiều loại tài khoản và dịch vụ copy trading chất lượng.",
         "rating": 4.6,
@@ -505,7 +505,7 @@
     {
         "id": 9,
         "name": "Tickmill",
-        "logo": "https://via.placeholder.com/120x60/d946ef/ffffff?text=Tickmill",
+        "logo": "/forex-brokers/tickmill.png",
         "url": "https://www.tickmill.com",
         "description": "Sàn giao dịch ECN với chi phí thấp và tốc độ thực thi nhanh, lý tưởng cho scalping.",
         "rating": 4.8,
@@ -564,7 +564,7 @@
     {
         "id": 10,
         "name": "FXCM",
-        "logo": "https://via.placeholder.com/120x60/f87171/ffffff?text=FXCM",
+        "logo": "/forex-brokers/fxcm.png",
         "url": "https://www.fxcm.com",
         "description": "Sàn forex toàn cầu với công cụ phân tích nâng cao và API chuyên nghiệp cho trader.",
         "rating": 4.5,
@@ -624,7 +624,7 @@
     {
         "id": 11,
         "name": "InstaForex",
-        "logo": "https://via.placeholder.com/120x60/22d3ee/000000?text=InstaForex",
+        "logo": "/forex-brokers/insta.jpeg",
         "url": "https://www.instaforex.com",
         "description": "Sàn thân thiện với người mới bắt đầu với tài khoản Cent và chương trình bonus hấp dẫn.",
         "rating": 4.3,
@@ -685,7 +685,7 @@
     {
         "id": 12,
         "name": "FBS",
-        "logo": "https://via.placeholder.com/120x60/34d399/ffffff?text=FBS",
+        "logo": "/forex-brokers/unnamed.png",
         "url": "https://www.fbs.com",
         "description": "Sàn forex thân thiện với người dùng và nhiều chương trình thưởng hấp dẫn.",
         "rating": 4.6,
@@ -745,7 +745,7 @@
     {
         "id": 13,
         "name": "OctaFX",
-        "logo": "https://via.placeholder.com/120x60/60a5fa/ffffff?text=OctaFX",
+        "logo": "/forex-brokers/octafx.webp",
         "url": "https://www.octafx.com",
         "description": "Sàn có giao diện hiện đại, dễ sử dụng với copy trading và spread thấp.",
         "rating": 4.4,
@@ -803,7 +803,7 @@
     {
         "id": 14,
         "name": "Admirals",
-        "logo": "https://via.placeholder.com/120x60/3b82f6/ffffff?text=Admirals",
+        "logo": "/forex-brokers/admirals.png",
         "url": "https://admiralmarkets.com",
         "description": "Sàn cung cấp phân tích chuyên sâu và đầu tư đa tài sản bao gồm cổ phiếu, ETF.",
         "rating": 4.5,
@@ -861,7 +861,7 @@
     {
         "id": 15,
         "name": "Libertex",
-        "logo": "https://via.placeholder.com/120x60/f97316/ffffff?text=Libertex",
+        "logo": "/forex-brokers/libertex.png",
         "url": "https://www.libertex.com",
         "description": "Sàn không spread, giao dịch theo mô hình hoa hồng với nhiều công cụ tài chính.",
         "rating": 4.3,

@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "XM",
-        "logo": "https://via.placeholder.com/120x60/2563eb/ffffff?text=XM",
+        "logo": "/forex-brokers/XM.jpg",
         "url": "https://www.xm.com",
         "description": "Leading forex broker with over 10 million clients worldwide, offering forex, CFD, and precious metals trading with advanced technology and 24/7 customer support.",
         "rating": 4.8,
@@ -67,7 +67,7 @@
     {
         "id": 2,
         "name": "FXTM",
-        "logo": "https://via.placeholder.com/120x60/10b981/ffffff?text=FXTM",
+        "logo": "/forex-brokers/fxtm_logo_22df8de2c8.png",
         "url": "https://www.forextime.com",
         "description": "Trusted forex broker with advanced technology, offering forex and CFD trading via MT4/MT5 platforms and professional analysis tools.",
         "rating": 4.7,
@@ -132,7 +132,7 @@
     {
         "id": 3,
         "name": "IC Markets",
-        "logo": "https://via.placeholder.com/120x60/f59e0b/ffffff?text=IC+Markets",
+        "logo": "/forex-brokers/IC.png",
         "url": "https://www.icmarkets.com",
         "description": "ECN broker with ultra-low spreads and high trading volume, ideal for professional traders and scalping.",
         "rating": 4.9,
@@ -195,7 +195,7 @@
     {
         "id": 4,
         "name": "Pepperstone",
-        "logo": "https://via.placeholder.com/120x60/ef4444/ffffff?text=Pepperstone",
+        "logo": "/forex-brokers/pepperstone.png",
         "url": "https://www.pepperstone.com",
         "description": "Professional forex broker with Razor technology, offering ECN trading with low spreads and fast execution.",
         "rating": 4.6,
@@ -258,7 +258,7 @@
     {
         "id": 5,
         "name": "OANDA",
-        "logo": "https://via.placeholder.com/120x60/8b5cf6/ffffff?text=OANDA",
+        "logo": "/forex-brokers/oanda.png",
         "url": "https://www.oanda.com",
         "description": "Long-established and reputable forex broker, offering forex trading with stable platforms and professional technical analysis tools.",
         "rating": 4.5,
@@ -317,7 +317,7 @@
     {
         "id": 6,
         "name": "AvaTrade",
-        "logo": "https://via.placeholder.com/120x60/06b6d4/ffffff?text=AvaTrade",
+        "logo": "/forex-brokers/ava.png",
         "url": "https://www.avatrade.com",
         "description": "Forex broker with diverse products and platforms, offering forex, CFD, and options trading with social trading tools.",
         "rating": 4.4,
@@ -381,7 +381,7 @@
     {
         "id": 7,
         "name": "Exness",
-        "logo": "https://via.placeholder.com/120x60/facc15/000000?text=Exness",
+        "logo": "/forex-brokers/exness.jpg",
         "url": "https://www.exness.com",
         "description": "Popular forex broker with low spreads, ultra-fast withdrawals, and unlimited leverage.",
         "rating": 4.7,
@@ -444,7 +444,7 @@
     {
         "id": 8,
         "name": "HotForex",
-        "logo": "https://via.placeholder.com/120x60/16a34a/ffffff?text=HotForex",
+        "logo": "/forex-brokers/hfm.png",
         "url": "https://www.hotforex.com",
         "description": "Forex broker offering multiple account types and high-quality copy trading services.",
         "rating": 4.6,
@@ -505,7 +505,7 @@
     {
         "id": 9,
         "name": "Tickmill",
-        "logo": "https://via.placeholder.com/120x60/d946ef/ffffff?text=Tickmill",
+        "logo": "/forex-brokers/tickmill.png",
         "url": "https://www.tickmill.com",
         "description": "ECN broker with low costs and fast execution speed, ideal for scalping.",
         "rating": 4.8,
@@ -564,7 +564,7 @@
     {
         "id": 10,
         "name": "FXCM",
-        "logo": "https://via.placeholder.com/120x60/f87171/ffffff?text=FXCM",
+        "logo": "/forex-brokers/fxcm.png",
         "url": "https://www.fxcm.com",
         "description": "Global forex broker with advanced analysis tools and professional API for traders.",
         "rating": 4.5,
@@ -624,7 +624,7 @@
     {
         "id": 11,
         "name": "InstaForex",
-        "logo": "https://via.placeholder.com/120x60/22d3ee/000000?text=InstaForex",
+        "logo": "/forex-brokers/insta.jpeg",
         "url": "https://www.instaforex.com",
         "description": "Beginner-friendly broker with Cent accounts and attractive bonus programs.",
         "rating": 4.3,
@@ -685,7 +685,7 @@
     {
         "id": 12,
         "name": "FBS",
-        "logo": "https://via.placeholder.com/120x60/34d399/ffffff?text=FBS",
+        "logo": "/forex-brokers/unnamed.png",
         "url": "https://www.fbs.com",
         "description": "User-friendly forex broker with many attractive bonus programs.",
         "rating": 4.6,
@@ -745,7 +745,7 @@
     {
         "id": 13,
         "name": "OctaFX",
-        "logo": "https://via.placeholder.com/120x60/60a5fa/ffffff?text=OctaFX",
+        "logo": "/forex-brokers/octafx.webp",
         "url": "https://www.octafx.com",
         "description": "Broker with a modern, easy-to-use interface, copy trading, and low spreads.",
         "rating": 4.4,
@@ -803,7 +803,7 @@
     {
         "id": 14,
         "name": "Admirals",
-        "logo": "https://via.placeholder.com/120x60/3b82f6/ffffff?text=Admirals",
+        "logo": "/forex-brokers/admirals.png",
         "url": "https://admiralmarkets.com",
         "description": "Broker offering in-depth analysis and multi-asset investment including stocks and ETFs.",
         "rating": 4.5,
@@ -861,7 +861,7 @@
     {
         "id": 15,
         "name": "Libertex",
-        "logo": "https://via.placeholder.com/120x60/f97316/ffffff?text=Libertex",
+        "logo": "/forex-brokers/libertex.png",
         "url": "https://www.libertex.com",
         "description": "Zero-spread broker operating on a commission-based model with a wide range of financial instruments.",
         "rating": 4.3,
