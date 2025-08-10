@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowLeft, BookOpen, Clock, Tag, Share2, Bookmark, TrendingUp, DollarSign, Shield, BarChart3, Users, AlertTriangle, CheckCircle, Info, Zap, Settings, Brain, Target } from 'lucide-react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 import { getKnowledgeDetail, getKnowledgeDetailById } from '../../../lib/data'
 
 interface KnowledgeItem {
@@ -189,28 +190,7 @@ export default function KnowledgeDetailPage({ params }: { params: { id: string }
                 </div>
             </main>
 
-            {/* Footer */}
-            <footer className="bg-gray-900 text-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <div className="text-center">
-                        <h3 className="text-xl font-bold mb-4">Action Now</h3>
-                        <p className="text-gray-400 mb-6">
-                            Cung cấp thông tin chính xác và cập nhật về thị trường forex
-                        </p>
-                        <div className="flex justify-center space-x-6">
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                                Về chúng tôi
-                            </a>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                                Liên hệ
-                            </a>
-                            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                                Chính sách
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     )
 } 

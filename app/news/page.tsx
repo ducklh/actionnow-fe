@@ -6,6 +6,7 @@ import { TrendingUp, Calendar, User, ArrowRight, Search, Filter } from 'lucide-r
 import { useLanguage } from '../contexts/LanguageContext'
 import { getNews, searchNews, SiteNewsArticle } from '../../lib/data'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 
 const categoriesVi = ["Tất cả", "Phân tích kỹ thuật", "Phân tích cơ bản", "Tin tức thị trường"]
@@ -172,25 +173,7 @@ export default function NewsPage() {
                 </div>
             </main>
 
-            {/* Footer */}
-            <footer className="bg-gray-900 text-white py-12 mt-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center">
-                        <h3 className="text-xl font-bold mb-4">Action Now</h3>
-                        <p className="text-gray-400 mb-6">
-                            {t('footer.description')}
-                        </p>
-                        <div className="flex justify-center space-x-6">
-                            <Link href="/" className="text-gray-400 hover:text-white">
-                                {t('nav.forex')}
-                            </Link>
-                            <Link href="/news" className="text-gray-400 hover:text-white">
-                                {t('nav.news')}
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     )
 } 

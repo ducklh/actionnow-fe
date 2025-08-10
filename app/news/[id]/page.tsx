@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark, TrendingUp, Tag } f
 import { useLanguage } from '../../contexts/LanguageContext'
 import { getNewsById, getNews } from '../../../lib/data'
 import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 
 interface NewsArticle {
   id: number

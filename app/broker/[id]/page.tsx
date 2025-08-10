@@ -5,6 +5,7 @@ import { ArrowLeft, ExternalLink, Shield, DollarSign, TrendingUp, Globe, Star, C
 import { useLanguage } from '../../contexts/LanguageContext'
 import { getForexBrokerById } from '../../../lib/data'
 import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 
 export default function BrokerDetailPage({ params }: { params: { id: string } }) {
     const { t, language } = useLanguage()
@@ -262,25 +263,7 @@ export default function BrokerDetailPage({ params }: { params: { id: string } })
                 </div>
             </main>
 
-            {/* Footer */}
-            <footer className="bg-gray-900 text-white py-12 mt-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center">
-                        <h3 className="text-xl font-bold mb-4">Action Now</h3>
-                        <p className="text-gray-400 mb-6">
-                            Cung cấp thông tin chính xác và cập nhật về thị trường forex
-                        </p>
-                        <div className="flex justify-center space-x-6">
-                            <Link href="/" className="text-gray-400 hover:text-white">
-                                Sàn Forex
-                            </Link>
-                            <Link href="/news" className="text-gray-400 hover:text-white">
-                                Tin Tức
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     )
 } 

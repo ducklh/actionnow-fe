@@ -84,6 +84,11 @@ const translations = {
         'footer.contact': 'Liên hệ',
         'footer.policy': 'Chính sách',
         'footer.description': 'Cung cấp thông tin chính xác và cập nhật về thị trường forex',
+        'footer.forex': 'Sàn Forex',
+        'footer.crypto': 'Sàn Crypto',
+        'footer.news': 'Tin Tức',
+        'footer.knowledge': 'Kiến Thức',
+        'footer.rights': 'Tất cả quyền được bảo lưu.',
 
         // Broker details
         'broker.description': 'Mô tả',
@@ -234,6 +239,11 @@ const translations = {
         'footer.contact': 'Contact',
         'footer.policy': 'Policy',
         'footer.description': 'Providing accurate and up-to-date information about the forex market',
+        'footer.forex': 'Forex Brokers',
+        'footer.crypto': 'Crypto Brokers',
+        'footer.news': 'News',
+        'footer.knowledge': 'Knowledge',
+        'footer.rights': 'All rights reserved.',
 
         // Broker details
         'broker.description': 'Description',

@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation'
 import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark, TrendingUp, Bitcoin } from 'lucide-react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 
 interface CryptoArticle {
     id: number
@@ -349,28 +350,7 @@ export default function CryptoArticlePage() {
                 </div>
             </main>
 
-            {/* Footer */}
-            <footer className="bg-gray-900 text-white py-12 mt-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center">
-                        <h3 className="text-xl font-bold mb-4">Action Now</h3>
-                        <p className="text-gray-400 mb-6">
-                            Nền tảng tin tức tài chính hàng đầu về Forex và Cryptocurrency
-                        </p>
-                        <div className="flex justify-center space-x-6">
-                            <Link href="/" className="text-gray-400 hover:text-white">
-                                {t('nav.forex')}
-                            </Link>
-                            <Link href="/crypto" className="text-gray-400 hover:text-white">
-                                Crypto
-                            </Link>
-                            <Link href="/news" className="text-gray-400 hover:text-white">
-                                {t('nav.news')}
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     )
 } 
