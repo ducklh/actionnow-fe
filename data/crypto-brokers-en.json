@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Binance",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/binance.png",
         "url": "https://www.binance.com",
         "description": "The largest cryptocurrency exchange in the world with over 350+ coins",
         "rating": 4.9,
@@ -58,7 +58,7 @@
     {
         "id": 2,
         "name": "Coinbase",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/coinbase.png",
         "url": "https://www.coinbase.com",
         "description": "A reputable and beginner-friendly cryptocurrency exchange",
         "rating": 4.7,
@@ -117,7 +117,7 @@
     {
         "id": 3,
         "name": "Kraken",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/kraken.png",
         "url": "https://www.kraken.com",
         "description": "A long-standing cryptocurrency exchange with high security",
         "rating": 4.8,
@@ -177,7 +177,7 @@
     {
         "id": 4,
         "name": "KuCoin",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/kucoin.webp",
         "url": "https://www.kucoin.com",
         "description": "A cryptocurrency exchange with many altcoins and new tokens",
         "rating": 4.6,
@@ -234,7 +234,7 @@
     {
         "id": 5,
         "name": "OKX",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/okx.jpg",
         "url": "https://www.okx.com",
         "description": "A global cryptocurrency exchange with a variety of financial products",
         "rating": 4.5,
@@ -292,7 +292,7 @@
     {
         "id": 6,
         "name": "Bybit",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/bybit.png",
         "url": "https://www.bybit.com",
         "description": "A cryptocurrency exchange specializing in futures and derivatives",
         "rating": 4.4,
@@ -349,7 +349,7 @@
     {
         "id": 7,
         "name": "Gate.io",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/gateio.png",
         "url": "https://www.gate.io",
         "description": "A cryptocurrency exchange with over 1400+ coins and tokens",
         "rating": 4.3,
@@ -406,7 +406,7 @@
     {
         "id": 8,
         "name": "Huobi",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/huobi.png",
         "url": "https://www.huobi.com",
         "description": "A major cryptocurrency exchange with a wide range of financial products",
         "rating": 4.2,

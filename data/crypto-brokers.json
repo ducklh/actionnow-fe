@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Binance",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/binance.png",
         "url": "https://www.binance.com",
         "description": "Sàn giao dịch cryptocurrency lớn nhất thế giới với hơn 350+ coin",
         "rating": 4.9,
@@ -58,7 +58,7 @@
     {
         "id": 2,
         "name": "Coinbase",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/coinbase.png",
         "url": "https://www.coinbase.com",
         "description": "Sàn giao dịch cryptocurrency uy tín và dễ sử dụng cho người mới",
         "rating": 4.7,
@@ -117,7 +117,7 @@
     {
         "id": 3,
         "name": "Kraken",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/kraken.png",
         "url": "https://www.kraken.com",
         "description": "Sàn giao dịch cryptocurrency lâu đời với bảo mật cao",
         "rating": 4.8,
@@ -177,7 +177,7 @@
     {
         "id": 4,
         "name": "KuCoin",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/kucoin.webp",
         "url": "https://www.kucoin.com",
         "description": "Sàn giao dịch cryptocurrency với nhiều altcoin và token mới",
         "rating": 4.6,
@@ -234,7 +234,7 @@
     {
         "id": 5,
         "name": "OKX",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/okx.jpg",
         "url": "https://www.okx.com",
         "description": "Sàn giao dịch cryptocurrency toàn cầu với nhiều sản phẩm tài chính",
         "rating": 4.5,
@@ -292,7 +292,7 @@
     {
         "id": 6,
         "name": "Bybit",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/bybit.png",
         "url": "https://www.bybit.com",
         "description": "Sàn giao dịch cryptocurrency chuyên về futures và derivatives",
         "rating": 4.4,
@@ -349,7 +349,7 @@
     {
         "id": 7,
         "name": "Gate.io",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/gateio.png",
         "url": "https://www.gate.io",
         "description": "Sàn giao dịch cryptocurrency với hơn 1400+ coin và token",
         "rating": 4.3,
@@ -406,7 +406,7 @@
     {
         "id": 8,
         "name": "Huobi",
-        "logo": "/forex-brokers/unnamed.png",
+        "logo": "/crypto-brokers/huobi.png",
         "url": "https://www.huobi.com",
         "description": "Sàn giao dịch cryptocurrency lớn với nhiều sản phẩm tài chính",
         "rating": 4.2,

@@ -74,7 +74,7 @@ export default function CryptoBrokersPage() {
                 </div>
 
                 {/* Brokers Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {sortedBrokers.map((broker) => (
                         <div key={broker.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col h-full">
                             {/* Broker Header */}
@@ -99,7 +99,7 @@ export default function CryptoBrokersPage() {
                             </div>
 
                             {/* Broker Details */}
-                            <div className="p-6 flex-grow">
+                            <div className="p-6 flex-1 flex flex-col">
                                 {/* Features */}
                                 <div className="mb-6">
                                     <h4 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center">
@@ -157,23 +157,25 @@ export default function CryptoBrokersPage() {
                                     </div>
                                 </div>
 
-                                {/* Action Buttons */}
-                                <div className="flex space-x-3">
-                                    <Link
-                                        href={broker.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex-1 bg-orange-600 text-white py-2 px-4 rounded-lg hover:bg-orange-700 transition-colors font-medium text-center flex items-center justify-center"
-                                    >
-                                        <ExternalLink className="h-4 w-4 mr-2" />
-                                        {t('crypto.visit')}
-                                    </Link>
-                                    <Link
-                                        href={`/crypto-brokers/${broker.id}`}
-                                        className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white py-2 px-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors font-medium text-center"
-                                    >
-                                        {t('crypto.viewDetails')}
-                                    </Link>
+                                {/* Action Buttons - Đặt ở cuối card */}
+                                <div className="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                                    <div className="flex space-x-3">
+                                        <Link
+                                            href={broker.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex-1 bg-orange-600 text-white py-2.5 px-4 rounded-lg hover:bg-orange-700 transition-colors font-medium text-center flex items-center justify-center min-h-[44px]"
+                                        >
+                                            <ExternalLink className="h-4 w-4 mr-2" />
+                                            {t('crypto.visit')}
+                                        </Link>
+                                        <Link
+                                            href={`/crypto-brokers/${broker.id}`}
+                                            className="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white py-2.5 px-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors font-medium text-center flex items-center justify-center min-h-[44px]"
+                                        >
+                                            {t('crypto.viewDetails')}
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
