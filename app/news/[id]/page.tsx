@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark, TrendingUp, Tag } from 'lucide-react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { getNewsById, getNews } from '../../../lib/data'
+import Header from '../../components/Header'
 
 interface NewsArticle {
   id: number
@@ -423,29 +424,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-      {/* Header */}
-      <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <div className="flex items-center">
-              <Link href="/news" className="flex items-center text-gray-600 hover:text-blue-600 mr-6 dark:text-gray-400 dark:hover:text-blue-400">
-                <ArrowLeft className="h-5 w-5 mr-2" />
-                {t('common.back')}
-              </Link>
-              <TrendingUp className="h-8 w-8 text-blue-600 mr-3" />
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Action Now</h1>
-            </div>
-            <div className="flex items-center space-x-4">
-              <button className="text-gray-500 hover:text-blue-600">
-                <Bookmark className="h-5 w-5" />
-              </button>
-              <button className="text-gray-500 hover:text-blue-600">
-                <Share2 className="h-5 w-5" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header activePage="news" />
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

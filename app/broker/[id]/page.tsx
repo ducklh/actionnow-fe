@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { ArrowLeft, ExternalLink, Shield, DollarSign, TrendingUp, Globe, Star, CheckCircle, AlertTriangle, Info } from 'lucide-react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { getForexBrokerById } from '../../../lib/data'
+import Header from '../../components/Header'
+
 export default function BrokerDetailPage({ params }: { params: { id: string } }) {
     const { t, language } = useLanguage()
     const broker = getForexBrokerById(parseInt(params.id), language)
@@ -23,28 +25,56 @@ export default function BrokerDetailPage({ params }: { params: { id: string } })
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-            {/* Header */}
-            <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center py-6">
-                        <div className="flex items-center">
-                            <Link href="/" className="flex items-center text-gray-600 hover:text-blue-600 mr-6 dark:text-gray-400 dark:hover:text-blue-400">
-                                <ArrowLeft className="h-5 w-5 mr-2" />
-                                {t('common.back')}
-                            </Link>
-                            <img src={broker.logo} alt={broker.name} className="h-8 object-contain mr-3" />
-                            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{broker.name}</h1>
-                        </div>
-                        <div className="flex items-center space-x-4">
-                            <div className="flex items-center">
-                                <Star className="h-5 w-5 text-yellow-500 mr-1" />
-                                <span className="font-semibold text-gray-900 dark:text-white">{broker.rating}/5.0</span>
+            <Header activePage="forex" />
+
+            {/* Main Content */}
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                {/* Back Button */}
+                <Link
+                    href="/"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium mb-8"
+                >
+                    <ArrowLeft className="h-4 w-4 mr-2" />
+                    {t('common.back')}
+                </Link>
+
+                {/* Broker Header */}
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
+                    <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-6">
+                        <div className="flex items-center mb-4 lg:mb-0">
+                            <img
+                                src={broker.logo}
+                                alt={broker.name}
+                                className="h-16 w-16 object-contain mr-6"
+                            />
+                            <div>
+                                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                                    {broker.name}
+                                </h1>
+                                <div className="flex items-center">
+                                    <div className="flex items-center mr-4">
+                                        {[...Array(5)].map((_, i) => (
+                                            <Star
+                                                key={i}
+                                                className={`h-5 w-5 ${i < Math.floor(broker.rating)
+                                                    ? 'text-yellow-400 fill-current'
+                                                    : 'text-gray-300'
+                                                    }`}
+                                            />
+                                        ))}
+                                    </div>
+                                    <span className="text-lg font-semibold text-gray-900 dark:text-white">
+                                        {broker.rating}/5.0
+                                    </span>
+                                </div>
                             </div>
+                        </div>
+                        <div className="flex space-x-4">
                             <a
                                 href={broker.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg flex items-center transition-colors"
+                                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors font-medium flex items-center"
                             >
                                 <Globe className="h-4 w-4 mr-2" />
                                 {t('home.visit')}
@@ -52,11 +82,12 @@ export default function BrokerDetailPage({ params }: { params: { id: string } })
                             </a>
                         </div>
                     </div>
-                </div>
-            </header>
 
-            {/* Main Content */}
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                    <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
+                        {broker.description}
+                    </p>
+                </div>
+
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Main Content */}
                     <div className="lg:col-span-2">

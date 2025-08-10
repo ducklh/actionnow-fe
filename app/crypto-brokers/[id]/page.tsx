@@ -6,7 +6,7 @@ import { useParams } from 'next/navigation'
 import { ArrowLeft, ExternalLink, TrendingUp, Shield, DollarSign, Bitcoin, Star, CheckCircle, AlertTriangle, Users, Globe } from 'lucide-react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { getCryptoBrokerById, CryptoBroker } from '../../../lib/data'
-
+import Header from '../../components/Header'
 
 
 export default function CryptoBrokerDetailPage() {
@@ -35,34 +35,7 @@ export default function CryptoBrokerDetailPage() {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-            {/* Header */}
-            <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center py-6">
-                        <div className="flex items-center">
-                            <Bitcoin className="h-8 w-8 text-orange-600 mr-3" />
-                            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Action Now</h1>
-                        </div>
-                        <nav className="flex space-x-8">
-                            <Link href="/" className="text-gray-500 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-blue-400">
-                                {t('nav.forex')}
-                            </Link>
-                            <Link href="/crypto-brokers" className="text-orange-600 font-medium">
-                                Crypto Brokers
-                            </Link>
-                            <Link href="/crypto" className="text-gray-500 hover:text-orange-600 font-medium dark:text-gray-400 dark:hover:text-orange-400">
-                                Crypto News
-                            </Link>
-                            <Link href="/news" className="text-gray-500 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-blue-400">
-                                {t('nav.news')}
-                            </Link>
-                            <Link href="/knowledge" className="text-gray-500 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-blue-400">
-                                {t('nav.knowledge')}
-                            </Link>
-                        </nav>
-                    </div>
-                </div>
-            </header>
+            <Header activePage="crypto-brokers" theme="orange" />
 
             {/* Main Content */}
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
