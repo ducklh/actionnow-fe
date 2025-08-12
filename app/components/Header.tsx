@@ -93,12 +93,7 @@ export default function Header({ activePage, theme = 'blue' }: HeaderProps) {
                         >
                             {t('nav.cryptoBrokers')}
                         </Link>
-                        <Link
-                            href="/crypto"
-                            className={`font-medium ${activePage === 'crypto' ? getActiveColor() : `text-gray-500 dark:text-gray-400 ${getCryptoHoverColor()}`}`}
-                        >
-                            {t('nav.cryptoNews')}
-                        </Link>
+
                         <Link
                             href="/news"
                             className={`font-medium ${activePage === 'news' ? getActiveColor() : `text-gray-500 dark:text-gray-400 ${getForexHoverColor()}`}`}
@@ -144,13 +139,7 @@ export default function Header({ activePage, theme = 'blue' }: HeaderProps) {
                             >
                                 {t('nav.cryptoBrokers')}
                             </Link>
-                            <Link
-                                href="/crypto"
-                                className={`block px-3 py-2 rounded-md text-base font-medium ${activePage === 'crypto' ? getActiveColor() : 'text-gray-500 dark:text-gray-400'} ${getCryptoHoverBg()}`}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                {t('nav.cryptoNews')}
-                            </Link>
+
                             <Link
                                 href="/news"
                                 className={`block px-3 py-2 rounded-md text-base font-medium ${activePage === 'news' ? getActiveColor() : 'text-gray-500 dark:text-gray-400'} ${getForexHoverBg()}`}

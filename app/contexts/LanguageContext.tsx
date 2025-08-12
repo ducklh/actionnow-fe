@@ -21,7 +21,7 @@ const translations = {
         'nav.news': 'Tin Tức',
         'nav.knowledge': 'Kiến Thức',
         'nav.cryptoBrokers': 'Sàn Crypto',
-        'nav.cryptoNews': 'Tin Crypto',
+
 
         // Common
         'common.back': 'Quay lại',
@@ -32,6 +32,13 @@ const translations = {
         'common.category': 'Danh mục',
         'common.all': 'Tất cả',
         'common.readTime': 'phút',
+        'common.previous': 'Trước',
+        'common.next': 'Tiếp',
+        'common.page': 'Trang',
+        'common.of': 'của',
+        'common.showing': 'Hiển thị',
+        'common.to': 'đến',
+        'common.items': 'mục',
 
         // Home page
         'home.title': 'Danh Sách Sàn Forex Uy Tín',
@@ -134,8 +141,7 @@ const translations = {
         'crypto.newsletter.subtitle': 'Đăng ký để nhận thông tin về các sàn giao dịch cryptocurrency mới và cập nhật',
         'crypto.newsletter.placeholder': 'Nhập email của bạn',
         'crypto.newsletter.button': 'Đăng ký',
-        'crypto.newsletter.news.title': 'Đăng ký nhận tin tức Crypto',
-        'crypto.newsletter.news.subtitle': 'Nhận tin tức mới nhất về cryptocurrency và blockchain trực tiếp vào email của bạn',
+
         'crypto.backToList': 'Quay lại danh sách sàn',
         'crypto.notFound.broker': 'Không tìm thấy sàn giao dịch',
         'crypto.detailedInfo': 'Thông tin chi tiết',
@@ -153,22 +159,7 @@ const translations = {
         'crypto.yes': 'Có',
         'crypto.no': 'Không',
 
-        // Crypto News
-        'crypto.news.title': 'Tin Tức Cryptocurrency',
-        'crypto.news.subtitle': 'Cập nhật tin tức mới nhất về Bitcoin, Ethereum và các cryptocurrency khác. Phân tích thị trường và xu hướng công nghệ blockchain.',
-        'crypto.news.searchPlaceholder': 'Tìm kiếm tin tức cryptocurrency...',
-        'crypto.news.noNewsFound': 'Không tìm thấy tin tức',
-        'crypto.news.tryDifferentKeywords': 'Thử tìm kiếm với từ khóa khác hoặc chọn danh mục khác',
 
-        // Crypto Categories
-        'crypto.categories.all': 'Tất cả',
-        'crypto.categories.market': 'Tin tức thị trường',
-        'crypto.categories.technology': 'Phân tích kỹ thuật',
-        'crypto.categories.defi': 'DeFi',
-        'crypto.categories.nft': 'NFT',
-        'crypto.categories.regulation': 'Regulation',
-        'crypto.categories.layer2': 'Layer 2',
-        'crypto.categories.memecoin': 'Meme Coin'
     },
     en: {
         // Navigation
@@ -176,7 +167,7 @@ const translations = {
         'nav.news': 'News',
         'nav.knowledge': 'Knowledge',
         'nav.cryptoBrokers': 'Crypto Brokers',
-        'nav.cryptoNews': 'Crypto News',
+
 
         // Common
         'common.back': 'Back',
@@ -187,6 +178,19 @@ const translations = {
         'common.category': 'Category',
         'common.all': 'All',
         'common.readTime': 'min',
+        'common.previous': 'Previous',
+        'common.next': 'Next',
+        'common.page': 'Page',
+        'common.of': 'of',
+        'common.showing': 'Showing',
+        'common.to': 'to',
+        'common.previous': 'Previous',
+        'common.next': 'Next',
+        'common.page': 'Page',
+        'common.of': 'of',
+        'common.showing': 'Showing',
+        'common.to': 'to',
+        'common.items': 'items',
 
         // Home page
         'home.title': 'Top Forex Brokers',
@@ -289,8 +293,7 @@ const translations = {
         'crypto.newsletter.subtitle': 'Subscribe to receive information about new cryptocurrency exchanges and updates',
         'crypto.newsletter.placeholder': 'Enter your email',
         'crypto.newsletter.button': 'Subscribe',
-        'crypto.newsletter.news.title': 'Subscribe to Crypto News',
-        'crypto.newsletter.news.subtitle': 'Get the latest cryptocurrency and blockchain news directly to your email',
+
         'crypto.backToList': 'Back to Exchange List',
         'crypto.notFound.broker': 'Exchange not found',
         'crypto.detailedInfo': 'Detailed Information',
@@ -308,22 +311,7 @@ const translations = {
         'crypto.yes': 'Yes',
         'crypto.no': 'No',
 
-        // Crypto News
-        'crypto.news.title': 'Cryptocurrency News',
-        'crypto.news.subtitle': 'Get the latest news about Bitcoin, Ethereum and other cryptocurrencies. Market analysis and blockchain technology trends.',
-        'crypto.news.searchPlaceholder': 'Search cryptocurrency news...',
-        'crypto.news.noNewsFound': 'No news found',
-        'crypto.news.tryDifferentKeywords': 'Try searching with different keywords or select another category',
 
-        // Crypto Categories
-        'crypto.categories.all': 'All',
-        'crypto.categories.market': 'Market News',
-        'crypto.categories.technology': 'Technical Analysis',
-        'crypto.categories.defi': 'DeFi',
-        'crypto.categories.nft': 'NFT',
-        'crypto.categories.regulation': 'Regulation',
-        'crypto.categories.layer2': 'Layer 2',
-        'crypto.categories.memecoin': 'Meme Coin'
     }
 }
 

@@ -8,6 +8,7 @@ import { getForexBrokers, searchForexBrokers } from '../lib/data'
 import ImageWithFallback from './components/ImageWithFallback'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Pagination from './components/Pagination'
 
 interface ForexBroker {
     id: number
@@ -26,6 +27,8 @@ export default function Home() {
     const { t, language } = useLanguage()
     const [searchTerm, setSearchTerm] = useState('')
     const [sortBy, setSortBy] = useState<'rating' | 'name'>('rating')
+    const [currentPage, setCurrentPage] = useState(1)
+    const itemsPerPage = 12
 
     const forexBrokers = getForexBrokers(language)
 
@@ -38,6 +41,22 @@ export default function Home() {
         }
         return a.name.localeCompare(b.name)
     })
+
+    // Reset to first page when search or sort changes
+    useEffect(() => {
+        setCurrentPage(1)
+    }, [searchTerm, sortBy])
+
+    // Calculate pagination
+    const totalPages = Math.ceil(sortedBrokers.length / itemsPerPage)
+    const startItem = (currentPage - 1) * itemsPerPage
+    const endItem = startItem + itemsPerPage
+    const currentBrokers = sortedBrokers.slice(startItem, endItem)
+
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page)
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
@@ -83,7 +102,7 @@ export default function Home() {
 
                 {/* Brokers Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-                    {sortedBrokers.map((broker) => (
+                    {currentBrokers.map((broker) => (
                         <div key={broker.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col h-full">
                             {/* Broker Header */}
                             <div className="p-6 border-b border-gray-100 dark:border-gray-700 flex-shrink-0">
@@ -167,6 +186,20 @@ export default function Home() {
                         <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">{t('home.noBrokersFound')}</h3>
                         <p className="text-gray-600 dark:text-gray-400">{t('home.tryDifferentKeywords')}</p>
                     </div>
+                )}
+
+                {/* Pagination */}
+                {sortedBrokers.length > 0 && (
+                    <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={handlePageChange}
+                        totalItems={sortedBrokers.length}
+                        itemsPerPage={itemsPerPage}
+                        startItem={startItem}
+                        endItem={endItem}
+                        theme="blue"
+                    />
                 )}
             </main>
 

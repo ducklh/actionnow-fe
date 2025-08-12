@@ -1,12 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { TrendingUp, Calendar, User, ArrowRight, Search, Filter } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { getNews, searchNews, SiteNewsArticle } from '../../lib/data'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Pagination from '../components/Pagination'
 
 
 const categoriesVi = ["Tất cả", "Phân tích kỹ thuật", "Phân tích cơ bản", "Tin tức thị trường"]
@@ -16,6 +17,8 @@ export default function NewsPage() {
     const { t, language } = useLanguage()
     const [searchTerm, setSearchTerm] = useState('')
     const [selectedCategory, setSelectedCategory] = useState(language === 'en' ? 'All' : 'Tất cả')
+    const [currentPage, setCurrentPage] = useState(1)
+    const itemsPerPage = 12
 
     const newsArticles = getNews(language)
 
@@ -28,6 +31,22 @@ export default function NewsPage() {
 
         return matchesSearch && matchesCategory
     })
+
+    // Reset to first page when search or category changes
+    useEffect(() => {
+        setCurrentPage(1)
+    }, [searchTerm, selectedCategory])
+
+    // Calculate pagination
+    const totalPages = Math.ceil(filteredArticles.length / itemsPerPage)
+    const startItem = (currentPage - 1) * itemsPerPage
+    const endItem = startItem + itemsPerPage
+    const currentArticles = filteredArticles.slice(startItem, endItem)
+
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page)
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
@@ -78,7 +97,7 @@ export default function NewsPage() {
 
                 {/* News Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-                    {filteredArticles.map((article) => (
+                    {currentArticles.map((article) => (
                         <article key={article.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col h-full">
                             <img
                                 src={article.image}
@@ -150,6 +169,20 @@ export default function NewsPage() {
                         <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">Không tìm thấy tin tức</h3>
                         <p className="text-gray-600 dark:text-gray-400">Thử tìm kiếm với từ khóa khác hoặc chọn danh mục khác</p>
                     </div>
+                )}
+
+                {/* Pagination */}
+                {filteredArticles.length > 0 && (
+                    <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={handlePageChange}
+                        totalItems={filteredArticles.length}
+                        itemsPerPage={itemsPerPage}
+                        startItem={startItem}
+                        endItem={endItem}
+                        theme="blue"
+                    />
                 )}
 
                 {/* Newsletter Signup */}

@@ -1,17 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { BookOpen, Search, Filter, TrendingUp, DollarSign, Shield, BarChart3, Users, Clock, AlertTriangle, CheckCircle, Info, Zap, Settings, Brain, Target } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { getKnowledge, KnowledgeItem as DataKnowledgeItem } from '../../lib/data'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Pagination from '../components/Pagination'
 
 export default function KnowledgePage() {
     const { t, language } = useLanguage()
     const [searchTerm, setSearchTerm] = useState('')
     const [selectedCategory, setSelectedCategory] = useState(language === 'en' ? 'All' : 'Tất cả')
+    const [currentPage, setCurrentPage] = useState(1)
+    const itemsPerPage = 12
 
     const categories = [
         language === 'en' ? 'All' : 'Tất cả',
@@ -57,6 +60,22 @@ export default function KnowledgePage() {
         const matchesCategory = (selectedCategory === 'Tất cả' || selectedCategory === 'All') || item.category === selectedCategory
         return matchesSearch && matchesCategory
     })
+
+    // Reset to first page when search or category changes
+    useEffect(() => {
+        setCurrentPage(1)
+    }, [searchTerm, selectedCategory])
+
+    // Calculate pagination
+    const totalPages = Math.ceil(filteredItems.length / itemsPerPage)
+    const startItem = (currentPage - 1) * itemsPerPage
+    const endItem = startItem + itemsPerPage
+    const currentItems = filteredItems.slice(startItem, endItem)
+
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page)
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
 
     const getLevelColor = (level: string) => {
         switch (level) {
@@ -131,7 +150,7 @@ export default function KnowledgePage() {
 
                 {/* Knowledge Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredItems.map((item) => {
+                    {currentItems.map((item) => {
                         const IconComponent = item.icon
                         return (
                             <div key={item.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col h-full">
@@ -191,6 +210,20 @@ export default function KnowledgePage() {
                         <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">{t('knowledge.notFound.title')}</h3>
                         <p className="text-gray-500 dark:text-gray-400">{t('knowledge.notFound.subtitle')}</p>
                     </div>
+                )}
+
+                {/* Pagination */}
+                {filteredItems.length > 0 && (
+                    <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={handlePageChange}
+                        totalItems={filteredItems.length}
+                        itemsPerPage={itemsPerPage}
+                        startItem={startItem}
+                        endItem={endItem}
+                        theme="blue"
+                    />
                 )}
             </div>
 
