@@ -2,18 +2,35 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { BookOpen, Search, Filter, TrendingUp, DollarSign, Shield, BarChart3, Users, Clock, AlertTriangle, CheckCircle, Info, Zap, Settings, Brain, Target } from 'lucide-react'
+import { BookOpen, Search, Filter, TrendingUp, DollarSign, Shield, BarChart3, Users, Clock, AlertTriangle, CheckCircle, Info, Zap, Settings, Brain, Target, Loader2 } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
-import { getKnowledge, KnowledgeItem as DataKnowledgeItem } from '../../lib/data'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Pagination from '../components/Pagination'
+
+// Interface cho dữ liệu từ API
+interface ApiKnowledgeItem {
+    id: string
+    title: string
+    excerpt: string
+    content: string
+    category: string
+    level: string
+    author: string
+    publishedAt: string
+    readTime: string
+    image: string
+    tags: Array<{ id: string, value: string }>
+}
 
 export default function KnowledgePage() {
     const { t, language } = useLanguage()
     const [searchTerm, setSearchTerm] = useState('')
     const [selectedCategory, setSelectedCategory] = useState(language === 'en' ? 'All' : 'Tất cả')
     const [currentPage, setCurrentPage] = useState(1)
+    const [knowledgeItems, setKnowledgeItems] = useState<ApiKnowledgeItem[]>([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState<string | null>(null)
     const itemsPerPage = 12
 
     const categories = [
@@ -27,7 +44,30 @@ export default function KnowledgePage() {
         t('knowledge.tools')
     ]
 
-    const rawItems = getKnowledge(language)
+    // Fetch data from API
+    useEffect(() => {
+        const fetchKnowledge = async () => {
+            try {
+                setLoading(true)
+                setError(null)
+                const response = await fetch('http://localhost:8080/api/knowledge-items')
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`)
+                }
+
+                const data = await response.json()
+                setKnowledgeItems(data)
+            } catch (err) {
+                console.error('Error fetching knowledge items:', err)
+                setError(err instanceof Error ? err.message : 'Có lỗi xảy ra khi tải dữ liệu')
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fetchKnowledge()
+    }, [])
 
     const getIconByCategory = (category: string) => {
         const cat = category.toLowerCase()
@@ -41,22 +81,22 @@ export default function KnowledgePage() {
         return BookOpen
     }
 
-    const knowledgeItems = rawItems.map(item => ({
+    const processedItems = knowledgeItems.map(item => ({
         id: item.id,
         title: item.title,
         category: item.category,
         level: item.level,
-        readTime: `${typeof (item as any).readTime === 'number' ? (item as any).readTime : String((item as any).readTime)} ${t('common.readTime')}`,
-        description: (item as any).excerpt || '',
+        readTime: `${item.readTime} ${t('common.readTime')}`,
+        description: item.excerpt || '',
         icon: getIconByCategory(item.category),
         tags: item.tags,
         content: item.content,
     }))
 
-    const filteredItems = knowledgeItems.filter(item => {
+    const filteredItems = processedItems.filter(item => {
         const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
             item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            item.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+            item.tags.some(tag => tag.value.toLowerCase().includes(searchTerm.toLowerCase()))
         const matchesCategory = (selectedCategory === 'Tất cả' || selectedCategory === 'All') || item.category === selectedCategory
         return matchesSearch && matchesCategory
     })
@@ -92,6 +132,55 @@ export default function KnowledgePage() {
         }
     }
 
+    // Loading state
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+                <Header activePage="knowledge" />
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                    <div className="text-center">
+                        <Loader2 className="h-12 w-12 text-blue-600 mx-auto mb-4 animate-spin" />
+                        <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-2">
+                            {t('common.loading') || 'Đang tải dữ liệu...'}
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400">
+                            Vui lòng chờ trong giây lát
+                        </p>
+                    </div>
+                </div>
+                <Footer />
+            </div>
+        )
+    }
+
+    // Error state
+    if (error) {
+        return (
+            <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+                <Header activePage="knowledge" />
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                    <div className="text-center">
+                        <div className="bg-red-100 dark:bg-red-900 border border-red-200 dark:border-red-800 rounded-lg p-6 max-w-md mx-auto">
+                            <h3 className="text-xl font-medium text-red-800 dark:text-red-200 mb-2">
+                                Lỗi khi tải dữ liệu
+                            </h3>
+                            <p className="text-red-600 dark:text-red-300 mb-4">
+                                {error}
+                            </p>
+                            <button
+                                onClick={() => window.location.reload()}
+                                className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
+                            >
+                                Thử lại
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <Footer />
+            </div>
+        )
+    }
+
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
             <Header activePage="knowledge" />
@@ -106,7 +195,7 @@ export default function KnowledgePage() {
                         </p>
                         <div className="flex justify-center space-x-4">
                             <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3">
-                                <span className="text-2xl font-bold">{knowledgeItems.length}</span>
+                                <span className="text-2xl font-bold">{processedItems.length}</span>
                                 <p className="text-sm">{t('knowledge.articles')}</p>
                             </div>
                             <div className="bg-white bg-opacity-20 rounded-lg px-6 py-3">
@@ -185,9 +274,9 @@ export default function KnowledgePage() {
                                     </div>
 
                                     <div className="flex flex-wrap gap-2 mb-4">
-                                        {item.tags.slice(0, 3).map((tag, index) => (
-                                            <span key={index} className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded">
-                                                {tag}
+                                        {item.tags.slice(0, 3).map((tag) => (
+                                            <span key={tag.id} className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded">
+                                                {tag.value}
                                             </span>
                                         ))}
                                     </div>

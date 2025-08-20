@@ -158,6 +158,9 @@ const translations = {
         'crypto.apiSupport': 'API Support',
         'crypto.yes': 'Có',
         'crypto.no': 'Không',
+        'crypto.quickInfo': 'Thông tin nhanh',
+        'crypto.companyInfo': 'Thông tin công ty',
+        'crypto.tradingInfo': 'Thông tin giao dịch',
 
 
     },
@@ -178,12 +181,6 @@ const translations = {
         'common.category': 'Category',
         'common.all': 'All',
         'common.readTime': 'min',
-        'common.previous': 'Previous',
-        'common.next': 'Next',
-        'common.page': 'Page',
-        'common.of': 'of',
-        'common.showing': 'Showing',
-        'common.to': 'to',
         'common.previous': 'Previous',
         'common.next': 'Next',
         'common.page': 'Page',
@@ -310,6 +307,9 @@ const translations = {
         'crypto.apiSupport': 'API Support',
         'crypto.yes': 'Yes',
         'crypto.no': 'No',
+        'crypto.quickInfo': 'Quick Info',
+        'crypto.companyInfo': 'Company Information',
+        'crypto.tradingInfo': 'Trading Information',
 
 
     }

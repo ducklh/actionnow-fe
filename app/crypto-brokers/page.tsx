@@ -2,32 +2,124 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ExternalLink, TrendingUp, Shield, DollarSign, Bitcoin, Search, Filter } from 'lucide-react'
+import { ExternalLink, TrendingUp, Shield, DollarSign, Bitcoin, Search, Filter, Loader2 } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
-import { getCryptoBrokers, searchCryptoBrokers } from '../../lib/data'
+import { CryptoBroker } from '../../lib/data'
+
+// Interface cho dữ liệu từ API
+interface ApiCryptoBroker {
+    id: string
+    name: string
+    nameEn: string
+    logo: string
+    url: string
+    description: string
+    descriptionEn: string
+    rating: number
+    regulation: string
+    minDeposit: string
+    tradingFees: string
+    founded: string
+    headquarters: string
+    headquartersEn: string
+    tradingVolume: string
+    mobileApp: boolean
+    apiSupport: boolean
+    detailedDescription: string
+    detailedDescriptionEn: string
+    cryptoFeatures: Array<{ id: string, value: string, valueEn: string }>
+    supportedCoins: Array<{ id: string, value: string, valueEn: string }>
+    cryptoPros: Array<{ id: string, value: string, valueEn: string }>
+    cryptoCons: Array<{ id: string, value: string, valueEn: string }>
+    securityFeatures: Array<{ id: string, value: string, valueEn: string }>
+    paymentMethods: Array<{ id: string, value: string, valueEn: string }>
+    customerSupports: Array<{ id: string, value: string, valueEn: string }>
+}
 import ImageWithFallback from '../components/ImageWithFallback'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Pagination from '../components/Pagination'
-
 
 export default function CryptoBrokersPage() {
     const { t, language } = useLanguage()
     const [searchTerm, setSearchTerm] = useState('')
     const [sortBy, setSortBy] = useState<'rating' | 'name'>('rating')
     const [currentPage, setCurrentPage] = useState(1)
+    const [cryptoBrokers, setCryptoBrokers] = useState<ApiCryptoBroker[]>([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState<string | null>(null)
     const itemsPerPage = 12
 
-    const cryptoBrokers = getCryptoBrokers(language)
+    // Helper functions để lấy giá trị theo ngôn ngữ
+    const getLocalizedValue = (value: string, valueEn: string) => {
+        return language === 'en' ? valueEn : value
+    }
+
+    const getLocalizedName = (broker: ApiCryptoBroker) => {
+        return getLocalizedValue(broker.name, broker.nameEn)
+    }
+
+    const getLocalizedDescription = (broker: ApiCryptoBroker) => {
+        return getLocalizedValue(broker.description, broker.descriptionEn)
+    }
+
+    const getLocalizedHeadquarters = (broker: ApiCryptoBroker) => {
+        return getLocalizedValue(broker.headquarters, broker.headquartersEn)
+    }
+
+    // Fetch data from API
+    useEffect(() => {
+        const fetchCryptoBrokers = async () => {
+            try {
+                setLoading(true)
+                setError(null)
+                const response = await fetch('http://localhost:8080/api/crypto-brokers', {
+                    // headers: {
+                    //     'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc1NTI3MjA3MCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzU1MTg1NjcwfQ.VqayfeMo1T0g9md22ZNE22PzMWlbtDNftjmm_TozCa4xeg21eM5QAUI9vT3Dy-CiqB88aSfsmL4QEM31fEL8Sg',
+                    //     'Content-Type': 'application/json'
+                    // }
+                })
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`)
+                }
+
+                const data = await response.json()
+                setCryptoBrokers(data)
+            } catch (err) {
+                console.error('Error fetching crypto brokers:', err)
+                setError(err instanceof Error ? err.message : 'Có lỗi xảy ra khi tải dữ liệu')
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fetchCryptoBrokers()
+    }, [])
 
     const filteredBrokers = searchTerm
-        ? searchCryptoBrokers(searchTerm, language)
+        ? cryptoBrokers.filter(broker => {
+            const localizedName = getLocalizedName(broker)
+            const localizedDescription = getLocalizedDescription(broker)
+            const localizedFeatures = broker.cryptoFeatures.map(feature =>
+                getLocalizedValue(feature.value, feature.valueEn)
+            )
+
+            return localizedName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                localizedDescription.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                localizedFeatures.some(feature =>
+                    feature.toLowerCase().includes(searchTerm.toLowerCase())
+                )
+        })
         : cryptoBrokers
+
     const sortedBrokers = filteredBrokers.sort((a, b) => {
         if (sortBy === 'rating') {
             return b.rating - a.rating
         }
-        return a.name.localeCompare(b.name)
+        const nameA = getLocalizedName(a)
+        const nameB = getLocalizedName(b)
+        return nameA.localeCompare(nameB)
     })
 
     // Reset to first page when search or sort changes
@@ -44,6 +136,55 @@ export default function CryptoBrokersPage() {
     const handlePageChange = (page: number) => {
         setCurrentPage(page)
         window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+
+    // Loading state
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+                <Header activePage="crypto-brokers" theme="orange" />
+                <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                    <div className="text-center py-20">
+                        <Loader2 className="h-12 w-12 text-orange-600 mx-auto mb-4 animate-spin" />
+                        <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-2">
+                            {t('common.loading') || 'Đang tải dữ liệu...'}
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400">
+                            Vui lòng chờ trong giây lát
+                        </p>
+                    </div>
+                </main>
+                <Footer />
+            </div>
+        )
+    }
+
+    // Error state
+    if (error) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+                <Header activePage="crypto-brokers" theme="orange" />
+                <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                    <div className="text-center py-20">
+                        <div className="bg-red-100 dark:bg-red-900 border border-red-200 dark:border-red-800 rounded-lg p-6 max-w-md mx-auto">
+                            <h3 className="text-xl font-medium text-red-800 dark:text-red-200 mb-2">
+                                Lỗi khi tải dữ liệu
+                            </h3>
+                            <p className="text-red-600 dark:text-red-300 mb-4">
+                                {error}
+                            </p>
+                            <button
+                                onClick={() => window.location.reload()}
+                                className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
+                            >
+                                Thử lại
+                            </button>
+                        </div>
+                    </div>
+                </main>
+                <Footer />
+            </div>
+        )
     }
 
     return (
@@ -102,10 +243,10 @@ export default function CryptoBrokersPage() {
                                     <div className="flex items-center min-w-0">
                                         <ImageWithFallback
                                             src={broker.logo}
-                                            alt={broker.name}
+                                            alt={getLocalizedName(broker)}
                                             className="h-8 w-auto object-contain mr-3"
                                         />
-                                        <h3 className="text-xl font-bold text-gray-900 dark:text-white truncate">{broker.name}</h3>
+                                        <h3 className="text-xl font-bold text-gray-900 dark:text-white truncate">{getLocalizedName(broker)}</h3>
                                     </div>
                                     <div className="flex items-center">
                                         <span className="text-yellow-500 mr-1">★</span>
@@ -113,7 +254,7 @@ export default function CryptoBrokersPage() {
                                     </div>
                                 </div>
                                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                                    {broker.description}
+                                    {getLocalizedDescription(broker)}
                                 </p>
                             </div>
 
@@ -126,12 +267,12 @@ export default function CryptoBrokersPage() {
                                         {t('crypto.features')}
                                     </h4>
                                     <div className="flex flex-wrap gap-2">
-                                        {broker.features.map((feature, index) => (
+                                        {broker.cryptoFeatures.map((feature, index) => (
                                             <span
-                                                key={index}
+                                                key={feature.id}
                                                 className="px-2 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 text-xs rounded-full"
                                             >
-                                                {feature}
+                                                {getLocalizedValue(feature.value, feature.valueEn)}
                                             </span>
                                         ))}
                                     </div>
@@ -162,10 +303,10 @@ export default function CryptoBrokersPage() {
                                     <div className="flex flex-wrap gap-2">
                                         {broker.supportedCoins.slice(0, 4).map((coin, index) => (
                                             <span
-                                                key={index}
+                                                key={coin.id}
                                                 className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full"
                                             >
-                                                {coin}
+                                                {getLocalizedValue(coin.value, coin.valueEn)}
                                             </span>
                                         ))}
                                         {broker.supportedCoins.length > 4 && (

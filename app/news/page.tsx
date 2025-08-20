@@ -2,13 +2,26 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { TrendingUp, Calendar, User, ArrowRight, Search, Filter } from 'lucide-react'
+import { TrendingUp, Calendar, User, ArrowRight, Search, Filter, Loader2 } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
-import { getNews, searchNews, SiteNewsArticle } from '../../lib/data'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Pagination from '../components/Pagination'
 
+// Interface cho dữ liệu từ API
+interface ApiSiteNewsArticle {
+    id: string
+    title: string
+    excerpt: string
+    content: string
+    category: string
+    author: string
+    publishedAt: string
+    readTime: string
+    image: string
+    fullContent: string
+    tags: Array<{ id: string, value: string }>
+}
 
 const categoriesVi = ["Tất cả", "Phân tích kỹ thuật", "Phân tích cơ bản", "Tin tức thị trường"]
 const categoriesEn = ["All", "Technical Analysis", "Fundamental Analysis", "Market News"]
@@ -18,14 +31,40 @@ export default function NewsPage() {
     const [searchTerm, setSearchTerm] = useState('')
     const [selectedCategory, setSelectedCategory] = useState(language === 'en' ? 'All' : 'Tất cả')
     const [currentPage, setCurrentPage] = useState(1)
+    const [newsArticles, setNewsArticles] = useState<ApiSiteNewsArticle[]>([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState<string | null>(null)
     const itemsPerPage = 12
 
-    const newsArticles = getNews(language)
+    // Fetch data from API
+    useEffect(() => {
+        const fetchNews = async () => {
+            try {
+                setLoading(true)
+                setError(null)
+                const response = await fetch('http://localhost:8080/api/site-news-articles')
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`)
+                }
+
+                const data = await response.json()
+                setNewsArticles(data)
+            } catch (err) {
+                console.error('Error fetching news:', err)
+                setError(err instanceof Error ? err.message : 'Có lỗi xảy ra khi tải dữ liệu')
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fetchNews()
+    }, [])
 
     const filteredArticles = newsArticles.filter(article => {
         const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
             article.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            article.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+            article.tags.some(tag => tag.value.toLowerCase().includes(searchTerm.toLowerCase()))
 
         const matchesCategory = (selectedCategory === 'Tất cả' || selectedCategory === 'All') || article.category === selectedCategory
 
@@ -46,6 +85,55 @@ export default function NewsPage() {
     const handlePageChange = (page: number) => {
         setCurrentPage(page)
         window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+
+    // Loading state
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+                <Header activePage="news" />
+                <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                    <div className="text-center py-20">
+                        <Loader2 className="h-12 w-12 text-blue-600 mx-auto mb-4 animate-spin" />
+                        <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-2">
+                            {t('common.loading') || 'Đang tải dữ liệu...'}
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400">
+                            Vui lòng chờ trong giây lát
+                        </p>
+                    </div>
+                </main>
+                <Footer />
+            </div>
+        )
+    }
+
+    // Error state
+    if (error) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+                <Header activePage="news" />
+                <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                    <div className="text-center py-20">
+                        <div className="bg-red-100 dark:bg-red-900 border border-red-200 dark:border-red-800 rounded-lg p-6 max-w-md mx-auto">
+                            <h3 className="text-xl font-medium text-red-800 dark:text-red-200 mb-2">
+                                Lỗi khi tải dữ liệu
+                            </h3>
+                            <p className="text-red-600 dark:text-red-300 mb-4">
+                                {error}
+                            </p>
+                            <button
+                                onClick={() => window.location.reload()}
+                                className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
+                            >
+                                Thử lại
+                            </button>
+                        </div>
+                    </div>
+                </main>
+                <Footer />
+            </div>
+        )
     }
 
     return (
@@ -139,12 +227,12 @@ export default function NewsPage() {
 
                                 {/* Tags */}
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    {article.tags.map((tag, index) => (
+                                    {article.tags.map((tag) => (
                                         <span
-                                            key={index}
+                                            key={tag.id}
                                             className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-full"
                                         >
-                                            #{tag}
+                                            #{tag.value}
                                         </span>
                                     ))}
                                 </div>
