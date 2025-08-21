@@ -108,24 +108,11 @@ export default function Header({ activePage, theme = 'blue' }: HeaderProps) {
                         >
                             {t('nav.cryptoBrokers')}
                         </Link>
-
-                        <Link
-                            href="/news"
-                            className={`font-medium ${activePage === 'news' ? getActiveColor() : `text-gray-500 dark:text-gray-400 ${getForexHoverColor()}`}`}
-                        >
-                            {t('nav.news')}
-                        </Link>
-                        <Link
-                            href="/knowledge"
-                            className={`font-medium ${activePage === 'knowledge' ? getActiveColor() : `text-gray-500 dark:text-gray-400 ${getForexHoverColor()}`}`}
-                        >
-                            {t('nav.knowledge')}
-                        </Link>
                         <Link
                             href="/contact"
                             className={`font-medium text-gray-500 dark:text-gray-400 ${getForexHoverColor()}`}
                         >
-                            Liên Hệ
+                            {t('nav.contact')}
                         </Link>
                     </nav>
 
@@ -202,7 +189,7 @@ export default function Header({ activePage, theme = 'blue' }: HeaderProps) {
                                 className={`block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-gray-400 ${getForexHoverBg()}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
-                                Liên Hệ
+                                {t('nav.contact')}
                             </Link>
 
                             {/* Mobile CTA Button */}

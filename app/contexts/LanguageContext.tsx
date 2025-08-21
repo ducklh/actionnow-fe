@@ -23,6 +23,7 @@ const translations = {
         'nav.cryptoBrokers': 'Sàn Crypto',
         'nav.joinTelegram': 'Tham gia Telegram',
         'nav.joinTelegramSubtitle': 'Yêu cầu nâng hoa hồng',
+        'nav.contact': 'Liên Hệ',
 
 
         // Common
@@ -268,7 +269,8 @@ const translations = {
         'nav.news': 'Tin Tức',
         'nav.knowledge': 'Kiến Thức',
         'nav.cryptoBrokers': 'Crypto Brokers',
-        'nav.joinTelegram': 'Tham gia Telegram',
+        'nav.joinTelegram': 'Join Telegram',
+        'nav.contact': 'Contact',
 
 
         // Common
