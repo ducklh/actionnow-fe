@@ -4,9 +4,10 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { TrendingUp, Bitcoin, Menu, X } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
+import Image from 'next/image'
 
 interface HeaderProps {
-    activePage: 'forex' | 'crypto-brokers' | 'crypto' | 'news' | 'knowledge'
+    activePage: 'home' | 'forex' | 'crypto-brokers' | 'crypto' | 'news' | 'knowledge' | 'contact'
     theme?: 'blue' | 'orange'
 }
 
@@ -75,14 +76,28 @@ export default function Header({ activePage, theme = 'blue' }: HeaderProps) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center py-6">
                     <div className="flex items-center">
-                        {getIcon()}
-                        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Action Now</h1>
+                        <Link href="/" className="flex items-center mr-3">
+                            <Image
+                                src="/logo.png"
+                                alt="K-Network Logo"
+                                width={42}
+                                height={42}
+                                className="h-10 w-10 object-contain"
+                            />
+                        </Link>
+                        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">K-Network</h1>
                     </div>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex space-x-8">
                         <Link
                             href="/"
+                            className={`font-medium ${activePage === 'home' ? getActiveColor() : `text-gray-500 dark:text-gray-400 ${getForexHoverColor()}`}`}
+                        >
+                            Home
+                        </Link>
+                        <Link
+                            href="/broker"
                             className={`font-medium ${activePage === 'forex' ? getActiveColor() : `text-gray-500 dark:text-gray-400 ${getForexHoverColor()}`}`}
                         >
                             {t('nav.forex')}
@@ -106,7 +121,28 @@ export default function Header({ activePage, theme = 'blue' }: HeaderProps) {
                         >
                             {t('nav.knowledge')}
                         </Link>
+                        <Link
+                            href="/contact"
+                            className={`font-medium text-gray-500 dark:text-gray-400 ${getForexHoverColor()}`}
+                        >
+                            Liên Hệ
+                        </Link>
                     </nav>
+
+                    {/* CTA Button */}
+                    <div className="hidden md:block">
+                        <a
+                            href="https://t.me/K_NETWORK_official"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl border border-blue-500/20"
+                        >
+                            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                            </svg>
+                            {t('nav.joinTelegram')}
+                        </a>
+                    </div>
 
                     {/* Mobile Menu Button */}
                     <button
@@ -127,6 +163,13 @@ export default function Header({ activePage, theme = 'blue' }: HeaderProps) {
                         <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
                             <Link
                                 href="/"
+                                className={`block px-3 py-2 rounded-md text-base font-medium ${activePage === 'home' ? getActiveColor() : 'text-gray-500 dark:text-gray-400'} ${getForexHoverBg()}`}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Home
+                            </Link>
+                            <Link
+                                href="/broker"
                                 className={`block px-3 py-2 rounded-md text-base font-medium ${activePage === 'forex' ? getActiveColor() : 'text-gray-500 dark:text-gray-400'} ${getForexHoverBg()}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
@@ -154,6 +197,31 @@ export default function Header({ activePage, theme = 'blue' }: HeaderProps) {
                             >
                                 {t('nav.knowledge')}
                             </Link>
+                            <Link
+                                href="/contact"
+                                className={`block px-3 py-2 rounded-md text-base font-medium text-gray-500 dark:text-gray-400 ${getForexHoverBg()}`}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Liên Hệ
+                            </Link>
+
+                            {/* Mobile CTA Button */}
+                            <div className="pt-2 border-t border-gray-200 dark:border-gray-700">
+                                <a
+                                    href="https://t.me/K_NETWORK_official"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block w-full text-center px-4 py-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 border border-blue-500/20"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    <div className="flex items-center justify-center">
+                                        <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                                        </svg>
+                                        {t('nav.joinTelegram')}
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 )}

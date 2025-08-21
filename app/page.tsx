@@ -1,332 +1,386 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ExternalLink, Shield, DollarSign, Globe, TrendingUp, Loader2 } from 'lucide-react'
+import { TrendingUp, Bitcoin, Globe, BookOpen, Newspaper, ArrowRight, Star, Shield, Users, Zap, Settings } from 'lucide-react'
 import { useLanguage } from './contexts/LanguageContext'
-import ImageWithFallback from './components/ImageWithFallback'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Pagination from './components/Pagination'
 
-// Interface cho dữ liệu từ API
-interface ApiForexBroker {
-    id: string
-    name: string
-    nameEn: string
-    logo: string
-    url: string
-    description: string
-    descriptionEn: string
-    rating: number
-    regulation: string
-    minDeposit: string
-    spreads: string
-    leverage: string
-    founded: string
-    headquarters: string
-    headquartersEn: string
-    forexFeatures: Array<{ id: string, value: string, valueEn: string }>
-    forexPlatforms: Array<{ id: string, value: string, valueEn: string }>
-    forexInstruments: Array<{ id: string, value: string, valueEn: string }>
-    forexPros: Array<{ id: string, value: string, valueEn: string }>
-    forexCons: Array<{ id: string, value: string, valueEn: string }>
-    forexLanguages: Array<{ id: string, value: string, valueEn: string }>
-    forexSupports: Array<{ id: string, value: string, valueEn: string }>
-    forexPaymentMethods: Array<{ id: string, value: string, valueEn: string }>
-}
+export default function HomePage() {
+    const { t } = useLanguage()
 
-export default function Home() {
-    const { t, language } = useLanguage()
-    const [searchTerm, setSearchTerm] = useState('')
-    const [sortBy, setSortBy] = useState<'rating' | 'name'>('rating')
-    const [currentPage, setCurrentPage] = useState(1)
-    const [forexBrokers, setForexBrokers] = useState<ApiForexBroker[]>([])
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState<string | null>(null)
-    const itemsPerPage = 12
-
-    // Helper functions để lấy giá trị theo ngôn ngữ
-    const getLocalizedValue = (value: string, valueEn: string) => {
-        console.log('language', language)
-        return language === 'en' ? valueEn : value
-    }
-
-    const getLocalizedName = (broker: ApiForexBroker) => {
-        return getLocalizedValue(broker.name, broker.nameEn)
-    }
-
-    const getLocalizedDescription = (broker: ApiForexBroker) => {
-        console.log('broker.description', broker.description)
-        console.log('broker.descriptionEn', broker.descriptionEn)
-        return getLocalizedValue(broker.description, broker.descriptionEn)
-    }
-
-    const getLocalizedHeadquarters = (broker: ApiForexBroker) => {
-        return getLocalizedValue(broker.headquarters, broker.headquartersEn)
-    }
-
-    // Fetch data from API
-    useEffect(() => {
-        const fetchForexBrokers = async () => {
-            try {
-                setLoading(true)
-                setError(null)
-                const response = await fetch('http://localhost:8080/api/forex-brokers')
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`)
-                }
-
-                const data = await response.json()
-                setForexBrokers(data)
-            } catch (err) {
-                console.error('Error fetching forex brokers:', err)
-                setError(err instanceof Error ? err.message : 'Có lỗi xảy ra khi tải dữ liệu')
-            } finally {
-                setLoading(false)
-            }
+    const features = [
+        {
+            icon: <TrendingUp className="h-8 w-8 text-blue-600" />,
+            title: t('home.features.forexTitle'),
+            description: t('home.features.forexDesc'),
+            href: '/broker',
+            color: 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800'
+        },
+        {
+            icon: <Bitcoin className="h-8 w-8 text-orange-600" />,
+            title: t('home.features.cryptoTitle'),
+            description: t('home.features.cryptoDesc'),
+            href: '/crypto-brokers',
+            color: 'bg-orange-50 dark:bg-orange-900/20 border-orange-200 dark:border-orange-800'
+        },
+        {
+            icon: <Newspaper className="h-8 w-8 text-green-600" />,
+            title: t('home.features.newsTitle'),
+            description: t('home.features.newsDesc'),
+            href: '/news',
+            color: 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800'
+        },
+        {
+            icon: <BookOpen className="h-8 w-8 text-purple-600" />,
+            title: t('home.features.knowledgeTitle'),
+            description: t('home.features.knowledgeDesc'),
+            href: '/knowledge',
+            color: 'bg-purple-50 dark:bg-purple-900/20 border-purple-200 dark:border-purple-800'
         }
+    ]
 
-        fetchForexBrokers()
-    }, [])
-
-    const filteredBrokers = searchTerm
-        ? forexBrokers.filter(broker => {
-            const localizedName = getLocalizedName(broker)
-            const localizedDescription = getLocalizedDescription(broker)
-            const localizedFeatures = broker.forexFeatures.map(feature =>
-                getLocalizedValue(feature.value, feature.valueEn)
-            )
-
-            return localizedName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                localizedDescription.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                localizedFeatures.some(feature =>
-                    feature.toLowerCase().includes(searchTerm.toLowerCase())
-                )
-        })
-        : forexBrokers
-
-    const sortedBrokers = filteredBrokers.sort((a, b) => {
-        if (sortBy === 'rating') {
-            return b.rating - a.rating
-        }
-        const nameA = getLocalizedName(a)
-        const nameB = getLocalizedName(b)
-        return nameA.localeCompare(nameB)
-    })
-
-    // Reset to first page when search or sort changes
-    useEffect(() => {
-        setCurrentPage(1)
-    }, [searchTerm, sortBy])
-
-    // Calculate pagination
-    const totalPages = Math.ceil(sortedBrokers.length / itemsPerPage)
-    const startItem = (currentPage - 1) * itemsPerPage
-    const endItem = startItem + itemsPerPage
-    const currentBrokers = sortedBrokers.slice(startItem, endItem)
-
-    const handlePageChange = (page: number) => {
-        setCurrentPage(page)
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-
-    // Loading state
-    if (loading) {
-        return (
-            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-                <Header activePage="forex" />
-                <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <div className="text-center py-20">
-                        <Loader2 className="h-12 w-12 text-blue-600 mx-auto mb-4 animate-spin" />
-                        <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-2">
-                            {t('common.loading') || 'Đang tải dữ liệu...'}
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-400">
-                            Vui lòng chờ trong giây lát
-                        </p>
-                    </div>
-                </main>
-                <Footer />
-            </div>
-        )
-    }
-
-    // Error state
-    if (error) {
-        return (
-            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-                <Header activePage="forex" />
-                <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <div className="text-center py-20">
-                        <div className="bg-red-100 dark:bg-red-900 border border-red-200 dark:border-red-800 rounded-lg p-6 max-w-md mx-auto">
-                            <h3 className="text-xl font-medium text-red-800 dark:text-red-200 mb-2">
-                                Lỗi khi tải dữ liệu
-                            </h3>
-                            <p className="text-red-600 dark:text-red-300 mb-4">
-                                {error}
-                            </p>
-                            <button
-                                onClick={() => window.location.reload()}
-                                className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
-                            >
-                                Thử lại
-                            </button>
-                        </div>
-                    </div>
-                </main>
-                <Footer />
-            </div>
-        )
-    }
+    const stats = [
+        { label: t('home.stats.forexBrokers'), value: '50+', icon: <TrendingUp className="h-5 w-5 text-blue-600" /> },
+        { label: t('home.stats.cryptoBrokers'), value: '30+', icon: <Bitcoin className="h-5 w-5 text-orange-600" /> },
+        { label: t('home.stats.articles'), value: '200+', icon: <BookOpen className="h-5 w-5 text-purple-600" /> },
+        { label: t('home.stats.users'), value: '10K+', icon: <Users className="h-5 w-5 text-green-600" /> }
+    ]
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-            <Header activePage="forex" />
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+            <Header activePage="home" />
 
-            {/* Main Content */}
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                {/* Hero Section */}
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        {t('home.title')}
-                    </h2>
-                    <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                        {t('home.subtitle')}
+            {/* Hero Section */}
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div className="text-center mb-16">
+                    <div className="inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium mb-6">
+                        <Star className="h-4 w-4 mr-2" />
+                        {t('home.welcome')}
+                    </div>
+                    <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                        {t('home.heroTitle')}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+                            {' '}{t('home.heroTitleHighlight')}
+                        </span>
+                    </h1>
+                    <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+                        {t('home.heroSubtitle')}
                     </p>
-                </div>
-
-                {/* Search and Filter */}
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-8 border border-gray-200 dark:border-gray-700">
-                    <div className="flex flex-col sm:flex-row gap-4">
-                        <div className="flex-1">
-                            <input
-                                type="text"
-                                placeholder={t('home.searchPlaceholder')}
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                            />
-                        </div>
-                        <div className="flex items-center space-x-4">
-                            <label className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('common.sort')}:</label>
-                            <select
-                                value={sortBy}
-                                onChange={(e) => setSortBy(e.target.value as 'rating' | 'name')}
-                                className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                            >
-                                <option value="rating">{t('home.sortByRating')}</option>
-                                <option value="name">{t('home.sortByName')}</option>
-                            </select>
-                        </div>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link
+                            href="/broker"
+                            className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 text-lg"
+                        >
+                            {t('home.exploreForex')}
+                            <ArrowRight className="h-5 w-5 ml-2" />
+                        </Link>
+                        <Link
+                            href="/crypto-brokers"
+                            className="inline-flex items-center px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition-colors duration-200 text-lg"
+                        >
+                            {t('home.exploreCrypto')}
+                            <ArrowRight className="h-5 w-5 ml-2" />
+                        </Link>
                     </div>
                 </div>
 
-                {/* Brokers Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-                    {currentBrokers.map((broker) => (
-                        <div key={broker.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col h-full">
-                            {/* Broker Header */}
-                            <div className="p-6 border-b border-gray-100 dark:border-gray-700 flex-shrink-0">
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="flex items-center min-w-0">
-                                        <ImageWithFallback
-                                            src={broker.logo}
-                                            alt={getLocalizedName(broker)}
-                                            className="h-8 w-auto object-contain mr-3"
-                                        />
-                                        <h3 className="text-xl font-bold text-gray-800 dark:text-white truncate">{getLocalizedName(broker)}</h3>
-                                    </div>
-                                    <div className="flex items-center">
-                                        <span className="text-yellow-500 mr-1">★</span>
-                                        <span className="font-semibold text-gray-800 dark:text-white">{broker.rating}</span>
-                                    </div>
-                                </div>
-                                <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 leading-relaxed">{getLocalizedDescription(broker)}</p>
-
-                                {/* Features */}
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {broker.forexFeatures.map((feature) => (
-                                        <span
-                                            key={feature.id}
-                                            className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full"
-                                        >
-                                            {getLocalizedValue(feature.value, feature.valueEn)}
-                                        </span>
-                                    ))}
-                                </div>
+                {/* Stats Section */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                    {stats.map((stat, index) => (
+                        <div key={index} className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                            <div className="flex justify-center mb-3">
+                                {stat.icon}
                             </div>
-
-                            {/* Broker Details */}
-                            <div className="p-6 flex flex-col h-full">
-                                <div className="space-y-3 mb-6 flex-grow">
-                                    <div className="flex items-center text-sm min-w-0">
-                                        <Shield className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
-                                        <span className="text-gray-600 dark:text-gray-400 flex-shrink-0">{t('home.regulation')}: </span>
-                                        <span className="font-medium ml-1 text-gray-800 dark:text-white truncate">{broker.regulation}</span>
-                                    </div>
-                                    <div className="flex items-center text-sm min-w-0">
-                                        <DollarSign className="h-4 w-4 text-blue-600 mr-2 flex-shrink-0" />
-                                        <span className="text-gray-600 dark:text-gray-400 flex-shrink-0">{t('home.minDeposit')}: </span>
-                                        <span className="font-medium ml-1 text-gray-800 dark:text-white truncate">{broker.minDeposit}</span>
-                                    </div>
-                                    <div className="flex items-center text-sm min-w-0">
-                                        <TrendingUp className="h-4 w-4 text-purple-600 mr-2 flex-shrink-0" />
-                                        <span className="text-gray-600 dark:text-gray-400 flex-shrink-0">{t('home.spread')}: </span>
-                                        <span className="font-medium ml-1 text-gray-800 dark:text-white truncate">{broker.spreads}</span>
-                                    </div>
-                                </div>
-
-                                {/* Action Buttons */}
-                                <div className="flex gap-3 mt-auto">
-                                    <Link
-                                        href={`/broker/${broker.id}`}
-                                        className="flex-1 bg-gray-600 hover:bg-gray-700 text-white font-medium py-3 px-4 rounded-lg flex items-center justify-center transition-colors duration-200"
-                                    >
-                                        {t('home.viewDetails')}
-                                    </Link>
-                                    <a
-                                        href={broker.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg flex items-center justify-center transition-colors duration-200"
-                                    >
-                                        <Globe className="h-4 w-4 mr-2" />
-                                        {t('home.visit')}
-                                        <ExternalLink className="h-4 w-4 ml-2" />
-                                    </a>
-                                </div>
-                            </div>
+                            <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
                         </div>
                     ))}
                 </div>
 
-                {/* Empty State */}
-                {sortedBrokers.length === 0 && (
-                    <div className="text-center py-12">
-                        <TrendingUp className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                        <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">{t('home.noBrokersFound')}</h3>
-                        <p className="text-gray-600 dark:text-gray-400">{t('home.tryDifferentKeywords')}</p>
-                    </div>
-                )}
+                {/* Features Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    {features.map((feature, index) => (
+                        <Link
+                            key={index}
+                            href={feature.href}
+                            className={`group p-8 rounded-2xl border-2 transition-all duration-300 hover:scale-105 ${feature.color}`}
+                        >
+                            <div className="flex items-start space-x-4">
+                                <div className="flex-shrink-0">
+                                    {feature.icon}
+                                </div>
+                                <div className="flex-1">
+                                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                        {feature.title}
+                                    </h3>
+                                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                                        {feature.description}
+                                    </p>
+                                    <div className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
+                                        {t('home.features.exploreNow')}
+                                        <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
 
-                {/* Pagination */}
-                {sortedBrokers.length > 0 && (
-                    <Pagination
-                        currentPage={currentPage}
-                        totalPages={totalPages}
-                        onPageChange={handlePageChange}
-                        totalItems={sortedBrokers.length}
-                        itemsPerPage={itemsPerPage}
-                        startItem={startItem}
-                        endItem={endItem}
-                        theme="blue"
-                    />
-                )}
+                {/* Why Choose Us Section */}
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12">
+                        {t('home.whyChoose.title')}
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="text-center">
+                            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-4">
+                                <Shield className="h-8 w-8 text-blue-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{t('home.whyChoose.reliable.title')}</h3>
+                            <p className="text-gray-600 dark:text-gray-300">
+                                {t('home.whyChoose.reliable.desc')}
+                            </p>
+                        </div>
+                        <div className="text-center">
+                            <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full mb-4">
+                                <Zap className="h-8 w-8 text-orange-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{t('home.whyChoose.fast.title')}</h3>
+                            <p className="text-gray-600 dark:text-gray-300">
+                                {t('home.whyChoose.fast.desc')}
+                            </p>
+                        </div>
+                        <div className="text-center">
+                            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full mb-4">
+                                <Users className="h-8 w-8 text-green-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{t('home.whyChoose.community.title')}</h3>
+                            <p className="text-gray-600 dark:text-gray-300">
+                                {t('home.whyChoose.community.desc')}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* CTA Section */}
+                <div className="text-center">
+                    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-12 text-white">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                            {t('home.cta.title')}
+                        </h2>
+                        <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                            {t('home.cta.subtitle')}
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link
+                                href="/broker"
+                                className="inline-flex items-center px-8 py-4 bg-white text-blue-600 hover:bg-gray-100 font-semibold rounded-lg transition-colors duration-200 text-lg"
+                            >
+                                {t('home.cta.startForex')}
+                                <ArrowRight className="h-5 w-5 ml-2" />
+                            </Link>
+                            <Link
+                                href="/crypto-brokers"
+                                className="inline-flex items-center px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-colors duration-200 text-lg"
+                            >
+                                {t('home.cta.exploreCrypto')}
+                                <ArrowRight className="h-5 w-5 ml-2" />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+                {/* About Section */}
+                <div className="text-center mb-16 mt-10">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        {t('home.about.title')}
+                    </h2>
+                    <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+                        {t('home.about.subtitle')}
+                    </p>
+                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+                        {t('home.about.description')}
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                                {t('home.about.mission')}
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-300">
+                                {t('home.about.missionDesc')}
+                            </p>
+                        </div>
+                        <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                                {t('home.about.vision')}
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-300">
+                                {t('home.about.visionDesc')}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Services Section */}
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        {t('home.services.title')}
+                    </h2>
+                    <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+                        {t('home.services.subtitle')}
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-4">
+                                <Shield className="h-8 w-8 text-blue-600" />
+                            </div>
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                                {t('home.services.brokerReview.title')}
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm">
+                                {t('home.services.brokerReview.desc')}
+                            </p>
+                        </div>
+                        <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full mb-4">
+                                <BookOpen className="h-8 w-8 text-green-600" />
+                            </div>
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                                {t('home.services.education.title')}
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm">
+                                {t('home.services.education.desc')}
+                            </p>
+                        </div>
+                        <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                            <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full mb-4">
+                                <TrendingUp className="h-8 w-8 text-purple-600" />
+                            </div>
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                                {t('home.services.analysis.title')}
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm">
+                                {t('home.services.analysis.desc')}
+                            </p>
+                        </div>
+                        <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                            <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full mb-4">
+                                <Settings className="h-8 w-8 text-orange-600" />
+                            </div>
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                                {t('home.services.tools.title')}
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm">
+                                {t('home.services.tools.desc')}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Testimonials Section */}
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        {t('home.testimonials.title')}
+                    </h2>
+                    <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+                        {t('home.testimonials.subtitle')}
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                            <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <span className="text-2xl font-bold text-blue-600">A</span>
+                            </div>
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                {t('home.testimonials.user1.name')}
+                            </h3>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                                {t('home.testimonials.user1.role')}
+                            </p>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm italic">
+                                "{t('home.testimonials.user1.comment')}"
+                            </p>
+                        </div>
+                        <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                            <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <span className="text-2xl font-bold text-green-600">B</span>
+                            </div>
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                {t('home.testimonials.user2.name')}
+                            </h3>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                                {t('home.testimonials.user2.role')}
+                            </p>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm italic">
+                                "{t('home.testimonials.user2.comment')}"
+                            </p>
+                        </div>
+                        <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                            <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <span className="text-2xl font-bold text-purple-600">C</span>
+                            </div>
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                {t('home.testimonials.user3.name')}
+                            </h3>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                                {t('home.testimonials.user3.role')}
+                            </p>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm italic">
+                                "{t('home.testimonials.user3.comment')}"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* FAQ Section */}
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        {t('home.faq.title')}
+                    </h2>
+                    <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+                        {t('home.faq.subtitle')}
+                    </p>
+                    <div className="max-w-4xl mx-auto space-y-6">
+                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 text-left">
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                                {t('home.faq.q1')}
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-300">
+                                {t('home.faq.a1')}
+                            </p>
+                        </div>
+                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 text-left">
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                                {t('home.faq.q2')}
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-300">
+                                {t('home.faq.a2')}
+                            </p>
+                        </div>
+                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 text-left">
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                                {t('home.faq.q3')}
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-300">
+                                {t('home.faq.a3')}
+                            </p>
+                        </div>
+                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 text-left">
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                                {t('home.faq.q4')}
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-300">
+                                {t('home.faq.a4')}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Contact Section */}
+                {/* Removed Contact component */}
             </main>
 
             <Footer />
         </div>
     )
-} 
+}

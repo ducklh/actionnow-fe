@@ -2,9 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ExternalLink, TrendingUp, Shield, DollarSign, Bitcoin, Search, Filter, Loader2 } from 'lucide-react'
+import { Search, Star, TrendingUp, ArrowUpDown, Shield, DollarSign, Globe, ExternalLink } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
-import { CryptoBroker } from '../../lib/data'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import Pagination from '../components/Pagination'
+import ImageWithFallback from '../components/ImageWithFallback'
+import { cryptoBrokersApi } from '../../lib/api'
 
 // Interface cho dữ liệu từ API
 interface ApiCryptoBroker {
@@ -35,10 +39,6 @@ interface ApiCryptoBroker {
     paymentMethods: Array<{ id: string, value: string, valueEn: string }>
     customerSupports: Array<{ id: string, value: string, valueEn: string }>
 }
-import ImageWithFallback from '../components/ImageWithFallback'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Pagination from '../components/Pagination'
 
 export default function CryptoBrokersPage() {
     const { t, language } = useLanguage()
@@ -73,19 +73,8 @@ export default function CryptoBrokersPage() {
             try {
                 setLoading(true)
                 setError(null)
-                const response = await fetch('http://localhost:8080/api/crypto-brokers', {
-                    // headers: {
-                    //     'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc1NTI3MjA3MCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzU1MTg1NjcwfQ.VqayfeMo1T0g9md22ZNE22PzMWlbtDNftjmm_TozCa4xeg21eM5QAUI9vT3Dy-CiqB88aSfsmL4QEM31fEL8Sg',
-                    //     'Content-Type': 'application/json'
-                    // }
-                })
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`)
-                }
-
-                const data = await response.json()
-                setCryptoBrokers(data)
+                const data = await cryptoBrokersApi.getAll()
+                setCryptoBrokers(data as ApiCryptoBroker[])
             } catch (err) {
                 console.error('Error fetching crypto brokers:', err)
                 setError(err instanceof Error ? err.message : 'Có lỗi xảy ra khi tải dữ liệu')
@@ -145,7 +134,7 @@ export default function CryptoBrokersPage() {
                 <Header activePage="crypto-brokers" theme="orange" />
                 <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                     <div className="text-center py-20">
-                        <Loader2 className="h-12 w-12 text-orange-600 mx-auto mb-4 animate-spin" />
+                        <div className="h-12 w-12 text-orange-600 mx-auto mb-4 animate-spin" />
                         <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-2">
                             {t('common.loading') || 'Đang tải dữ liệu...'}
                         </h3>
@@ -219,7 +208,7 @@ export default function CryptoBrokersPage() {
                             </div>
                         </div>
                         <div className="flex items-center space-x-4">
-                            <Filter className="h-5 w-5 text-gray-400" />
+                            <ArrowUpDown className="h-5 w-5 text-gray-400" />
                             <label className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('common.sort')}:</label>
                             <select
                                 value={sortBy}
@@ -249,7 +238,7 @@ export default function CryptoBrokersPage() {
                                         <h3 className="text-xl font-bold text-gray-900 dark:text-white truncate">{getLocalizedName(broker)}</h3>
                                     </div>
                                     <div className="flex items-center">
-                                        <span className="text-yellow-500 mr-1">★</span>
+                                        <Star className="h-4 w-4 text-yellow-500 mr-1" />
                                         <span className="font-semibold text-gray-800 dark:text-white">{broker.rating}</span>
                                     </div>
                                 </div>
