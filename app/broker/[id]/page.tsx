@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, ExternalLink, Shield, DollarSign, TrendingUp, Globe, Star, CheckCircle, AlertTriangle, Info, Loader2 } from 'lucide-react'
 import { useLanguage } from '../../contexts/LanguageContext'
+import { forexBrokersApi } from '../../../lib/api'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 
@@ -62,13 +63,7 @@ export default function BrokerDetailPage({ params }: { params: { id: string } })
             try {
                 setLoading(true)
                 setError(null)
-                const response = await fetch(`http://localhost:8080/api/forex-brokers/${params.id}`)
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`)
-                }
-
-                const data = await response.json()
+                const data = await forexBrokersApi.getById(params.id) as ApiForexBroker
                 setBroker(data)
             } catch (err) {
                 console.error('Error fetching forex broker:', err)

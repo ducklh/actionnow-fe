@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { ArrowLeft, ExternalLink, TrendingUp, Shield, DollarSign, Bitcoin, Star, CheckCircle, AlertTriangle, Users, Globe, Loader2 } from 'lucide-react'
 import { useLanguage } from '../../contexts/LanguageContext'
+import { cryptoBrokersApi } from '../../../lib/api'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 
@@ -72,13 +73,7 @@ export default function CryptoBrokerDetailPage() {
                 setLoading(true)
                 setError(null)
                 const id = params.id as string
-                const response = await fetch(`http://localhost:8080/api/crypto-brokers/${id}`)
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`)
-                }
-
-                const data = await response.json()
+                const data = await cryptoBrokersApi.getById(id) as ApiCryptoBroker
                 setBroker(data)
             } catch (err) {
                 console.error('Error fetching crypto broker:', err)

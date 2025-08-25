@@ -32,13 +32,30 @@ export async function fetchApi<T>(endpoint: string): Promise<T[]> {
     }
 }
 
+// Function để lấy dữ liệu đơn lẻ (không phải array)
+export async function fetchApiSingle<T>(endpoint: string): Promise<T> {
+    try {
+        const response = await fetch(endpoint)
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.error('API fetch error:', error)
+        throw error
+    }
+}
+
 // Specific API functions
 export const forexBrokersApi = {
     getAll: () => fetchApi(API_ENDPOINTS.FOREX_BROKERS),
+    getById: (id: string) => fetchApiSingle(`${API_ENDPOINTS.FOREX_BROKERS}/${id}`),
 }
 
 export const cryptoBrokersApi = {
     getAll: () => fetchApi(API_ENDPOINTS.CRYPTO_BROKERS),
+    getById: (id: string) => fetchApiSingle(`${API_ENDPOINTS.CRYPTO_BROKERS}/${id}`),
 }
 
 export const newsApi = {
