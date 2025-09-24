@@ -2,10 +2,12 @@
 const nextConfig = {
     // App Router đã được kích hoạt mặc định trong Next.js 13+
 
+    // Cấu hình cho Docker
+    output: 'standalone',
+
     // Tắt warning về extra attributes
     experimental: {
-        // Tắt warning về data-locator-hook-status-message
-        suppressHydrationWarning: true,
+        // Các experimental features khác có thể thêm ở đây
     },
 
     // Cấu hình images để cho phép placeholder.com

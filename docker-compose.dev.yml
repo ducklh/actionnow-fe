@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # Next.js Frontend Development
+  frontend-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_BASE_URL=http://localhost:8080
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # Backend API Development (placeholder)
+  backend-dev:
+    image: node:18-alpine
+    working_dir: /app
+    command: >
+      sh -c "
+        echo 'Backend development service placeholder' &&
+        echo 'Please replace this with your actual backend service' &&
+        echo 'Backend should run on port 8080' &&
+        echo 'Sleeping indefinitely...' &&
+        sleep infinity
+      "
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
