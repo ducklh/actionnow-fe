@@ -6,6 +6,7 @@ import { ArrowLeft, BookOpen, Clock, Tag, Share2, Bookmark, TrendingUp, DollarSi
 import { useLanguage } from '../../contexts/LanguageContext'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import { API_BASE_URL } from '../../../lib/api'
 
 // Interface cho dữ liệu từ API
 interface ApiKnowledgeItem {
@@ -34,7 +35,7 @@ export default function KnowledgeDetailPage({ params }: { params: { id: string }
             try {
                 setLoading(true)
                 setError(null)
-                const response = await fetch(`http://localhost:8080/api/knowledge-items/${params.id}`)
+                const response = await fetch(`${API_BASE_URL}/api/knowledge-items/${params.id}`)
 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`)
