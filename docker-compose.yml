@@ -8,9 +8,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    # environment:
-    #   - NODE_ENV=production
-    #   - NEXT_PUBLIC_API_BASE_URL=http://157.66.101.198:9000
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_BASE_URL=https://api.k-network.io
     networks:
       - app-network
     restart: unless-stopped
